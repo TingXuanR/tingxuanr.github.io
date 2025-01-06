@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>CW 闪电侠、超级少女、绿箭侠、明日传奇联动</title><url>/post/cw-%E9%97%AA%E7%94%B5%E4%BE%A0%E8%B6%85%E7%BA%A7%E5%B0%91%E5%A5%B3%E7%BB%BF%E7%AE%AD%E4%BE%A0%E6%98%8E%E6%97%A5%E4%BC%A0%E5%A5%87%E8%81%94%E5%8A%A8/</url><categories><category>影视</category><category>2025-01</category></categories><tags><tag>超英</tag></tags><content type="html"><![CDATA[  CW 闪电侠、超级少女、绿箭侠、明日传奇联动​	摘要：收集了CW频道十年中闪电侠、超级少女、绿箭侠、明日传奇几部剧的具体联动集数。并且每一次联动都合并成了一个mp4文件。
+First-VS第一次联动：闪电侠VS绿箭侠
+闪电侠S1E08&amp;mdash;&amp;gt;绿箭S3E08
+2015-Together闪电侠团队与绿箭侠团队联手对抗不死野人萨维奇，与鹰侠和鹰女并肩作战
+闪电侠S2E08&amp;mdash;&amp;gt;绿箭S4E08
+2016-Dominators北京时间2016年11月29日，CW电视台将播出《四剧联动特别篇：支配者入侵》（序言）；11月30日播出《四剧联动特别篇：支配者入侵》（上篇）；12月1日播出《四剧联动特别篇：支配者入侵》（中篇）；12月2日播出《四剧联动特别篇：支配者入侵》（下篇）。约20位超级英雄将出现在联动特别篇中，正义联盟总部也将首次在电视中亮相。在《四剧联动特别篇：支配者入侵》（中篇）观众还将看到奥利弗已经逝世的父母和前女友黑金丝雀一起回归。DC漫画中的超级反派丧钟也将登场。 [1-2]联动篇中，CW将融合四剧主题BGM旋律全新编曲，带来四剧融合版BGM。
+超女S2E08&amp;mdash;&amp;gt;闪电侠S3E08&amp;mdash;&amp;gt;绿箭S5E08&amp;mdash;&amp;gt;明日传奇S2E07
+2017-Duet超女受到高维度生物音乐大师的催眠而陷入梦境，超女团队随着线索到1号地球向闪电侠团队求助，而闪电侠也意外被音乐大师催眠陷入同一个梦境。
+超女S2E16&amp;mdash;&amp;gt;闪电侠S3E17
+2017-Earth X2017年11月27日，DC联动集：CRISIS ON EARTH X （地球X的危机）
+超女S3E08&amp;mdash;&amp;gt;绿箭S6E08&amp;mdash;&amp;gt;闪电侠S4E08&amp;mdash;&amp;gt;明日传奇S3E08
+2018-ElseWorld2018年12月9日，CW台再一次进行《闪电侠》《绿箭侠》《超女》的联动大事件（《明日传奇》将不参与这次联动）。故事始于阿卡姆疯人院博士John Deegan重写现实，导致绿箭侠和闪电侠交换生命，在这个新的现实中，巴里·艾伦变成了奥利弗·奎恩（绿箭侠），奥利弗·奎恩变成了巴里·艾伦（闪电侠），而这两位英雄是唯一知道他们在错误的生活中拥有彼此力量的人。
+闪电 …  ]]></content></entry><entry><title>使用Hugo搭建博客网站</title><url>/post/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</url><categories><category>编程</category><category>2025-01</category></categories><tags><tag>建站</tag><tag>折腾</tag></tags><content type="html">  使用Hugo和Github基于hugo-theme-next主题搭建博客网站​	摘要：基于HugoV0.140.2(20241230)和hugo-theme-nextV4.6.3(20240722)，next主题使用的是yaml配置文件，和其它主题用的toml不一样。不过文章里面遇到的一些问题对其它主题也能有参考作用。
+初步使用下载Hogo Extend, git本次hugo版本: hugo v0.140.2-aae02ca612a02e085c08366a9c9279f4abb39d94+extended windows/amd64 BuildDate=2024-12-30T15:01:53Z VendorInfo=gohugoio
+新建GitHub仓库仓库名为github_user_name.github.io，权限为public，创建时readme或者git ignore都不需要选，建一个空白仓库就行。
+建好后在setting里面选择main分支为GitHub page。等待github deploy完成后就可以用https://github_user_name.github.io访问博客网站了。（当然要先完成创建博客网站这步）
+如果仓库名是其它的，也没问题。但是在config.yaml里面的baseurl要改成github_user_name.github.io/other_repo，不然很多样式文件是找不到的。
+创建博客网站目录在本地新建一个目录website或其它名字，右键“git bash here”，在git bash里输入 hugo new site Blog Blog就是本地的调试目录了。
+cd Blog // 初始化git目录 git init // 下载主题（需要科学上网，clash开TUN Mode。或者从gitee下载） git submodule add https://github.com/hugo-next/hugo-theme-next.git themes/hugo-theme-next // 将archives文件夹拷贝到Blog目录 cp -r themes/hugo-theme-next/exampleSite/content/archives/ . //  …  </content></entry></search>
