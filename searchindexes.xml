@@ -1,4 +1,53 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>CW 闪电侠、超级少女、绿箭侠、明日传奇联动</title><url>/post/cw-%E9%97%AA%E7%94%B5%E4%BE%A0%E8%B6%85%E7%BA%A7%E5%B0%91%E5%A5%B3%E7%BB%BF%E7%AE%AD%E4%BE%A0%E6%98%8E%E6%97%A5%E4%BC%A0%E5%A5%87%E8%81%94%E5%8A%A8/</url><categories><category>影视</category><category>2025-01</category></categories><tags><tag>超英</tag></tags><content type="html"><![CDATA[  CW 闪电侠、超级少女、绿箭侠、明日传奇联动​	摘要：收集了CW频道十年中闪电侠、超级少女、绿箭侠、明日传奇几部剧的具体联动集数。并且每一次联动都合并成了一个mp4文件。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>使用Hugo搭建博客网站</title><url>/post/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</url><categories><category>编程</category><category>2025-01</category></categories><tags><tag>建站</tag><tag>折腾</tag></tags><content type="html">  使用Hugo和Github基于hugo-theme-next主题搭建博客网站​	摘要：基于Hugo和hugo-theme-next利用github page搭建自己的静态网站并开启评论功能。需要注意的是next主题使用的是yaml配置文件，和大部分主题用的toml文件语法不一样，不过文章里面遇到的一些问题对其它主题也能有参考作用。
+关键词：Hugo	Github	Hugo-theme-next	SSH	LeanCloud	Vercel
+初步使用下载Hogo Extend, Git，Go本次hugo版本: hugo v0.140.2-aae02ca612a02e085c08366a9c9279f4abb39d94+extended windows/amd64 BuildDate=2024-12-30T15:01:53Z VendorInfo=gohugoio
+Hugo-theme-next: 4.6.3(20240722)
+新建GitHub仓库仓库名为github_user_name.github.io，权限为public，创建时readme或者git ignore都不需要选，建一个空白仓库就行。
+建好后在setting里面选择main分支为GitHub page。等待github deploy完成后就可以用https://github_user_name.github.io访问博客网站了。（当然要先完成创建博客网站这步）
+如果仓库名是其它的，也没问题。但是在config.yaml里面的baseurl要改成github_user_name.github.io/other_repo，不然很多样式文件是找不到的。
+创建博客网站目录在本地新建一个目录website或其它名字，右键“git bash here”，在git bash里输入 hugo new site Blog Blog就是本地的调试目录了。（推荐在OneDrive里面新建，这样就可以多端同步）
+cd Blog // 初始化git目录 git init // 下载主题（需要科学上网，clash开TUN Mode。或者从gitee下载） git submodule add https://github.com/hugo-next/hugo-theme-next.git …  </content></entry><entry><title>Macbook air m1不要升级macOS15</title><url>/post/macbook_air_m1%E4%B8%8D%E8%A6%81%E5%8D%87%E7%BA%A7macos15/</url><categories><category>数码</category><category>2025-01</category></categories><tags><tag>软件</tag><tag>Mac</tag></tags><content type="html">  macbook air m1不要升级macOS15摘要：一开始比较纠结macbook air m1 8g内存要不要升级macOS15，最终结论是不要。8g内存日用都不太够，升级15就更难受了，而且续航也会缩短很多。文末附带Safari去广告方式。
+之前想用chatgpt桌面版时，想升级14，但查了一圈后放弃了。这次想用Ghostery插件给Safari去广告，想升级的，但是发现可以在设置里单独升级Safari，不用升级系统。再加上看了一圈国内外的评价，都在吐槽8g的升级后体验不好。reddit的一篇帖子有专门讨论。
+原帖链接：https://www.reddit.com/r/MacOS/comments/1fmq9ux/initial_macos_sequoia_stable_update_review_on/?sort=new
+总结如下：
+运存占用异常，AI会额外占用运存（大约2g），并且15.0时开启swap会导致电脑卡顿，20241224时15.1似乎解决，但是运存相比之前系统还是非常吃紧。 可能造成WIFI断流问题。同一个WIFI，手机有网，电脑没网。 chrome浏览器可能处于不可用状态。很多tab打不开。 触控板可能会抽风失灵。 耗电增加，续航减少。 Safari去广告使用Ad block Pro去除B站广告时有时广告只是不显示，但广告还是占着网页上的空间，甚至tab还会自动轮转。而打开Ghostery后这块空间就消失了。也因此单独把Safari升级到最新版，不然用不了Ghostery。
+  </content></entry><entry><title>MacOS安装homeBrew及监控实时功耗</title><url>/post/macos%E5%AE%89%E8%A3%85homebrew%E5%8F%8A%E7%9B%91%E6%8E%A7%E5%AE%9E%E6%97%B6%E5%8A%9F%E8%80%97/</url><categories><category>数码</category><category>2025-01</category></categories><tags><tag>mac</tag><tag>软件</tag></tags><content type="html"><![CDATA[  MacOS安装homeBrew及监控实时功耗摘要：介绍了如何在ARM芯片上安装homebrew。最初写于2022年，基于MacMini。2024年更新为基于Macbook air，并且用homebrew安装asitop来监控MacBook的实时功耗，安装smartmontools来查看查看磁盘的写入与读取。
+20241205更新：homebrew的好处是一个命令就能下载软件，而且会自动配好环境变量。下载时实际上不需要修改host，只要clashx开启增强模式，直接运行install就没问题。还需要注意的是安装完需要按照提示添加环境变量。在命令行依次输入
+echo &amp;raquo; /Users/rao/.zprofile
+echo &amp;rsquo;eval &amp;ldquo;$(/opt/homebrew/bin/brew shellenv)&amp;rdquo;&amp;rsquo; &amp;raquo; /Users/rao/.zprofile
+eval &amp;ldquo;$(/opt/homebrew/bin/brew shellenv)&amp;rdquo;
+安装完后硬盘剩余空间对比
+最主要的是xcode的command line，占用了2.37G。
+利用smartmontools查看硬盘写入量brew install smartmontools
+smartctl -a disk0 | awk &amp;lsquo;/SMART/Health Information/,/^$/&amp;rsquo;
+20241205日结果如下：
+SMART/Health Information (NVMe Log 0x02)
+Critical Warning: 0x00
+Temperature: 35 Celsius
+Available Spare: 100%
+Available Spare Threshold: 99%
+Percentage Used: 0%
+Data Units Read: 6,991,706 [3.57 TB]
+Data Units Written: 3,203,066 [1.63 TB]
+Host Read Commands: 162,196,009
+Host Write Commands: 65,625,988
+Controller Busy Time: 0
+Power Cycles: 91 …  ]]></content></entry><entry><title>MacOS使用Hugo</title><url>/post/macos%E4%BD%BF%E7%94%A8hugo/</url><categories><category>编程</category><category>2025-01</category></categories><tags><tag>建站</tag><tag>折腾</tag><tag>mac</tag></tags><content type="html">  MacOS使用Hugo摘要：将Blog项目文件拷贝到onedrive后，开始在macbook air上进行内容编写与发布。 安装推荐开启科学上网，不然太慢了。
+安装ARM版Hugoarch -arm64 brew install hugo
+本次安装的为hugo v0.139.5+extended+withdeploy darwin/arm64 BuildDate=2024-12-14T19:16:21Z VendorInfo=brew`版本
+安装Goarch -arm64 brew install go
+本次安装的为go version go1.23.4 darwin/arm64
+使用和Windows使用区别不大，命令都是一样的。需要注意的是以下两点：
+本地生成ssh私钥公钥，添加公钥到github设置里。​	ssh-keygen -t rsa -b 4096 -C &amp;quot;name@outlook.com&amp;quot;
+上传时如果之前有关联过https格式git仓库链接，可能提示输入用户名、密码，但是即使密码正确也不能登陆。
+需要改成ssh链接：git remote set-url origin git@github.com:user_name/repo_name.git
+默认的名字和邮箱是mac的本地用户名和机型，可以通过github &amp;ndash;config更改
+Committer: admin admin@admindeMacBook-Air.localYour name and email address were configured automatically based on your username and hostname……
+Git全局忽略 .DS_Store 文件由于Mac会默认生成.DS_Store文件，可以通过配置让git忽略这个文件。
+vim core.excludesfile ~/.gitignore_global # 添加一行：.DS_Store git config --global core.excludesfile ~/.gitignore_global 将Blog目录上传到新的私有仓库github page需要仓库是公开的，但是其实部署GitHub page只需要Public文件夹即可。
+而Blog文件夹则可以放到一个私有的仓库Blog-Project里面。
+步骤很简单，但需要注意的是要在根目录编辑.gitignore文件，添加public/。表示忽略public目录。
+  </content></entry><entry><title>CW 闪电侠、超级少女、绿箭侠、明日传奇联动</title><url>/post/cw-%E9%97%AA%E7%94%B5%E4%BE%A0%E8%B6%85%E7%BA%A7%E5%B0%91%E5%A5%B3%E7%BB%BF%E7%AE%AD%E4%BE%A0%E6%98%8E%E6%97%A5%E4%BC%A0%E5%A5%87%E8%81%94%E5%8A%A8/</url><categories><category>影视</category><category>2025-01</category></categories><tags><tag>超英</tag></tags><content type="html"><![CDATA[  CW 闪电侠、超级少女、绿箭侠、明日传奇联动​	摘要：收集了CW频道十年中闪电侠、超级少女、绿箭侠、明日传奇几部剧的具体联动集数。并且每一次联动都合并成了一个mp4文件。
 First-VS第一次联动：闪电侠VS绿箭侠
 闪电侠S1E08&amp;mdash;&amp;gt;绿箭S3E08
 2015-Together闪电侠团队与绿箭侠团队联手对抗不死野人萨维奇，与鹰侠和鹰女并肩作战
@@ -10,11 +59,4 @@ First-VS第一次联动：闪电侠VS绿箭侠
 2017-Earth X2017年11月27日，DC联动集：CRISIS ON EARTH X （地球X的危机）
 超女S3E08&amp;mdash;&amp;gt;绿箭S6E08&amp;mdash;&amp;gt;闪电侠S4E08&amp;mdash;&amp;gt;明日传奇S3E08
 2018-ElseWorld2018年12月9日，CW台再一次进行《闪电侠》《绿箭侠》《超女》的联动大事件（《明日传奇》将不参与这次联动）。故事始于阿卡姆疯人院博士John Deegan重写现实，导致绿箭侠和闪电侠交换生命，在这个新的现实中，巴里·艾伦变成了奥利弗·奎恩（绿箭侠），奥利弗·奎恩变成了巴里·艾伦（闪电侠），而这两位英雄是唯一知道他们在错误的生活中拥有彼此力量的人。
-闪电 …  ]]></content></entry><entry><title>使用Hugo搭建博客网站</title><url>/post/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</url><categories><category>编程</category><category>2025-01</category></categories><tags><tag>建站</tag><tag>折腾</tag></tags><content type="html">  使用Hugo和Github基于hugo-theme-next主题搭建博客网站​	摘要：基于HugoV0.140.2(20241230)和hugo-theme-nextV4.6.3(20240722)，next主题使用的是yaml配置文件，和其它主题用的toml不一样。不过文章里面遇到的一些问题对其它主题也能有参考作用。
-关键词：Hugo	Github	Hugo-theme-next	SSH	LeanCloud	Vercel
-初步使用下载Hogo Extend, git本次hugo版本: hugo v0.140.2-aae02ca612a02e085c08366a9c9279f4abb39d94+extended windows/amd64 BuildDate=2024-12-30T15:01:53Z VendorInfo=gohugoio
-新建GitHub仓库仓库名为github_user_name.github.io，权限为public，创建时readme或者git ignore都不需要选，建一个空白仓库就行。
-建好后在setting里面选择main分支为GitHub page。等待github deploy完成后就可以用https://github_user_name.github.io访问博客网站了。（当然要先完成创建博客网站这步）
-如果仓库名是其它的，也没问题。但是在config.yaml里面的baseurl要改成github_user_name.github.io/other_repo，不然很多样式文件是找不到的。
-创建博客网站目录在本地新建一个目录website或其它名字，右键“git bash here”，在git bash里输入 hugo new site Blog Blog就是本地的调试目录了。（推荐在OneDrive里面新建，这样就可以多端同步）
-cd Blog // 初始化git目录 git init // 下载主题（需要科学上网，clash开TUN Mode。或者从gitee下载） git submodule add https://github.com/hugo-next/hugo-theme-next.git themes/hugo-theme-next // 将archives文件夹拷贝到Blog目录 cp -r …  </content></entry></search>
+闪电 …  ]]></content></entry></search>
