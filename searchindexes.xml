@@ -1,17 +1,38 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>使用Hugo搭建博客网站</title><url>/post/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</url><categories><category>编程</category><category>2025-01</category></categories><tags><tag>建站</tag><tag>折腾</tag></tags><content type="html">  使用Hugo和Github基于hugo-theme-next主题搭建博客网站​	摘要：基于Hugo和hugo-theme-next利用github page搭建自己的静态网站并开启评论功能。需要注意的是next主题使用的是yaml配置文件，和大部分主题用的toml文件语法不一样，不过文章里面遇到的一些问题对其它主题也能有参考作用。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>使用Hugo搭建博客网站</title><url>/note/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</url><categories><category>编程</category><category>2025-01</category></categories><tags><tag>建站</tag><tag>折腾</tag></tags><content type="html">  使用Hugo和Github基于hugo-theme-next主题搭建博客网站​	摘要：基于Hugo和hugo-theme-next利用github page搭建自己的静态网站并开启评论功能。需要注意的是next主题使用的是yaml配置文件，和大部分主题用的toml文件语法不一样，不过文章里面遇到的一些问题对其它主题也能有参考作用。
 关键词：Hugo	Github	Hugo-theme-next	SSH	LeanCloud	Vercel
+遇到的问题：如何配置文章的最后修改时间？
+如何不在首页显示全部内容？
+如何激活评论模块？
+如何创建archives界面？
+如何配置图片路径？
+如何自定义左上角的菜单？
+……
 初步使用下载Hogo Extend, Git，Go本次hugo版本: hugo v0.140.2-aae02ca612a02e085c08366a9c9279f4abb39d94+extended windows/amd64 BuildDate=2024-12-30T15:01:53Z VendorInfo=gohugoio
 Hugo-theme-next: 4.6.3(20240722)
 新建GitHub仓库仓库名为github_user_name.github.io，权限为public，创建时readme或者git ignore都不需要选，建一个空白仓库就行。
 建好后在setting里面选择main分支为GitHub page。等待github deploy完成后就可以用https://github_user_name.github.io访问博客网站了。（当然要先完成创建博客网站这步）
 如果仓库名是其它的，也没问题。但是在config.yaml里面的baseurl要改成github_user_name.github.io/other_repo，不然很多样式文件是找不到的。
 创建博客网站目录在本地新建一个目录website或其它名字，右键“git bash here”，在git bash里输入 hugo new site Blog Blog就是本地的调试目录了。（推荐在OneDrive里面新建，这样就可以多端同步）
-cd Blog // 初始化git目录 git init // 下载主题（需要科学上网，clash开TUN Mode。或者从gitee下载） git submodule add https://github.com/hugo-next/hugo-theme-next.git …  </content></entry><entry><title>Macbook air m1不要升级macOS15</title><url>/post/macbook_air_m1%E4%B8%8D%E8%A6%81%E5%8D%87%E7%BA%A7macos15/</url><categories><category>数码</category><category>2025-01</category></categories><tags><tag>软件</tag><tag>Mac</tag></tags><content type="html">  macbook air m1不要升级macOS15摘要：一开始比较纠结macbook air m1 8g内存要不要升级macOS15，最终结论是不要。8g内存日用都不太够，升级15就更难受了，而且续航也会缩短很多。文末附带Safari去广告方式。
+cd Blog // 初始化git目录 git init // 下载主题（需要科学上网，clash开TUN Mode。或者从gitee下 …  </content></entry><entry><title>使用HandBrake烧录字幕到视频里</title><url>/note/%E4%BD%BF%E7%94%A8handbrake%E7%83%A7%E5%BD%95%E5%AD%97%E5%B9%95%E5%88%B0%E8%A7%86%E9%A2%91%E9%87%8C/</url><categories><category>数码</category><category>影视</category><category>2025-01</category></categories><tags><tag>软件</tag><tag>问题</tag></tags><content type="html"><![CDATA[  使用HandBrake烧录字幕到视频里摘要：使用HandBrake这个软件，将外挂字幕烧录到视频里面，顺便还能缩小视频体积，转换格式。觉得手机拍摄的视频太占空间也可以使用这个软件在保证质量的情况下极大的缩小文件体积。附带利用vscode转换文本编码。
+主要步骤下载handbrake: https://handbrake.fr/downloads.php打开源，选择视频或视频文件夹
+设置视频、音频码率，选择字幕文件
+在视频标签页中，一般保持1080p 30, 默认就行
+如果需要GPU加速，可以在编码器选择对应的选项，如H.264(Nvenc)&ndash; N卡专用。
+音频的话可以查看源文件音频码率，选择合适的。默认是160kb/s，可以改为和源文件一样的，如192kb/s。
+选好视频、音频设置后，点击字幕标签&ndash;轨道&ndash;导入字幕，选择字幕文件，点击burn in框，删除原来的列。
+最后点击“添加到队列中”（多个文件）或者直接开始编码（单个文件）
+整个流程演示：利用VsCode将字幕文件由中文GBK编码转化为UTF8编码先打开GBK编码的视频文件，发现乱码；点击右下角编码， reopen with gbk； 再次点击右下角编码，save as utf8。
+使用PR烧录有时候用handbrake烧录会失败，此时可以用PR替代。直接将视频和字幕添加到PR的项目里，然后把视频和字幕拉到右边的编辑栏导出即可。
+字幕文件时间必须有序给索尼克电影拉取字幕时发现的问题。
+字幕文件在PR里只显示到41:00左右，原因就是字幕文件存在这么一段:
+684 00:41:14,590 &ndash;&gt; 00:40:57,000
+可以看出时间从41秒到40秒，这肯定是不对的。把40:57改成41:16，之后再导入PR就能全部显示了。
+  ]]></content></entry><entry><title>Macbook air m1不要升级macOS15</title><url>/note/macbook_air_m1%E4%B8%8D%E8%A6%81%E5%8D%87%E7%BA%A7macos15/</url><categories><category>数码</category><category>2025-01</category></categories><tags><tag>软件</tag><tag>Mac</tag><tag>问题</tag></tags><content type="html">  macbookairm1 8g不要升级macOS15摘要：一开始比较纠结macbook air m1 8g内存要不要升级macOS15，最终结论是不要。8g内存日用都不太够，升级15就更加捉襟见肘，而且续航也会缩短很多。附带Safari去广告方式。
 之前想用chatgpt桌面版时，想升级14，但查了一圈后放弃了。这次想用Ghostery插件给Safari去广告，想升级的，但是发现可以在设置里单独升级Safari，不用升级系统。再加上看了一圈国内外的评价，都在吐槽8g的升级后体验不好。reddit的一篇帖子有专门讨论。
 原帖链接：https://www.reddit.com/r/MacOS/comments/1fmq9ux/initial_macos_sequoia_stable_update_review_on/?sort=new
 总结如下：
 运存占用异常，AI会额外占用运存（大约2g），并且15.0时开启swap会导致电脑卡顿，20241224时15.1似乎解决，但是运存相比之前系统还是非常吃紧。 可能造成WIFI断流问题。同一个WIFI，手机有网，电脑没网。 chrome浏览器可能处于不可用状态。很多tab打不开。 触控板可能会抽风失灵。 耗电增加，续航减少。 Safari去广告使用Ad block Pro去除B站广告时有时广告只是不显示，但广告还是占着网页上的空间，甚至tab还会自动轮转。而打开Ghostery后这块空间就消失了。也因此单独把Safari升级到最新版，不然用不了Ghostery。
-  </content></entry><entry><title>MacOS安装homeBrew及监控实时功耗</title><url>/post/macos%E5%AE%89%E8%A3%85homebrew%E5%8F%8A%E7%9B%91%E6%8E%A7%E5%AE%9E%E6%97%B6%E5%8A%9F%E8%80%97/</url><categories><category>数码</category><category>2025-01</category></categories><tags><tag>mac</tag><tag>软件</tag></tags><content type="html"><![CDATA[  MacOS安装homeBrew及监控实时功耗摘要：介绍了如何在ARM芯片上安装homebrew。最初写于2022年，基于MacMini。2024年更新为基于Macbook air，并且用homebrew安装asitop来监控MacBook的实时功耗，安装smartmontools来查看查看磁盘的写入与读取。
+  </content></entry><entry><title>MacOS安装homeBrew及监控实时功耗</title><url>/note/macos%E5%AE%89%E8%A3%85homebrew%E5%8F%8A%E7%9B%91%E6%8E%A7%E5%AE%9E%E6%97%B6%E5%8A%9F%E8%80%97/</url><categories><category>数码</category><category>2025-01</category></categories><tags><tag>mac</tag><tag>软件</tag></tags><content type="html"><![CDATA[  MacOS安装homeBrew及监控实时功耗摘要：介绍了如何在ARM芯片上安装homebrew。最初写于2022年，基于MacMini。2024年更新为基于Macbook air，并且用homebrew安装asitop来监控MacBook的实时功耗，安装smartmontools来查看查看磁盘的写入与读取。
 20241205更新：homebrew的好处是一个命令就能下载软件，而且会自动配好环境变量。下载时实际上不需要修改host，只要clashx开启增强模式，直接运行install就没问题。还需要注意的是安装完需要按照提示添加环境变量。在命令行依次输入
 echo &amp;raquo; /Users/rao/.zprofile
 echo &amp;rsquo;eval &amp;ldquo;$(/opt/homebrew/bin/brew shellenv)&amp;rdquo;&amp;rsquo; &amp;raquo; /Users/rao/.zprofile
@@ -32,7 +53,7 @@ Data Units Written: 3,203,066 [1.63 TB]
 Host Read Commands: 162,196,009
 Host Write Commands: 65,625,988
 Controller Busy Time: 0
-Power Cycles: 91 …  ]]></content></entry><entry><title>MacOS使用Hugo</title><url>/post/macos%E4%BD%BF%E7%94%A8hugo/</url><categories><category>编程</category><category>2025-01</category></categories><tags><tag>建站</tag><tag>折腾</tag><tag>mac</tag></tags><content type="html">  MacOS使用Hugo摘要：将Blog项目文件拷贝到onedrive后，开始在macbook air上进行内容编写与发布。 安装推荐开启科学上网，不然太慢了。
+Power Cycles: 91 …  ]]></content></entry><entry><title>MacOS使用Hugo</title><url>/note/macos%E4%BD%BF%E7%94%A8hugo/</url><categories><category>编程</category><category>2025-01</category></categories><tags><tag>建站</tag><tag>折腾</tag><tag>mac</tag></tags><content type="html">  MacOS使用Hugo摘要：将Blog项目文件拷贝到onedrive后，开始在macbook air上进行内容编写与发布。 安装推荐开启科学上网，不然太慢了。
 安装ARM版Hugoarch -arm64 brew install hugo
 本次安装的为hugo v0.139.5+extended+withdeploy darwin/arm64 BuildDate=2024-12-14T19:16:21Z VendorInfo=brew`版本
 安装Goarch -arm64 brew install go
@@ -47,7 +68,7 @@ Git全局忽略 .DS_Store 文件由于Mac会默认生成.DS_Store文件，可�
 vim core.excludesfile ~/.gitignore_global # 添加一行：.DS_Store git config --global core.excludesfile ~/.gitignore_global 将Blog目录上传到新的私有仓库github page需要仓库是公开的，但是其实部署GitHub page只需要Public文件夹即可。
 而Blog文件夹则可以放到一个私有的仓库Blog-Project里面。
 步骤很简单，但需要注意的是要在根目录编辑.gitignore文件，添加public/。表示忽略public目录。
-  </content></entry><entry><title>CW 闪电侠、超级少女、绿箭侠、明日传奇联动</title><url>/post/cw-%E9%97%AA%E7%94%B5%E4%BE%A0%E8%B6%85%E7%BA%A7%E5%B0%91%E5%A5%B3%E7%BB%BF%E7%AE%AD%E4%BE%A0%E6%98%8E%E6%97%A5%E4%BC%A0%E5%A5%87%E8%81%94%E5%8A%A8/</url><categories><category>影视</category><category>2025-01</category></categories><tags><tag>超英</tag></tags><content type="html"><![CDATA[  CW 闪电侠、超级少女、绿箭侠、明日传奇联动​	摘要：收集了CW频道十年中闪电侠、超级少女、绿箭侠、明日传奇几部剧的具体联动集数。并且每一次联动都合并成了一个mp4文件。
+  </content></entry><entry><title>CW 闪电侠、超级少女、绿箭侠、明日传奇联动</title><url>/daily/cw-%E9%97%AA%E7%94%B5%E4%BE%A0%E8%B6%85%E7%BA%A7%E5%B0%91%E5%A5%B3%E7%BB%BF%E7%AE%AD%E4%BE%A0%E6%98%8E%E6%97%A5%E4%BC%A0%E5%A5%87%E8%81%94%E5%8A%A8/</url><categories><category>影视</category><category>2025-01</category></categories><tags><tag>超英</tag></tags><content type="html"><![CDATA[  CW 闪电侠、超级少女、绿箭侠、明日传奇联动​	摘要：收集了CW频道十年中闪电侠、超级少女、绿箭侠、明日传奇几部剧的具体联动集数。并且每一次联动都合并成了一个mp4文件。
 First-VS第一次联动：闪电侠VS绿箭侠
 闪电侠S1E08&amp;mdash;&amp;gt;绿箭S3E08
 2015-Together闪电侠团队与绿箭侠团队联手对抗不死野人萨维奇，与鹰侠和鹰女并肩作战
@@ -59,4 +80,9 @@ First-VS第一次联动：闪电侠VS绿箭侠
 2017-Earth X2017年11月27日，DC联动集：CRISIS ON EARTH X （地球X的危机）
 超女S3E08&amp;mdash;&amp;gt;绿箭S6E08&amp;mdash;&amp;gt;闪电侠S4E08&amp;mdash;&amp;gt;明日传奇S3E08
 2018-ElseWorld2018年12月9日，CW台再一次进行《闪电侠》《绿箭侠》《超女》的联动大事件（《明日传奇》将不参与这次联动）。故事始于阿卡姆疯人院博士John Deegan重写现实，导致绿箭侠和闪电侠交换生命，在这个新的现实中，巴里·艾伦变成了奥利弗·奎恩（绿箭侠），奥利弗·奎恩变成了巴里·艾伦（闪电侠），而这两位英雄是唯一知道他们在错误的生活中拥有彼此力量的人。
-闪电 …  ]]></content></entry></search>
+闪电 …  ]]></content></entry><entry><title>关于网站</title><url>/about.html</url><categories><category>2025-01</category></categories><tags/><content type="html">  人生到处知何似，应似飞鸿踏雪泥。
+泥上偶然留指爪，鸿飞那复计东西。
+平时依靠互联网解决了不少问题，感觉可以把一些东西分享出来，或许也能帮到人？或者做个整理也好。
+虽然可能也没人看，但万一有人能看到这点“雪泥鸿爪”呢？
+萍水相逢，欢迎评论。
+  </content></entry></search>
