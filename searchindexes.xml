@@ -27,7 +27,7 @@ cd Blog // 初始化git目录 git init // 下载主题（需要科学上网，cl
 字幕文件在PR里只显示到41:00左右，原因就是字幕文件存在这么一段:
 684 00:41:14,590 &ndash;&gt; 00:40:57,000
 可以看出时间从41秒到40秒，这肯定是不对的。把40:57改成41:16，之后再导入PR就能全部显示了。
-  ]]></content></entry><entry><title>Macbook air m1不要升级macOS15</title><url>/note/macbook_air_m1%E4%B8%8D%E8%A6%81%E5%8D%87%E7%BA%A7macos15/</url><categories><category>数码</category><category>2025-01</category></categories><tags><tag>软件</tag><tag>Mac</tag><tag>问题</tag></tags><content type="html">  macbookairm1 8g不要升级macOS15摘要：一开始比较纠结macbook air m1 8g内存要不要升级macOS15，最终结论是不要。8g内存日用都不太够，升级15就更加捉襟见肘，而且续航也会缩短很多。附带Safari去广告方式。
+  ]]></content></entry><entry><title>Macbook air m1不要升级macOS15</title><url>/note/macbook_air_m1%E4%B8%8D%E8%A6%81%E5%8D%87%E7%BA%A7macos15/</url><categories><category>数码</category><category>2025-01</category></categories><tags><tag>软件</tag><tag>Mac</tag><tag>问题</tag></tags><content type="html">  macbookairm1 8g不要升级macOS15摘要：一开始比较纠结macbook air m1 8g内存要不要升级macOS15，最终结论是不要。 8g内存日用都不太够，升级15就更加捉襟见肘，而且续航也会缩短很多。附带Safari去广告方式。
 之前想用chatgpt桌面版时，想升级14，但查了一圈后放弃了。这次想用Ghostery插件给Safari去广告，想升级的，但是发现可以在设置里单独升级Safari，不用升级系统。再加上看了一圈国内外的评价，都在吐槽8g的升级后体验不好。reddit的一篇帖子有专门讨论。
 原帖链接：https://www.reddit.com/r/MacOS/comments/1fmq9ux/initial_macos_sequoia_stable_update_review_on/?sort=new
 总结如下：
