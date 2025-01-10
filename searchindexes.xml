@@ -6,6 +6,8 @@
 如何创建archives界面？
 如何配置图片路径？
 如何自定义左上角的菜单？
+如何添加友联？
+如何确定网页布局是否正常？
 ……
 初步使用下载Hogo Extend, Git，Go本次hugo版本: hugo v0.140.2-aae02ca612a02e085c08366a9c9279f4abb39d94+extended windows/amd64 BuildDate=2024-12-30T15:01:53Z VendorInfo=gohugoio
 Hugo-theme-next: 4.6.3(20240722)
@@ -13,7 +15,7 @@ Hugo-theme-next: 4.6.3(20240722)
 建好后在setting里面选择main分支为GitHub page。等待github deploy完成后就可以用https://github_user_name.github.io访问博客网站了。（当然要先完成创建博客网站这步）
 如果仓库名是其它的，也没问题。但是在config.yaml里面的baseurl要改成github_user_name.github.io/other_repo，不然很多样式文件是找不到的。
 创建博客网站目录在本地新建一个目录website或其它名字，右键“git bash here”，在git bash里输入 hugo new site Blog Blog就是本地的调试目录了。（推荐在OneDrive里面新建，这样就可以多端同步）
-cd Blog // 初始化git目录 git init // 下载主题（需要科学上网，clash开TUN Mode。或者从gitee下 …  </content></entry><entry><title>使用HandBrake烧录字幕到视频里</title><url>/note/%E4%BD%BF%E7%94%A8handbrake%E7%83%A7%E5%BD%95%E5%AD%97%E5%B9%95%E5%88%B0%E8%A7%86%E9%A2%91%E9%87%8C/</url><categories><category>数码</category><category>影视</category><category>2025-01</category></categories><tags><tag>软件</tag><tag>问题</tag></tags><content type="html"><![CDATA[  使用HandBrake烧录字幕到视频里摘要：使用HandBrake这个软件，将外挂字幕烧录到视频里面，顺便还能缩小视频体积，转换格式。觉得手机拍摄的视频太占空间也可以使用这个软件在保证质量的情况下极大的缩小文件体积。附带利用vscode转换文本编码。
+cd Blog // 初始化git目录 git init // 下载主题（需要科学上 …  </content></entry><entry><title>使用HandBrake烧录字幕到视频里</title><url>/note/%E4%BD%BF%E7%94%A8handbrake%E7%83%A7%E5%BD%95%E5%AD%97%E5%B9%95%E5%88%B0%E8%A7%86%E9%A2%91%E9%87%8C/</url><categories><category>数码</category><category>影视</category><category>2025-01</category></categories><tags><tag>软件</tag><tag>问题</tag></tags><content type="html"><![CDATA[  使用HandBrake烧录字幕到视频里摘要：使用HandBrake这个软件，将外挂字幕烧录到视频里面，顺便还能缩小视频体积，转换格式。觉得手机拍摄的视频太占空间也可以使用这个软件在保证质量的情况下极大的缩小文件体积。附带利用vscode转换文本编码。
 主要步骤下载handbrake: https://handbrake.fr/downloads.php打开源，选择视频或视频文件夹
 设置视频、音频码率，选择字幕文件
 在视频标签页中，一般保持1080p 30, 默认就行
@@ -53,7 +55,8 @@ Data Units Written: 3,203,066 [1.63 TB]
 Host Read Commands: 162,196,009
 Host Write Commands: 65,625,988
 Controller Busy Time: 0
-Power Cycles: 91 …  ]]></content></entry><entry><title>MacOS使用Hugo</title><url>/note/macos%E4%BD%BF%E7%94%A8hugo/</url><categories><category>编程</category><category>2025-01</category></categories><tags><tag>建站</tag><tag>折腾</tag><tag>mac</tag></tags><content type="html">  MacOS使用Hugo摘要：将Blog项目文件拷贝到onedrive后，开始在macbook air上进行内容编写与发布。 安装推荐开启科学上网，不然太慢了。
+Power Cycles: 91 …  ]]></content></entry><entry><title>MacOS使用Hugo</title><url>/note/macos%E4%BD%BF%E7%94%A8hugo/</url><categories><category>编程</category><category>2025-01</category></categories><tags><tag>建站</tag><tag>折腾</tag><tag>mac</tag></tags><content type="html">  MacOS使用Hugo摘要：将Blog项目文件拷贝到onedrive后，开始在macbook air上进行内容编写与发布。
+安装推荐开启科学上网，不然太慢了。
 安装ARM版Hugoarch -arm64 brew install hugo
 本次安装的为hugo v0.139.5+extended+withdeploy darwin/arm64 BuildDate=2024-12-14T19:16:21Z VendorInfo=brew`版本
 安装Goarch -arm64 brew install go
@@ -80,11 +83,7 @@ First-VS第一次联动：闪电侠VS绿箭侠
 2017-Earth X2017年11月27日，DC联动集：CRISIS ON EARTH X （地球X的危机）
 超女S3E08&amp;mdash;&amp;gt;绿箭S6E08&amp;mdash;&amp;gt;闪电侠S4E08&amp;mdash;&amp;gt;明日传奇S3E08
 2018-ElseWorld2018年12月9日，CW台再一次进行《闪电侠》《绿箭侠》《超女》的联动大事件（《明日传奇》将不参与这次联动）。故事始于阿卡姆疯人院博士John Deegan重写现实，导致绿箭侠和闪电侠交换生命，在这个新的现实中，巴里·艾伦变成了奥利弗·奎恩（绿箭侠），奥利弗·奎恩变成了巴里·艾伦（闪电侠），而这两位英雄是唯一知道他们在错误的生活中拥有彼此力量的人。
-闪电 …  ]]></content></entry><entry><title>关于网站</title><url>/about.html</url><categories><category>2025-01</category></categories><tags/><content type="html">  
-人生到处知何似，应似飞鸿踏雪泥。
+闪电 …  ]]></content></entry><entry><title>关于网站</title><url>/about.html</url><categories><category>2025-01</category></categories><tags/><content type="html">  人生到处知何似，应似飞鸿踏雪泥。
 泥上偶然留指爪，鸿飞那复计东西。
-平时依靠互联网解决了不少问题，感觉可以把一些东西分享出来，或许也能帮到人？或者做个整理也好。
-虽然可能也没人看，但万一有人能看到这点“雪泥鸿爪”呢？
-萍水相逢，欢迎评论
-  </content></entry><entry><title>站点示例</title><url>/flinks.html</url><categories/><tags/><content type="html">  如想交换本站友情链接，请在评论区留下你的站点信息，格式参考如下：
+萍水相逢，欢迎留言  </content></entry><entry><title>站点示例</title><url>/flinks.html</url><categories/><tags/><content type="html">  如想交换本站友情链接，请在评论区留下你的站点信息，格式参考如下：
 - name: 亭轩阁 desc: 收录遇到的问题，分享解决方法 avatar: https://tingxuanr.github.io/imgs/my_avatar.png link: https://tingxuanr.github.io   </content></entry></search>
