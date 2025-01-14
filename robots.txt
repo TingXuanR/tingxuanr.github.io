@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /imgs/
-Sitemap: https://tingxuanr.github.io/sitemap.xml
