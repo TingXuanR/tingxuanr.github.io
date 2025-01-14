@@ -22,7 +22,8 @@ cd Blog // 初始化git目录 git init // 下载主题（需要科学上 …  </
 打开terminal，输入nohup docker run --device /dev/net/tun --cap-add NET_ADMIN -ti -e PASSWORD=mypass -e URLWIN=1 -e DISABLE_PKG_VERSION_XML=1 -p 127.0.0.1:5901:5901 -p 127.0.0.1:1080:1080 -p 127.0.0.1:8888:8888 hagb/docker-easyconnect:7.6.7 &amp;gt; /dev/null &amp;amp; 其中passwd和7.6.7可以更改为适合自1.己的版本。
 等拉取完(一两分钟)后容器会自动运行。在docker desktop里可以看到。
 之后需要运行只需要在docker desktop里开始，停止就行。
-![image-20250114102842894](/imgs/Mac通过容器运行深信服easy …  ]]></content></entry><entry><title>象棋界大地震录音门事件</title><url>/post/%E8%B1%A1%E6%A3%8B%E7%95%8C%E5%A4%A7%E5%9C%B0%E9%9C%87--%E5%BD%95%E9%9F%B3%E9%97%A8%E4%BA%8B%E4%BB%B6/</url><categories><category>2025-01</category></categories><tags><tag>新闻</tag></tags><content type="html">  象棋界大地震&amp;amp;quot;录音门&amp;amp;quot;事件摘要：录音门从2023年4月曝光，期间2024年9月官方公告处理过王天一、王跃飞两人。但2025年1月12日的公告却直接让整个象棋界来了个大洗牌。象棋等级分前十的选手里，前三的王天一、郑惟桐、赵鑫鑫、第六的汪洋被终生禁赛，排名第八的郝继超也被禁赛4年并撤销等级称号。这一次，真的是“高手在民间”了。
+修改clash x的配置文件将原本的配置文件内容复制到新建的sf.yaml中。防止clash自动刷新后将修改清除。
+修改sf.yaml，在proxies …  ]]></content></entry><entry><title>象棋界大地震录音门事件</title><url>/post/%E8%B1%A1%E6%A3%8B%E7%95%8C%E5%A4%A7%E5%9C%B0%E9%9C%87--%E5%BD%95%E9%9F%B3%E9%97%A8%E4%BA%8B%E4%BB%B6/</url><categories><category>2025-01</category></categories><tags><tag>新闻</tag></tags><content type="html">  象棋界大地震&amp;amp;quot;录音门&amp;amp;quot;事件摘要：录音门从2023年4月曝光，期间2024年9月官方公告处理过王天一、王跃飞两人。但2025年1月12日的公告却直接让整个象棋界来了个大洗牌。象棋等级分前十的选手里，前三的王天一、郑惟桐、赵鑫鑫、第六的汪洋被终生禁赛，排名第八的郝继超也被禁赛4年并撤销等级称号。这一次，真的是“高手在民间”了。
 处理结果（截至2025年1月12日）官方的公告是还在继续查，不知道第三批还会有哪些人被处罚。
 过程初步发酵（2023年）2023年4月，一段长达12分钟的录音在网络上曝光，录音内容涉及两位中国象棋特级大师王跃飞和郝继超的对话。录音中，两人讨论了买棋、卖棋、操纵比赛结果、软件作弊等违规行为，期间提及中国象棋等级分连续十年排名第一的棋手王天一。
 2023年7月，中国象棋协会介入调查。
