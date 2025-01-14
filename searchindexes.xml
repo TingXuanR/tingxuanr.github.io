@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>使用Hugo搭建博客网站</title><url>/note/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</url><categories><category>编程</category><category>2025-01</category></categories><tags><tag>建站</tag><tag>折腾</tag></tags><content type="html">  使用Hugo和Github基于hugo-theme-next主题搭建博客网站​	摘要：基于Hugo和hugo-theme-next利用github page搭建自己的静态网站并开启评论功能。需要注意的是next主题使用的是yaml配置文件，和大部分主题用的toml文件语法不一样，不过文章里面遇到的一些问题对其它主题也能有参考作用。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>使用Hugo搭建博客网站</title><url>/note/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</url><categories><category>日常</category><category>2025-01</category></categories><tags><tag>建站</tag><tag>折腾</tag></tags><content type="html">  使用Hugo和Github基于hugo-theme-next主题搭建博客网站​	摘要：基于Hugo和hugo-theme-next利用github page搭建自己的静态网站并开启评论功能。需要注意的是next主题使用的是yaml配置文件，和大部分主题用的toml文件语法不一样，不过文章里面遇到的一些问题对其它主题也能有参考作用。
 关键词：Hugo	Github	Hugo-theme-next	SSH	LeanCloud	Vercel
 遇到的问题：如何配置文章的最后修改时间？
 如何不在首页显示全部内容？
@@ -15,7 +15,14 @@ Hugo-theme-next: 4.6.3(20240722)
 建好后在setting里面选择main分支为GitHub page。等待github deploy完成后就可以用https://github_user_name.github.io访问博客网站了。（当然要先完成创建博客网站这步）
 如果仓库名是其它的，也没问题。但是在config.yaml里面的baseurl要改成github_user_name.github.io/other_repo，不然很多样式文件是找不到的。
 创建博客网站目录在本地新建一个目录website或其它名字，右键“git bash here”，在git bash里输入 hugo new site Blog Blog就是本地的调试目录了。（推荐在OneDrive里面新建，这样就可以多端同步）
-cd Blog // 初始化git目录 git init // 下载主题（需要科学上 …  </content></entry><entry><title>象棋界大地震录音门事件</title><url>/post/%E8%B1%A1%E6%A3%8B%E7%95%8C%E5%A4%A7%E5%9C%B0%E9%9C%87--%E5%BD%95%E9%9F%B3%E9%97%A8%E4%BA%8B%E4%BB%B6/</url><categories><category>2025-01</category></categories><tags><tag>新闻</tag></tags><content type="html">  象棋界大地震&amp;amp;quot;录音门&amp;amp;quot;事件摘要：录音门从2023年4月曝光，期间2024年9月官方公告处理过王天一、王跃飞两人。但2025年1月12日的公告却直接让整个象棋界来了个大洗牌。象棋等级分前十的选手里，前三的王天一、郑惟桐、赵鑫鑫、第六的汪洋被终生禁赛，排名第八的郝继超也被禁赛4年并撤销等级称号。这一次，真的是“高手在民间”了。
+cd Blog // 初始化git目录 git init // 下载主题（需要科学上 …  </content></entry><entry><title>Mac通过容器运行深信服easy Connect</title><url>/note/mac%E9%80%9A%E8%BF%87%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%B7%B1%E4%BF%A1%E6%9C%8Deasy-connect/</url><categories><category>日常</category><category>2025-01</category></categories><tags><tag>mac</tag><tag>软件</tag><tag>折腾</tag></tags><content type="html"><![CDATA[  Mac通过容器运行深信服easy connect摘要：公司用的深信服easy Connect进行内网连接。但是这个软件过于流氓，在windows上会占用u盘导致无法弹出，而且还会生成域名证书，想干什么不得而知。为了防止它继续祸害，决定把它丢到容器里运行。如果失败，建议用虚拟机而不是在本地安装。
+安装dockerhttps://docs.docker.com/desktop/下载arm版docker desktop
+安装完后进入setting，关闭docker自动更新。找到docker engineer选项，更换库源，加入以下代码：
+&amp;#34;registry-mirrors&amp;#34;: [ &amp;#34;http://hub-mirror.c.163.com&amp;#34;, &amp;#34;https://docker.mirrors.ustc.edu.cn&amp;#34;, &amp;#34;https://registry.docker-cn.com&amp;#34;, &amp;#34;https://dockerhub.azk8s.cn&amp;#34;, &amp;#34;https://reg-mirror.qiniu.com&amp;#34; ] terminal输入docker info可以看到Registry Mirrors添加成功了没有。
+打开terminal，输入nohup docker run --device /dev/net/tun --cap-add NET_ADMIN -ti -e PASSWORD=mypass -e URLWIN=1 -e DISABLE_PKG_VERSION_XML=1 -p 127.0.0.1:5901:5901 -p 127.0.0.1:1080:1080 -p 127.0.0.1:8888:8888 hagb/docker-easyconnect:7.6.7 &amp;gt; /dev/null &amp;amp; 其中passwd和7.6.7可以更改为适合自1.己的版本。
+等拉取完(一两分钟)后容器会自动运行。在docker desktop里可以看到。
+之后需要运行只需要在docker desktop里开始，停止就行。
+![image-20250114102842894](/imgs/Mac通过容器运行深信服easy …  ]]></content></entry><entry><title>象棋界大地震录音门事件</title><url>/post/%E8%B1%A1%E6%A3%8B%E7%95%8C%E5%A4%A7%E5%9C%B0%E9%9C%87--%E5%BD%95%E9%9F%B3%E9%97%A8%E4%BA%8B%E4%BB%B6/</url><categories><category>2025-01</category></categories><tags><tag>新闻</tag></tags><content type="html">  象棋界大地震&amp;amp;quot;录音门&amp;amp;quot;事件摘要：录音门从2023年4月曝光，期间2024年9月官方公告处理过王天一、王跃飞两人。但2025年1月12日的公告却直接让整个象棋界来了个大洗牌。象棋等级分前十的选手里，前三的王天一、郑惟桐、赵鑫鑫、第六的汪洋被终生禁赛，排名第八的郝继超也被禁赛4年并撤销等级称号。这一次，真的是“高手在民间”了。
 处理结果（截至2025年1月12日）官方的公告是还在继续查，不知道第三批还会有哪些人被处罚。
 过程初步发酵（2023年）2023年4月，一段长达12分钟的录音在网络上曝光，录音内容涉及两位中国象棋特级大师王跃飞和郝继超的对话。录音中，两人讨论了买棋、卖棋、操纵比赛结果、软件作弊等违规行为，期间提及中国象棋等级分连续十年排名第一的棋手王天一。
 2023年7月，中国象棋协会介入调查。
@@ -82,7 +89,7 @@ Data Units Written: 3,203,066 [1.63 TB]
 Host Read Commands: 162,196,009
 Host Write Commands: 65,625,988
 Controller Busy Time: 0
-Power Cycles: 91 …  ]]></content></entry><entry><title>MacOS使用Hugo</title><url>/note/macos%E4%BD%BF%E7%94%A8hugo/</url><categories><category>编程</category><category>2025-01</category></categories><tags><tag>建站</tag><tag>折腾</tag><tag>mac</tag></tags><content type="html">  MacOS使用Hugo摘要：将Blog项目文件拷贝到onedrive后，开始在macbook air上进行内容编写与发布。
+Power Cycles: 91 …  ]]></content></entry><entry><title>MacOS使用Hugo</title><url>/note/macos%E4%BD%BF%E7%94%A8hugo/</url><categories><category>日常</category><category>2025-01</category></categories><tags><tag>建站</tag><tag>折腾</tag><tag>mac</tag></tags><content type="html">  MacOS使用Hugo摘要：将Blog项目文件拷贝到onedrive后，开始在macbook air上进行内容编写与发布。
 安装推荐开启科学上网，不然太慢了。
 安装ARM版Hugoarch -arm64 brew install hugo
 本次安装的为hugo v0.139.5+extended+withdeploy darwin/arm64 BuildDate=2024-12-14T19:16:21Z VendorInfo=brew`版本
