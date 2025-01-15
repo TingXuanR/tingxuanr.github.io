@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>使用Hugo搭建博客网站</title><url>/note/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</url><categories><category>日常</category><category>2025-01</category></categories><tags><tag>建站</tag><tag>折腾</tag></tags><content type="html">  使用Hugo和Github基于hugo-theme-next主题搭建博客网站​	摘要：基于Hugo和hugo-theme-next利用github page搭建自己的静态网站并开启评论功能。需要注意的是next主题使用的是yaml配置文件，和大部分主题用的toml文件语法不一样，不过文章里面遇到的一些问题对其它主题也能有参考作用。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>使用Hugo搭建博客网站</title><url>/note/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>建站</tag><tag>折腾</tag><tag>2025-01</tag></tags><content type="html">  摘要：基于Hugo和hugo-theme-next利用github page搭建自己的静态网站并开启评论功能。需要注意的是next主题使用的是yaml配置文件，和大部分主题用的toml文件语法不一样，不过文章里面遇到的一些问题对其它主题也能有参考作用。
 关键词：Hugo	Github	Hugo-theme-next	SSH	LeanCloud	Vercel
 遇到的问题：如何配置文章的最后修改时间？
 如何不在首页显示全部内容？
@@ -15,7 +15,7 @@ Hugo-theme-next: 4.6.3(20240722)
 建好后在setting里面选择main分支为GitHub page。等待github deploy完成后就可以用https://github_user_name.github.io访问博客网站了。（当然要先完成创建博客网站这步）
 如果仓库名是其它的，也没问题。但是在config.yaml里面的baseurl要改成github_user_name.github.io/other_repo，不然很多样式文件是找不到的。
 创建博客网站目录在本地新建一个目录website或其它名字，右键“git bash here”，在git bash里输入 hugo new site Blog Blog就是本地的调试目录了。（推荐在OneDrive里面新建，这样就可以多端同步）
-cd Blog // 初始化git目录 git init // 下载主题（需要科学上 …  </content></entry><entry><title>Mac通过容器运行深信服easy Connect</title><url>/note/mac%E9%80%9A%E8%BF%87%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%B7%B1%E4%BF%A1%E6%9C%8Deasy-connect/</url><categories><category>日常</category><category>2025-01</category></categories><tags><tag>mac</tag><tag>软件</tag><tag>折腾</tag></tags><content type="html"><![CDATA[  Mac通过容器运行深信服easy connect摘要：公司用的深信服easy Connect进行内网连接。但是这个软件过于流氓，在windows上会占用u盘导致无法弹出，而且还会生成域名证书，想干什么不得而知。为了防止它继续祸害，决定把它丢到容器里运行。如果失败，建议用虚拟机而不是在本地安装。
+cd Blog // 初始化git目录 git init // 下载主题（需要科学上网，clash开TUN Mode。或者从gitee下载） git submodule …  </content></entry><entry><title>Mac通过容器运行深信服easy Connect</title><url>/note/mac%E9%80%9A%E8%BF%87%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%B7%B1%E4%BF%A1%E6%9C%8Deasy-connect/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>mac</tag><tag>软件</tag><tag>折腾</tag><tag>2025-01</tag></tags><content type="html"><![CDATA[  摘要：公司用的深信服easy Connect进行内网连接。但是这个软件过于流氓，在windows上会占用u盘导致无法弹出，而且还会生成域名证书，想干什么不得而知。为了防止它继续祸害，决定把它丢到docker里运行。如果失败，建议用虚拟机而不是在本地安装。
 安装dockerhttps://docs.docker.com/desktop/下载arm版docker desktop
 安装完后进入setting，关闭docker自动更新。找到docker engineer选项，更换库源，加入以下代码：
 &amp;#34;registry-mirrors&amp;#34;: [ &amp;#34;http://hub-mirror.c.163.com&amp;#34;, &amp;#34;https://docker.mirrors.ustc.edu.cn&amp;#34;, &amp;#34;https://registry.docker-cn.com&amp;#34;, &amp;#34;https://dockerhub.azk8s.cn&amp;#34;, &amp;#34;https://reg-mirror.qiniu.com&amp;#34; ] terminal输入docker info可以看到Registry Mirrors添加成功了没有。
@@ -23,7 +23,7 @@ cd Blog // 初始化git目录 git init // 下载主题（需要科学上 …  </
 等拉取完(一两分钟)后容器会自动运行。在docker desktop里可以看到。
 之后需要运行只需要在docker desktop里开始，停止就行。
 修改clash x的配置文件将原本的配置文件内容复制到新建的sf.yaml中。防止clash自动刷新后将修改清除。
-修改sf.yaml，在proxies …  ]]></content></entry><entry><title>象棋界大地震录音门事件</title><url>/post/%E8%B1%A1%E6%A3%8B%E7%95%8C%E5%A4%A7%E5%9C%B0%E9%9C%87--%E5%BD%95%E9%9F%B3%E9%97%A8%E4%BA%8B%E4%BB%B6/</url><categories><category>2025-01</category></categories><tags><tag>新闻</tag></tags><content type="html">  象棋界大地震&amp;amp;quot;录音门&amp;amp;quot;事件摘要：录音门从2023年4月曝光，期间2024年9月官方公告处理过王天一、王跃飞两人。但2025年1月12日的公告却直接让整个象棋界来了个大洗牌。象棋等级分前十的选手里，前三的王天一、郑惟桐、赵鑫鑫、第六的汪洋被终生禁赛，排名第八的郝继超也被禁赛4年并撤销等级称号。这一次，真的是“高手在民间”了。
+修改sf.yaml，在proxies和rules添加如下语句：（凡是10开头的内网ip …  ]]></content></entry><entry><title>象棋界大地震录音门事件</title><url>/post/%E8%B1%A1%E6%A3%8B%E7%95%8C%E5%A4%A7%E5%9C%B0%E9%9C%87--%E5%BD%95%E9%9F%B3%E9%97%A8%E4%BA%8B%E4%BB%B6/</url><categories><category/></categories><tags><tag>新闻</tag><tag>2025-01</tag></tags><content type="html">  摘要：录音门从2023年4月曝光，期间2024年9月官方公告处理过王天一、王跃飞两人。但2025年1月12日的公告却直接让整个象棋界来了个大洗牌。象棋等级分前十的选手里，前三的王天一、郑惟桐、赵鑫鑫、第六的汪洋被终生禁赛，排名第八的郝继超也被禁赛4年并撤销等级称号。这一次，真的是“高手在民间”了。
 处理结果（截至2025年1月12日）官方的公告是还在继续查，不知道第三批还会有哪些人被处罚。
 过程初步发酵（2023年）2023年4月，一段长达12分钟的录音在网络上曝光，录音内容涉及两位中国象棋特级大师王跃飞和郝继超的对话。录音中，两人讨论了买棋、卖棋、操纵比赛结果、软件作弊等违规行为，期间提及中国象棋等级分连续十年排名第一的棋手王天一。
 2023年7月，中国象棋协会介入调查。
@@ -34,7 +34,9 @@ cd Blog // 初始化git目录 git init // 下载主题（需要科学上 …  </
 2024年12月16日，据《环球时报》报道，国家体育总局免去朱国平的棋牌运动管理中心（中国棋院）主任（院长）、党委书记职务，免去郭玉军的棋牌运动管理中心纪委书记职务，还免去郭莉萍试任的健身气功管理中心副主任职务。被柳大华举报后，国家体育总局曾安排郭莉萍试任健身气功管理中心副主任。
 第二次处理（2025年）2025年01月12日，国家体育总局棋牌运动管理中心召开全国棋牌领域赛风赛纪警示教育会，通报对41名违规人员的处罚决定：
 终身禁赛：赵鑫鑫、汪洋、郑惟桐等3人
-禁赛数年：王廓（7年6个月）、孙逸阳（7年）、赵 …  </content></entry><entry><title>混乱的分辨率：1920*1080=2K ？</title><url>/daily/%E6%B7%B7%E4%B9%B1%E7%9A%84%E5%88%86%E8%BE%A8%E7%8E%87192010802k-/</url><categories><category>数码</category><category>影视</category><category>2025-01</category></categories><tags><tag>分辨率</tag></tags><content type="html">  混乱的分辨率：1920*1080=2K ？摘要：大多数人的认知里，1920x1080应该是1080p，而非2K。但是数字电影联盟的标准里2K却是2048x1080。这其实是电影行业和显示器行业标准不同导致。
+禁赛数年：王廓（7年6个月）、孙逸阳（7年）、赵金成（6年）等34人
+通报批评：曹岩磊等4人
+参 …  </content></entry><entry><title>混乱的分辨率：1920*1080=2K ？</title><url>/daily/%E6%B7%B7%E4%B9%B1%E7%9A%84%E5%88%86%E8%BE%A8%E7%8E%87192010802k-/</url><categories><category>笔记</category><category>比特乾坤</category></categories><tags><tag>分辨率</tag><tag>2025-01</tag></tags><content type="html">  摘要：大多数人的认知里，1920x1080应该是1080p，而非2K。但是数字电影联盟的标准里2K却是2048x1080。这其实是电影行业和显示器行业标准不同导致。
 分辨率表示方式目前分辨率有两种表示方式：
 以长作为分辨率：一般以K为后缀。如长边有2048个像素点，那就称2K；有4096个像素点，那就称4K。而目前国内电脑常用的2.5K，就是因为长边有2560个像素点。这是根据数字电影联盟（DCI）的标准，它跳过1k直接把2048x1080这个定义为2k，是有意为之。 以宽作为分辨率：一般以P为后缀，表示显示器逐行扫描的行数。如宽有1080行，就称为1080P；有2160行，就称为2160P。而目前国内厂家为了数据好看，很少用这个标准。一般都是标注2K、2.5K之类。 2K=2048*1080的由来对于早期的的电视而言，有着HD标准。也就是分辨达到720p（1280x720）以上，FHD指的是1080p。
 电视或显示器的长宽比普遍为16:9，而好莱坞电影制作大多使用17:9的长宽比，因此DCI（由多家好莱坞电影公司共同成立的组织，旨在制定数字影院的技术标准。）公布2048x1080=2k时是以电影行业的屏幕宽比为标准的。长边多出来的128个像素主要是方便拍摄与剪辑。它们定义2048x1080=2k可能是故意让人们以为影院看比电视上看更清晰，但实际上并没有。
@@ -43,14 +45,14 @@ DCI规定的4K也和如今电视行业的3840x2160不同，它的是4096x2160。
 事实上DCI定义的2k和4k只是用在电影制作领域。更普遍被消费者了解的其实是电视或显示器对分辨率的定义：1920x1080是1K，2560x1440才是2K，3840x2160才是4K。
 厂商为了宣传数据好看，故意混淆各种概念，这才模糊了大众几乎对分辨率的认识。
 好在大多数人都是理智的，不会真的认可3168x1440是3k屏（某厂商宣传时修改成了2.5k屏）。
-归根结底，电影行业的标准和显示器行业的标准不应该为了宣传而混淆。尤其是手机屏幕 …  </content></entry><entry><title>视频为什么会糊？蓝光、码率、分辨率</title><url>/daily/%E8%A7%86%E9%A2%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E7%B3%8A%E8%93%9D%E5%85%89%E7%A0%81%E7%8E%87%E5%88%86%E8%BE%A8%E7%8E%87/</url><categories><category>数码</category><category>影视</category><category>2025-01</category></categories><tags><tag>蓝光</tag><tag>码率</tag></tags><content type="html">  视频为什么会糊？蓝光、码率、分辨率摘要：主要介绍一下什么是蓝光、码率、分辨率，以及它们之间的区别。重点介绍码率和蓝光，分辨率太混乱，单独介绍。
+归根结底，电影行业的标准和显示器行业的标准不应该为了宣传而混淆。尤其是手机屏幕和电脑屏幕，都是显示器，分辨率也应该跟着显示 …  </content></entry><entry><title>视频为什么会糊？蓝光、码率、分辨率</title><url>/daily/%E8%A7%86%E9%A2%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E7%B3%8A%E8%93%9D%E5%85%89%E7%A0%81%E7%8E%87%E5%88%86%E8%BE%A8%E7%8E%87/</url><categories><category>笔记</category><category>比特乾坤</category></categories><tags><tag>蓝光</tag><tag>码率</tag><tag>分辨率</tag><tag>2025-01</tag></tags><content type="html">  摘要：主要介绍一下什么是蓝光、码率、分辨率，以及它们之间的区别。重点介绍码率和蓝光，分辨率太混乱，单独介绍。
 蓝光蓝光：blue-ray disk。光盘的一种，并无特指某种清晰度。最大的特点是容量大，最低25GB，最大128GB。普通CD只有650-700MB，DVD只有4.7-15.8GB。
 分辨率分辨率：包含图像分辨率，屏幕分辨率，打印分辨率等。图像分辨率指图像文件中的像素数量，通常以宽度 × 高度的形式表示，如1080P为1920x1080 像素。屏幕分辨率指显示屏上能显示的像素数，屏幕的分辨率越高，屏幕能够显示的细节就越多，图像就越清晰。
 如果屏幕分辨率为4k（3840x2160），需要显示1080p的图片，此时图片的一个像素点可以对应屏幕的四个像素点，图片显示正常。但如果屏幕分辨率为2K（2560x1440），需要显示1080p图片，此时像素点就无法对齐，通常是通过拉伸来显示（或者不拉伸，但图片就会变得更小），使得图片失真。也就是说，可以把一个1080p的图片强制拉伸成2k或者4k的图片，所以使用ppi（每英寸像素）或者码率来表示画面的精细程度更加合适。
 码率码率：一秒钟包含的数据量（比特数），如视频的 10 Mbps，音频的 320 kbps。
 Netflix曾经做过调查，码率达到3Mbps时，720p和1080p视频的观感都有90分以上，也就是大部分人都能接受。如此计算，一部两小时的电影，大小至少要达到3Mbps/8 * 2 * 60 * 60 = 2700MB。注意这只是视频大小，还有音频、字幕等等没计算。而如果码率达到24Mbps, 体积就至少有21.6GB！这也是为什么手机或相机拍出来的视频体积非常大的原因。
 为什么同样分辨率下蓝光盘的视频体积有几十个G？因为蓝光盘的码率非常高，而视频网站为了节省流量，码率非常低。同样1080P码率，h.264编码下，蓝光盘视频码率能达到27Mbps，而视频网站，如爱奇艺“蓝光1080P”只有1.97Mbs，优酷“蓝光1080P”只有0.77Mbps，腾讯视频“高清SDR”只有0.55Mbps，而Netflix却有5.7Mbps。
-根据up柴知道的测试，国内流媒体平台的视频码率：B站高码率（3.97Mbps）&amp;amp;gt;爱奇艺1080P蓝光（1.73Mbps）&amp;amp;gt;B站普 …  </content></entry><entry><title>使用HandBrake烧录字幕到视频里</title><url>/note/%E4%BD%BF%E7%94%A8handbrake%E7%83%A7%E5%BD%95%E5%AD%97%E5%B9%95%E5%88%B0%E8%A7%86%E9%A2%91%E9%87%8C/</url><categories><category>数码</category><category>影视</category><category>2025-01</category></categories><tags><tag>软件</tag><tag>问题</tag></tags><content type="html"><![CDATA[  使用HandBrake烧录字幕到视频里摘要：使用HandBrake这个软件，将外挂字幕烧录到视频里面，顺便还能缩小视频体积，转换格式。觉得手机拍摄的视频太占空间也可以使用这个软件在保证质量的情况下极大的缩小文件体积。附带利用vscode转换文本编码。
+根据up柴知道的测试，国内流媒体平台的视频码率：B站高码率（3.97Mbps）&amp;amp;gt;爱奇艺1080P蓝光（1.73Mbps）&amp;amp;gt;B站普通（1.24Mbps）&amp;amp;raquo; …  </content></entry><entry><title>使用HandBrake烧录字幕到视频里</title><url>/note/%E4%BD%BF%E7%94%A8handbrake%E7%83%A7%E5%BD%95%E5%AD%97%E5%B9%95%E5%88%B0%E8%A7%86%E9%A2%91%E9%87%8C/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>软件</tag><tag>2025-01</tag></tags><content type="html"><![CDATA[  摘要：使用HandBrake这个软件，将外挂字幕烧录到视频里面，顺便还能缩小视频体积，转换格式。觉得手机拍摄的视频太占空间也可以使用这个软件在保证质量的情况下极大的缩小文件体积。附带利用vscode转换文本编码。
 主要步骤下载handbrake: https://handbrake.fr/downloads.php打开源，选择视频或视频文件夹
 设置视频、音频码率，选择字幕文件
 在视频标签页中，一般保持1080p 30, 默认就行
@@ -64,12 +66,12 @@ Netflix曾经做过调查，码率达到3Mbps时，720p和1080p视频的观感�
 字幕文件在PR里只显示到41:00左右，原因就是字幕文件存在这么一段:
 684 00:41:14,590 &ndash;&gt; 00:40:57,000
 可以看出时间从41秒到40秒，这肯定是不对的。把40:57改成41:16，之后再导入PR就能全部显示了。
-  ]]></content></entry><entry><title>Macbook air m1不要升级macOS15</title><url>/note/macbook_air_m1%E4%B8%8D%E8%A6%81%E5%8D%87%E7%BA%A7macos15/</url><categories><category>数码</category><category>2025-01</category></categories><tags><tag>软件</tag><tag>Mac</tag><tag>问题</tag></tags><content type="html">  macbookairm1 8g不要升级macOS15摘要：一开始比较纠结macbook air m1 8g内存要不要升级macOS15，最终结论是不要。 8g内存日用都不太够，升级15就更加捉襟见肘，而且续航也会缩短很多。附带Safari去广告方式。
+  ]]></content></entry><entry><title>Macbook air m1不要升级macOS15</title><url>/note/macbook_air_m1%E4%B8%8D%E8%A6%81%E5%8D%87%E7%BA%A7macos15/</url><categories><category>杂谈</category><category>闲言碎语</category></categories><tags><tag>软件</tag><tag>Mac</tag><tag>2025-01</tag></tags><content type="html">  摘要：一开始比较纠结macbook air m1 8g内存要不要升级macOS15，最终结论是不要。 8g内存日用都不太够，升级15就更加捉襟见肘，而且续航也会缩短很多。附带Safari去广告方式。
 之前想用chatgpt桌面版时，想升级14，但查了一圈后放弃了。这次想用Ghostery插件给Safari去广告，想升级的，但是发现可以在设置里单独升级Safari，不用升级系统。再加上看了一圈国内外的评价，都在吐槽8g的升级后体验不好。reddit的一篇帖子有专门讨论。
 原帖链接：https://www.reddit.com/r/MacOS/comments/1fmq9ux/initial_macos_sequoia_stable_update_review_on/?sort=new
 总结如下：
 运存占用异常，AI会额外占用运存（大约2g），并且15.0时开启swap会导致电脑卡顿，20241224时15.1似乎解决，但是运存相比之前系统还是非常吃紧。 可能造成WIFI断流问题。同一个WIFI，手机有网，电脑没网。 chrome浏览器可能处于不可用状态。很多tab打不开。 触控板可能会抽风失灵。 耗电增加，续航减少。 Safari去广告使用Ad block Pro去除B站广告时有时广告只是不显示，但广告还是占着网页上的空间，甚至tab还会自动轮转。而打开Ghostery后这块空间就消失了。也因此单独把Safari升级到最新版，不然用不了Ghostery。
-  </content></entry><entry><title>MacOS安装homeBrew及监控实时功耗</title><url>/note/macos%E5%AE%89%E8%A3%85homebrew%E5%8F%8A%E7%9B%91%E6%8E%A7%E5%AE%9E%E6%97%B6%E5%8A%9F%E8%80%97/</url><categories><category>数码</category><category>2025-01</category></categories><tags><tag>mac</tag><tag>软件</tag></tags><content type="html"><![CDATA[  MacOS安装homeBrew及监控实时功耗摘要：介绍了如何在ARM芯片上安装homebrew。最初写于2022年，基于MacMini。2024年更新为基于Macbook air，并且用homebrew安装asitop来监控MacBook的实时功耗，安装smartmontools来查看查看磁盘的写入与读取。
+  </content></entry><entry><title>MacOS安装homeBrew及监控实时功耗</title><url>/note/macos%E5%AE%89%E8%A3%85homebrew%E5%8F%8A%E7%9B%91%E6%8E%A7%E5%AE%9E%E6%97%B6%E5%8A%9F%E8%80%97/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>mac</tag><tag>软件</tag><tag>2025-01</tag></tags><content type="html"><![CDATA[  摘要：介绍了如何在ARM芯片上安装homebrew。最初写于2022年，基于MacMini。2024年更新为基于Macbook air，并且用homebrew安装asitop来监控MacBook的实时功耗，安装smartmontools来查看查看磁盘的写入与读取。
 20241205更新：homebrew的好处是一个命令就能下载软件，而且会自动配好环境变量。下载时实际上不需要修改host，只要clashx开启增强模式，直接运行install就没问题。还需要注意的是安装完需要按照提示添加环境变量。在命令行依次输入
 echo &amp;raquo; /Users/rao/.zprofile
 echo &amp;rsquo;eval &amp;ldquo;$(/opt/homebrew/bin/brew shellenv)&amp;rdquo;&amp;rsquo; &amp;raquo; /Users/rao/.zprofile
@@ -90,7 +92,9 @@ Data Units Written: 3,203,066 [1.63 TB]
 Host Read Commands: 162,196,009
 Host Write Commands: 65,625,988
 Controller Busy Time: 0
-Power Cycles: 91 …  ]]></content></entry><entry><title>MacOS使用Hugo</title><url>/note/macos%E4%BD%BF%E7%94%A8hugo/</url><categories><category>日常</category><category>2025-01</category></categories><tags><tag>建站</tag><tag>折腾</tag><tag>mac</tag></tags><content type="html">  MacOS使用Hugo摘要：将Blog项目文件拷贝到onedrive后，开始在macbook air上进行内容编写与发布。
+Power Cycles: 91
+Power On Hours: 131
+Unsafe …  ]]></content></entry><entry><title>MacOS使用Hugo</title><url>/note/macos%E4%BD%BF%E7%94%A8hugo/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>建站</tag><tag>折腾</tag><tag>mac</tag><tag>2025-01</tag></tags><content type="html">  摘要：将Blog项目文件拷贝到onedrive后，开始在macbook air上进行内容编写与发布。
 安装推荐开启科学上网，不然太慢了。
 安装ARM版Hugoarch -arm64 brew install hugo
 本次安装的为hugo v0.139.5+extended+withdeploy darwin/arm64 BuildDate=2024-12-14T19:16:21Z VendorInfo=brew`版本
@@ -106,19 +110,21 @@ Git全局忽略 .DS_Store 文件由于Mac会默认生成.DS_Store文件，可�
 vim core.excludesfile ~/.gitignore_global # 添加一行：.DS_Store git config --global core.excludesfile ~/.gitignore_global 将Blog目录上传到新的私有仓库github page需要仓库是公开的，但是其实部署GitHub page只需要Public文件夹即可。
 而Blog文件夹则可以放到一个私有的仓库Blog-Project里面。
 步骤很简单，但需要注意的是要在根目录编辑.gitignore文件，添加public/。表示忽略public目录。
-  </content></entry><entry><title>CW 闪电侠、超级少女、绿箭侠、明日传奇联动</title><url>/daily/cw-%E9%97%AA%E7%94%B5%E4%BE%A0%E8%B6%85%E7%BA%A7%E5%B0%91%E5%A5%B3%E7%BB%BF%E7%AE%AD%E4%BE%A0%E6%98%8E%E6%97%A5%E4%BC%A0%E5%A5%87%E8%81%94%E5%8A%A8/</url><categories><category>影视</category><category>2025-01</category></categories><tags><tag>超英</tag></tags><content type="html"><![CDATA[  CW联动：闪电侠、超级少女、绿箭侠、明日传奇等​	摘要：收集了CW频道十年中闪电侠、超级少女、绿箭侠、明日传奇几部剧的具体联动集数。并且每一次联动都合并成了一个mp4文件。
+  </content></entry><entry><title>CW 闪电侠、超级少女、绿箭侠、明日传奇联动</title><url>/daily/cw-%E9%97%AA%E7%94%B5%E4%BE%A0%E8%B6%85%E7%BA%A7%E5%B0%91%E5%A5%B3%E7%BB%BF%E7%AE%AD%E4%BE%A0%E6%98%8E%E6%97%A5%E4%BC%A0%E5%A5%87%E8%81%94%E5%8A%A8/</url><categories><category>杂谈</category><category>影视游戏</category></categories><tags><tag>超英</tag><tag>2025-01</tag></tags><content type="html"><![CDATA[  摘要：收集了CW频道十年中闪电侠、超级少女、绿箭侠、明日传奇几部剧的具体联动集数。并且每一次联动都合并成了一个mp4文件。
 First-VS第一次联动：闪电侠VS绿箭侠
 闪电侠S1E08&amp;mdash;&amp;gt;绿箭S3E08
 2015-Together闪电侠团队与绿箭侠团队联手对抗不死野人萨维奇，与鹰侠和鹰女并肩作战
 闪电侠S2E08&amp;mdash;&amp;gt;绿箭S4E08
+2016-FlashAndSuperGirl闪电侠第一次穿越次元来到超女的宇宙联手对敌
+超女S1E18
 2016-Dominators北京时间2016年11月29日，CW电视台将播出《四剧联动特别篇：支配者入侵》（序言）；11月30日播出《四剧联动特别篇：支配者入侵》（上篇）；12月1日播出《四剧联动特别篇：支配者入侵》（中篇）；12月2日播出《四剧联动特别篇：支配者入侵》（下篇）。约20位超级英雄将出现在联动特别篇中，正义联盟总部也将首次在电视中亮相。在《四剧联动特别篇：支配者入侵》（中篇）观众还将看到奥利弗已经逝世的父母和前女友黑金丝雀一起回归。DC漫画中的超级反派丧钟也将登场。 [1-2]联动篇中，CW将融合四剧主题BGM旋律全新编曲，带来四剧融合版BGM。
 超女S2E08&amp;mdash;&amp;gt;闪电侠S3E08&amp;mdash;&amp;gt;绿箭S5E08&amp;mdash;&amp;gt;明日传奇S2E07
 2017-Duet超女受到高维度生物音乐大师的催眠而陷入梦境，超女团队随着线索到1号地球向闪电侠团队求助，而闪电侠也意外被音乐大师催眠陷入同一个梦境。
 超女S2E16&amp;mdash;&amp;gt;闪电侠S3E17
 2017-Earth X2017年11月27日，DC联动集：CRISIS ON EARTH X （地球X的危机）
 超女S3E08&amp;mdash;&amp;gt;绿箭S6E08&amp;mdash;&amp;gt;闪电侠S4E08&amp;mdash;&amp;gt;明日传奇S3E08
-2018-ElseWorld2018年12月9日，CW台再一次进行《闪电侠》《绿箭侠》《超女》的联动大事件（《明日传奇》将不参与这次联动）。故事始于阿卡姆疯人院博士John Deegan重写现实，导致绿箭侠和闪电侠交换生命，在这个新的现实中，巴里·艾伦变成了奥利弗·奎恩（绿箭侠），奥利弗·奎恩变成了巴里·艾伦（闪电侠），而这两位英雄是唯一知道他们在错误的生活中拥有彼此力量的人。
-闪电 …  ]]></content></entry><entry><title>关于网站</title><url>/about.html</url><categories><category>2025-01</category></categories><tags/><content type="html">  人生到处知何似，应似飞鸿踏雪泥。
+2018-ElseWorld2018年12月9日，CW台再一次进行《闪电侠》《绿箭侠》《超女》的联动大事件（《明日传奇》将不参与这次联动）。故事始于阿卡姆疯人院博士John Deegan重写现实，导致绿箭侠和闪电侠交换生命，在这个新的现实中，巴里·艾伦变成了奥利弗·奎恩（绿箭侠），奥利弗·奎恩变成了巴里·艾伦（闪电侠），而这两位英雄是唯一知道他们在错误的生活 …  ]]></content></entry><entry><title>关于网站</title><url>/about.html</url><categories><category>杂谈</category></categories><tags/><content type="html">  人生到处知何似，应似飞鸿踏雪泥。
 泥上偶然留指爪，鸿飞那复计东西。
-萍水相逢，欢迎留言  </content></entry><entry><title>站点示例</title><url>/flinks.html</url><categories/><tags/><content type="html">  如想交换本站友情链接，请在评论区留下你的站点信息，格式参考如下：
+萍水相逢，欢迎留言。如果遇到评论或图片加载不出，请打开“科学上网”。
+  </content></entry><entry><title>站点示例</title><url>/flinks.html</url><categories/><tags/><content type="html">  如想交换本站友情链接，请在评论区留下你的站点信息，格式参考如下：
 - name: 亭轩阁 desc: 收录遇到的问题，分享解决方法 avatar: https://tingxuanr.github.io/imgs/my_avatar.png link: https://tingxuanr.github.io   </content></entry></search>
