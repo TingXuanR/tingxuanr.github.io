@@ -15,14 +15,25 @@ Hugo-theme-next: 4.6.3(20240722)
 建好后在setting里面选择main分支为GitHub page。等待github deploy完成后就可以用https://github_user_name.github.io访问博客网站了。（当然要先完成创建博客网站这步）
 如果仓库名是其它的，也没问题。但是在config.yaml里面的baseurl要改成github_user_name.github.io/other_repo，不然很多样式文件是找不到的。
 创建博客网站目录在本地新建一个目录website或其它名字，右键“git bash here”，在git bash里输入 hugo new site Blog Blog就是本地的调试目录了。（推荐在OneDrive里面新建，这样就可以多端同步）
-cd Blog // 初始化git目录 git init // 下载主题（需要科学上网，clash开TUN Mode。或者从gitee下载） git submodule …  </content></entry><entry><title>视频为什么会糊（二）？B站的码率变化</title><url>/note/%E8%A7%86%E9%A2%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E7%B3%8A%E4%BA%8Cb%E7%AB%99%E7%9A%84%E7%A0%81%E7%8E%87%E5%8F%98%E5%8C%96/</url><categories><category>笔记</category><category>比特乾坤</category></categories><tags><tag>码率</tag><tag>2025-01</tag></tags><content type="html">  摘要：流媒体平台（不只B站，所有流媒体都在干，画质最差的还得是优爱腾三家）为了节约成本，不断的降低自家视频的码率。很多所谓的4k、蓝光清晰度还不如六七年前的，纯粹是自欺欺人。
-对比2020年，B站1080p的视频码率能达到6Mbps，4K能达到20Mbps；2024年，B站1080p视频码率不足1Mbps，4K也只有不到2Mbps。很多时候，一段高解析度音频的码率都比视频码率要高得多。再好的视频编码方式，在码率极低的情况下也无法化腐朽为神奇。
+cd Blog // 初始化git目录 git init // 下载主题（需要科学上网，clash开TUN Mode。或者从gitee下载） git submodule …  </content></entry><entry><title>视频为什么会糊（二）？B站的码率变化</title><url>/note/%E8%A7%86%E9%A2%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E7%B3%8A%E4%BA%8Cb%E7%AB%99%E7%9A%84%E7%A0%81%E7%8E%87%E5%8F%98%E5%8C%96/</url><categories><category>笔记</category><category>比特乾坤</category></categories><tags><tag>码率</tag><tag>2025-01</tag></tags><content type="html">  摘要：流媒体平台（不只B站，所有流媒体都在干，画质最差的还得是优爱腾三家）为了节约成本，不断的降低自家视频的码率。很多所谓的4k、蓝光清晰度还不如六七年前的，纯粹是自欺欺人。上一篇对比码率指1秒内包含的比特数量，对视频而言，越多越清晰。2020年，B站1080p的视频码率能达到6Mbps，4K能达到20Mbps；2024年，B站1080p视频码率不足1Mbps，4K有时也只有不到2Mbps。很多时候，一段高解析度音频的码率都比视频码率要高得多。再好的视频编码方式，在码率极低的情况下也无法化腐朽为神奇。
 H.264粗略的讲，这个编码就是把视频画面里不变或相似的部分节省下来。比如，一个画面里有大量相同的色块，如蓝天白云，那么就可以利用一个像素块来代替周围相邻的像素块，这就是去除空间冗余；如果连续的几个帧之间只有少量部分在动，比如一片树叶下落的过程，那么这么多帧之间只需要记录树叶的运动轨迹就行，这就是去除时间冗余。还有变换编码、量化、熵编码等步骤，就不细说了。通过这些复杂的操作，能够在保证视频质量前提下，把视频体积缩小十倍以上。
 发展随着视频平台客户量的增大，它们在流量上的支出也越来越大，虽然有会员和广告盈利，但天生吝啬的它们还是想降低流量成本。
 刚开始还比较克制，只是使用更先进的编码，如H.265、AV1等，根据设备的不同发送不同码率的视频。
 理论上更高的编码格式意味着用更少的流量就可以让用户看清晰的视频，应该是用户和平台双赢的局面。但是，对视频进行不同程度的编码，这就意味着需要更多的算力，它们还想继续降低成本。于是，事情开始离谱。
 首先，所有上传到视频平台的视频都会被进行压缩，并且为了让视频看起来没那么模糊，还给视频增加了锐化，导致视频失真。其次，对于同一个视频，如果看的人少，那么码率会高一些。一旦这个视频观看的人多了，视频的码率便会急剧降低；再者，当用户在观看一个视频时，视频的编码和码率会不断的变化，也就是说平台会动态切换用户看到的视频源。并且，很多时候，H.265这个更高效的编码视频清晰度甚至不如H.264的视频，因为平台给H.265压制的码率实在太低了。
-最终，目前的局面就是平台（不只B站）为了节省流量，无底线的降低视频码率，现在有的1080p视频的码率甚至只有500kpbs不到！Apple Music上一首标准无损音质的音乐码率都能达到：44100（采样率）×16（采样精度）×2（声道数）=1411.2kbps！ …  </content></entry><entry><title>Mac通过容器运行深信服easy Connect</title><url>/note/mac%E9%80%9A%E8%BF%87%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%B7%B1%E4%BF%A1%E6%9C%8Deasy-connect/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>mac</tag><tag>软件</tag><tag>折腾</tag><tag>2025-01</tag></tags><content type="html"><![CDATA[  摘要：公司用的深信服easy Connect进行内网连接。但是这个软件过于流氓，在windows上会占用u盘导致无法弹出，而且还会生成域名证书，想干什么不得而知。为了防止它继续祸害，决定把它丢到docker里运行。如果失败，建议用虚拟机而不是在本地安装。
+最终，目前的局面就是平台（不只B站）为了节省流量，无底线的降低视频码率，现在有的1080p视频的码率甚至只有500kpbs不到！Apple Music上一首标准无损音质的音乐码率都能达到：44100（ …  </content></entry><entry><title>电脑散热：热管，风冷，水冷</title><url>/note/%E7%94%B5%E8%84%91%E6%95%A3%E7%83%AD%E7%83%AD%E7%AE%A1%E9%A3%8E%E5%86%B7%E6%B0%B4%E5%86%B7/</url><categories><category>笔记</category></categories><tags><tag>数码</tag><tag>散热</tag><tag>2025-01</tag></tags><content type="html">  摘要：介绍一下热管的工作原理与风冷水冷的散热方式。
+原理牛顿冷却定律：一个物体的热量散失速率与该物体周围的环境温度成正比。也就是说，物体与环境的温差越大，热量散的越快。
+CPU高负载工作时，温度急剧升高，热量传递到散热器，散热器与周围空气的温差就越大，热传递就越高。当散热器的温度高到一定程度后，散热器能够散发出去的热量和CPU最大功率产生的热量相等时，温度就不会再上升。只要此时CPU的温度低于危险工作温度，那散热器就是够用的。
+除了温差，影响散热的另一个要素是表面积。CPU的表面积很小，如果直接拿风扇吹CPU，散热效率非常低。所以需要先把热量从CPU传递到散热器，散热器利用空气的对流散失热量。散热器和空气接触的表面积越大，对流面积越大，热量散失的也就越快。如果再加上风扇加强对流，那散热器就能更高效的工作了。这就是风冷散热器。
+简而言之：热量从CPU到达散热器，散热器利用温差和对流将热量散发到空气。散热器表面积越大，效率也越高。
+热管原理就是液体蒸发时吸收热量，液化时释放热量。
+热管的内部装有冷却液，并且气压非常低，也就是沸点很低。热管工作时，热管的一头（蒸发端）吸收热量使水变成气体，然后在另一端（冷凝端）进行散热，当气体到达冷凝端就会液化成水，当蒸发端气体不断增加，冷凝端气体不断减少，就会形成压强差，使气体自发从蒸发端跑到冷凝端。水通过热管内部吸液芯的毛细管作用流回蒸发端，如此循环往复，就达成了热量交换。
+热管不光以管状形式出现，还会以板状形式出现，如均热板。
+风冷常见的风冷散热器有 塔式鳍片散热器和挤铝式下压散热器。它们都是将CPU的热量传递到热管，热管再传递到鳍片，鳍片再利用风扇快速的将热量散热到空气中。
+水冷水冷主要由冷头、水管、冷排、风扇构成。常见的是一体式水冷和分体式水冷。
+工作时冷头直接接触CPU，内部包含泵机和微水道。冷水流过微水道后带着热量，再通过泵机流到冷排上，冷排之间有很多水道，水道之间有大量密集鳍片。热水流入后把热量传递给鳍片，再通过风扇加强与空气的流通，将热水的热量散发到空气中。降温后的冷水再通过泵机流回冷头，如此循环往复。
+由上述可知冷排的尺寸是散热能力的关键，尺寸越大，与空气的接触越多，散热效率越高。常见的冷排有120mm，240mm，360mm。
+最后不管风冷还是水冷，最终都要和空气交换热量，所以散热器降温的极限不会低于室温， …  </content></entry><entry><title>Mac通过容器运行深信服easy Connect</title><url>/note/mac%E9%80%9A%E8%BF%87%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%B7%B1%E4%BF%A1%E6%9C%8Deasy-connect/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>mac</tag><tag>软件</tag><tag>折腾</tag><tag>2025-01</tag></tags><content type="html"><![CDATA[  摘要：公司用的深信服easy Connect进行内网连接。但是这个软件过于流氓，在windows上会占用u盘导致无法弹出，而且还会生成域名证书，想干什么不得而知。为了防止它继续祸害，决定把它丢到docker里运行。如果失败，建议用虚拟机而不是在本地安装。
 安装dockerhttps://docs.docker.com/desktop/下载arm版docker desktop
 安装完后进入setting，关闭docker自动更新。找到docker engineer选项，更换库源，加入以下代码：
 &amp;#34;registry-mirrors&amp;#34;: [ &amp;#34;http://hub-mirror.c.163.com&amp;#34;, &amp;#34;https://docker.mirrors.ustc.edu.cn&amp;#34;, &amp;#34;https://registry.docker-cn.com&amp;#34;, &amp;#34;https://dockerhub.azk8s.cn&amp;#34;, &amp;#34;https://reg-mirror.qiniu.com&amp;#34; ] terminal输入docker info可以看到Registry Mirrors添加成功了没有。
@@ -117,7 +128,7 @@ Git全局忽略 .DS_Store 文件由于Mac会默认生成.DS_Store文件，可�
 vim core.excludesfile ~/.gitignore_global # 添加一行：.DS_Store git config --global core.excludesfile ~/.gitignore_global 将Blog目录上传到新的私有仓库github page需要仓库是公开的，但是其实部署GitHub page只需要Public文件夹即可。
 而Blog文件夹则可以放到一个私有的仓库Blog-Project里面。
 步骤很简单，但需要注意的是要在根目录编辑.gitignore文件，添加public/。表示忽略public目录。
-  </content></entry><entry><title>CW 闪电侠、超级少女、绿箭侠、明日传奇联动</title><url>/daily/cw-%E9%97%AA%E7%94%B5%E4%BE%A0%E8%B6%85%E7%BA%A7%E5%B0%91%E5%A5%B3%E7%BB%BF%E7%AE%AD%E4%BE%A0%E6%98%8E%E6%97%A5%E4%BC%A0%E5%A5%87%E8%81%94%E5%8A%A8/</url><categories><category>杂谈</category><category>影视游戏</category></categories><tags><tag>超英</tag><tag>2025-01</tag></tags><content type="html"><![CDATA[  摘要：收集了CW频道十年中闪电侠、超级少女、绿箭侠、明日传奇几部剧的具体联动集数。并且每一次联动都合并成了一个mp4文件。
+  </content></entry><entry><title>CW 闪电侠、超级少女、绿箭侠、明日传奇联动整理</title><url>/daily/cw-%E9%97%AA%E7%94%B5%E4%BE%A0%E8%B6%85%E7%BA%A7%E5%B0%91%E5%A5%B3%E7%BB%BF%E7%AE%AD%E4%BE%A0%E6%98%8E%E6%97%A5%E4%BC%A0%E5%A5%87%E8%81%94%E5%8A%A8/</url><categories><category>杂谈</category><category>影视游戏</category></categories><tags><tag>超英</tag><tag>2025-01</tag></tags><content type="html"><![CDATA[  摘要：收集了CW频道十年中闪电侠、超级少女、绿箭侠、明日传奇几部剧的具体联动集数。并且每一次联动都合并成了一个mp4文件。
 First-VS第一次联动：闪电侠VS绿箭侠
 闪电侠S1E08&amp;mdash;&amp;gt;绿箭S3E08
 2015-Together闪电侠团队与绿箭侠团队联手对抗不死野人萨维奇，与鹰侠和鹰女并肩作战
