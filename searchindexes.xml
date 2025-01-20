@@ -21,7 +21,11 @@ H.264粗略的讲，这个编码就是把视频画面里不变或相似的部�
 刚开始还比较克制，只是使用更先进的编码，如H.265、AV1等，根据设备的不同发送不同码率的视频。
 理论上更高的编码格式意味着用更少的流量就可以让用户看清晰的视频，应该是用户和平台双赢的局面。但是，对视频进行不同程度的编码，这就意味着需要更多的算力，它们还想继续降低成本。于是，事情开始离谱。
 首先，所有上传到视频平台的视频都会被进行压缩，并且为了让视频看起来没那么模糊，还给视频增加了锐化，导致视频失真。其次，对于同一个视频，如果看的人少，那么码率会高一些。一旦这个视频观看的人多了，视频的码率便会急剧降低；再者，当用户在观看一个视频时，视频的编码和码率会不断的变化，也就是说平台会动态切换用户看到的视频源。并且，很多时候，H.265这个更高效的编码视频清晰度甚至不如H.264的视频，因为平台给H.265压制的码率实在太低了。
-最终，目前的局面就是平台（不只B站）为了节省流量，无底线的降低视频码率，现在有的1080p视频的码率甚至只有500kpbs不到！Apple Music上一首标准无损音质的音乐码率都能达到：44100（ …  </content></entry><entry><title>Vmware虚拟机没有网络？</title><url>/note/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%B2%A1%E6%9C%89%E7%BD%91%E7%BB%9C/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>数码</tag><tag>虚拟机</tag><tag>2025-01</tag></tags><content type="html"><![CDATA[  摘要：第一次遇到虚拟机安装完系统显示没网的情况，估计是之前用联想管家更新驱动导致网络设置出了问题。有段时间用UU加速器也一直超时丢包。
+最终，目前的局面就是平台（不只B站）为了节省流量，无底线的降低视频码率，现在有的1080p视频的码率甚至只有500kpbs不到！Apple Music上一首标准无损音质的音乐码率都能达到：44100（ …  </content></entry><entry><title>Win11专业版完全禁止自动更新</title><url>/note/win11%E4%B8%93%E4%B8%9A%E7%89%88%E5%AE%8C%E5%85%A8%E7%A6%81%E6%AD%A2%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>windows</tag><tag>软件</tag><tag>2025-01</tag></tags><content type="html"><![CDATA[  摘要：windows更新容易出bug，直接禁用。
+官方操作步骤组合键 Win + R 输入 gpedit.msc 回车 打开组策略编辑器：计算机配置 &gt; 管理模板 &gt; Windows组件 &gt; Windows 更新 &gt; 管理最终用户体验，双击进入。
+进入后选择 配置自动更新，右键编辑属性，在弹出的配置窗口中选择 已禁用。
+利用工具下载联想推出的“关闭Win11系统自动更新.exe”。注意这个工具禁用更新后，windows store就用不了了。
+参看链接windows论坛联想工具  ]]></content></entry><entry><title>Vmware虚拟机没有网络？</title><url>/note/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%B2%A1%E6%9C%89%E7%BD%91%E7%BB%9C/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>数码</tag><tag>虚拟机</tag><tag>2025-01</tag></tags><content type="html"><![CDATA[  摘要：第一次遇到虚拟机安装完系统显示没网的情况，估计是之前用联想管家更新驱动导致网络设置出了问题。有段时间用UU加速器也一直超时丢包。
 虚拟机安装完win10一直显示没网，使用NAT或桥接模式都没网。
 查询后通过添加虚拟机网络恢复 简要如下：
 VMware-&gt;编辑-&gt;虚拟网络编辑器-&gt;更改设置-&gt;添加网络-&gt;VMnet8、Nat模式-&gt;确认。
