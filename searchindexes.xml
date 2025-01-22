@@ -21,7 +21,8 @@ H.264粗略的讲，这个编码就是把视频画面里不变或相似的部�
 刚开始还比较克制，只是使用更先进的编码，如H.265、AV1等，根据设备的不同发送不同码率的视频。
 理论上更高的编码格式意味着用更少的流量就可以让用户看清晰的视频，应该是用户和平台双赢的局面。但是，对视频进行不同程度的编码，这就意味着需要更多的算力，它们还想继续降低成本。于是，事情开始离谱。
 首先，所有上传到视频平台的视频都会被进行压缩，并且为了让视频看起来没那么模糊，还给视频增加了锐化，导致视频失真。其次，对于同一个视频，如果看的人少，那么码率会高一些。一旦这个视频观看的人多了，视频的码率便会急剧降低；再者，当用户在观看一个视频时，视频的编码和码率会不断的变化，也就是说平台会动态切换用户看到的视频源。并且，很多时候，H.265这个更高效的编码视频清晰度甚至不如H.264的视频，因为平台给H.265压制的码率实在太低了。
-最终，目前的局面就是平台（不只B站）为了节省流量，无底线的降低视频码率，现在有的1080p视频的码率甚至只有500kpbs不到！Apple Music上一首标准无损音质的音乐码率都能达到：44100（ …  </content></entry><entry><title>Windows安装CUDA Toolkit</title><url>/note/windows%E5%AE%89%E8%A3%85cuda-toolkit/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>windows</tag><tag>软件</tag><tag>2025-01</tag></tags><content type="html"><![CDATA[  摘要：在windows环境下安装cuda的方式及注意事项。
+最终，目前的局面就是平台（不只B站）为了节省流量，无底线的降低视频码率，现在有的1080p视频的码率甚至只有500kpbs不到！Apple Music上一首标准无损音质的音乐码率都能达到：44100（ …  </content></entry><entry><title>Windows查看iPhone的heic图片</title><url>/note/windows%E6%9F%A5%E7%9C%8Biphone%E7%9A%84heic%E5%9B%BE%E7%89%87/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>windows</tag><tag>软件</tag><tag>2025-01</tag></tags><content type="html">  摘要：在windows查看heic图片的方式
+更新到win11 23H2, 使用自带的图片应用就可以查看heic图片。但是图片亮度过曝，和原照片不一致。 下载xnview classic, 安装heic_x32插件。查看图片时比原片亮度稍低，但观感比windows自带的好。   </content></entry><entry><title>Windows安装CUDA Toolkit</title><url>/note/windows%E5%AE%89%E8%A3%85cuda-toolkit/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>windows</tag><tag>软件</tag><tag>2025-01</tag></tags><content type="html"><![CDATA[  摘要：在windows环境下安装cuda的方式及注意事项。
 需要确保C盘空间足够，预留10G。
 Cuda在安装图形驱动时就已经安装了，欠缺的是cuda toolkit和cuDNN。二者都可以从英伟达官网下载，其中cuDNN需要登录账号。
 使用nvidia-smi可以看到目前的显卡驱动和cuda版本：最大支持12.7，安装12.6就行。
