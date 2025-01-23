@@ -21,7 +21,17 @@ H.264粗略的讲，这个编码就是把视频画面里不变或相似的部�
 刚开始还比较克制，只是使用更先进的编码，如H.265、AV1等，根据设备的不同发送不同码率的视频。
 理论上更高的编码格式意味着用更少的流量就可以让用户看清晰的视频，应该是用户和平台双赢的局面。但是，对视频进行不同程度的编码，这就意味着需要更多的算力，它们还想继续降低成本。于是，事情开始离谱。
 首先，所有上传到视频平台的视频都会被进行压缩，并且为了让视频看起来没那么模糊，还给视频增加了锐化，导致视频失真。其次，对于同一个视频，如果看的人少，那么码率会高一些。一旦这个视频观看的人多了，视频的码率便会急剧降低；再者，当用户在观看一个视频时，视频的编码和码率会不断的变化，也就是说平台会动态切换用户看到的视频源。并且，很多时候，H.265这个更高效的编码视频清晰度甚至不如H.264的视频，因为平台给H.265压制的码率实在太低了。
-最终，目前的局面就是平台（不只B站）为了节省流量，无底线的降低视频码率，现在有的1080p视频的码率甚至只有500kpbs不到！Apple Music上一首标准无损音质的音乐码率都能达到：44100（ …  </content></entry><entry><title>Windows查看iPhone的heic图片</title><url>/note/windows%E6%9F%A5%E7%9C%8Biphone%E7%9A%84heic%E5%9B%BE%E7%89%87/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>windows</tag><tag>软件</tag><tag>2025-01</tag></tags><content type="html">  摘要：在windows查看heic图片的方式
+最终，目前的局面就是平台（不只B站）为了节省流量，无底线的降低视频码率，现在有的1080p视频的码率甚至只有500kpbs不到！Apple Music上一首标准无损音质的音乐码率都能达到：44100（ …  </content></entry><entry><title>GoogleCEO在斯坦福上学的演讲</title><url>/note/googleceo%E5%9C%A8%E6%96%AF%E5%9D%A6%E7%A6%8F%E4%B8%8A%E5%AD%A6%E7%9A%84%E6%BC%94%E8%AE%B2/</url><categories><category>笔记</category></categories><tags><tag>人工智能</tag><tag>2025-01</tag></tags><content type="html">  摘要：曾经担任谷歌CEO长达10年(2001-2011)之久的Eric Schmidt在2024年受邀去斯坦福大学计算机学院接受访谈，本文记录了主要内容。对于网上说的什么Eric不知道会有摄像头，纯属捏造。视频里Eric抬头看到摄像头时表现非常平淡，而且继续说后面的话。
+原文为什么英伟达能价值两万亿美元？因为几乎所有的AI代码都要使用CUDA优化，而只有英伟达的GPU支持CUDA。另外，很多开源库也只针对CUDA做了优化。AMD现在正在做一个工具把CUDA翻译成AMD自己的语言ROCm。
+星际之门（自带AI的超级计算机，拥有数百万专用服务器芯片）不止要花1000亿美元，open ai CEO认为至少要3000亿美元。并且这个需要大量的能源，美国没有这么多能源，所以需要和加拿大搞好关系。或者找阿拉伯人来投资。
+为什么最新的排行榜上，opanAI不是榜首？以谷歌为例：谷歌认为，工作与生活的平衡、早回家和在家工作比获胜更重要。但是初创公司却是往死里工作，谷歌和微软初创时都是这样。把员工逼的很紧。台积电会让物理学博士在第一年到工厂干活，在美国几乎不可能。
+微软跟OpenAI合作时自己也觉得难以置信，微软怎么能将AI主导地位让渡给openAI。结果他们正在成为最有价值的公司。而苹果却没有好的AI解决方案。
+美国现在处于行业领先地位，大概领先了中国十年。所以有了芯片法案及其它法案限制中国AI的发展(Eric本人也参与了法案的制定)，因为只有少数国家（有大量资金、大量人才、强大教育体系和获胜意愿）能将AI发展起来。美国是一个，中国是一个。其它的国家？不知道。
+如何在一个已经学习到危险内容的系统中检测危险？假如AI已经学习了有害内容，但它并告诉你它学习了。
+现在的我们已经无法理解创造出来的AI是怎么运行的了。以后可能会出现对抗性AI，大公司会雇佣人去破坏AI系统，找出AI的漏洞。
+TikTok给美国人上了一课，在座各位年轻人以后如果创业，能偷音乐什么的就赶紧去做——似乎是在影射TikTok早期纵容盗版BMG——如果你做成了，就有钱雇佣最顶级的律师帮你擦屁股，如果你没做成，那就没人会起诉你。
+开源很好，谷歌历史上的大部分基础设施也都受益于开源，但是说实话，AI行业的成本太高了，开源负担不起，自己投资的法国大模型Mistral将会转为闭源路线了。
+公司CEO的目标是最大化收入，也就是 …  </content></entry><entry><title>Windows查看iPhone的heic图片</title><url>/note/windows%E6%9F%A5%E7%9C%8Biphone%E7%9A%84heic%E5%9B%BE%E7%89%87/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>windows</tag><tag>软件</tag><tag>2025-01</tag></tags><content type="html">  摘要：在windows查看heic图片的方式
 更新到win11 23H2, 使用自带的图片应用就可以查看heic图片。但是图片亮度过曝，和原照片不一致。 下载xnview classic, 安装heic_x32插件。查看图片时比原片亮度稍低，但观感比windows自带的好。   </content></entry><entry><title>Windows安装CUDA Toolkit</title><url>/note/windows%E5%AE%89%E8%A3%85cuda-toolkit/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>windows</tag><tag>软件</tag><tag>2025-01</tag></tags><content type="html"><![CDATA[  摘要：在windows环境下安装cuda的方式及注意事项。
 需要确保C盘空间足够，预留10G。
 Cuda在安装图形驱动时就已经安装了，欠缺的是cuda toolkit和cuDNN。二者都可以从英伟达官网下载，其中cuDNN需要登录账号。
@@ -54,7 +64,7 @@ CPU高负载工作时，温度急剧升高，热量传递到散热器，散热�
 水冷水冷主要由冷头、水管、冷排、风扇构成。常见的是一体式水冷和分体式水冷。
 工作时冷头直接接触CPU，内部包含泵机和微水道。冷水流过微水道后带着热量，再通过泵机流到冷排上，冷排之间有很多水道，水道之间有大量密集鳍片。热水流入后把热量传递给鳍片，再通过风扇加强与空气的流通，将热水的热量散发到空气中。降温后的冷水再通过泵机流回冷头，如此循环往复。
 由上述可知冷排的尺寸是散热能力的关键，尺寸越大，与空气的接触越多，散热效率越高。常见的冷排有120mm，240mm，360mm。
-最后不管风冷还是水冷，最终都要和空气交换热量，所以散热器降温的极限不会低于室温， …  </content></entry><entry><title>Mac通过容器运行深信服easy Connect</title><url>/note/mac%E9%80%9A%E8%BF%87%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%B7%B1%E4%BF%A1%E6%9C%8Deasy-connect/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>mac</tag><tag>软件</tag><tag>折腾</tag><tag>2025-01</tag></tags><content type="html"><![CDATA[  摘要：公司用的深信服easy Connect进行内网连接。但是这个软件过于流氓，在windows上会占用u盘导致无法弹出，而且还会生成域名证书，想干什么不得而知。为了防止它继续祸害，决定把它丢到docker里运行。如果失败，建议用虚拟机而不是在本地安装。
+最后不管风冷还是水冷，最终都要和空气交换热量，所以散热器降温的极限不会低于室温， …  </content></entry><entry><title>Mac通过容器运行深信服easy Connect</title><url>/note/mac%E9%80%9A%E8%BF%87%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%B7%B1%E4%BF%A1%E6%9C%8Deasy-connect/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>mac</tag><tag>软件</tag><tag>折腾</tag><tag>2025-01</tag></tags><content type="html"><![CDATA[  摘要：公司用的深信服easy Connect进行内网连接。但是这个软件过于流氓，在windows上会占用u盘导致无法弹出，而且还会生成根证书，想干什么不得而知。为了防止它继续祸害，决定把它丢到docker里运行。如果失败，建议用虚拟机而不是在本地安装。
 安装dockerhttps://docs.docker.com/desktop/下载arm版docker desktop
 安装完后进入setting，关闭docker自动更新。找到docker engineer选项，更换库源，加入以下代码：
 &amp;#34;registry-mirrors&amp;#34;: [ &amp;#34;http://hub-mirror.c.163.com&amp;#34;, &amp;#34;https://docker.mirrors.ustc.edu.cn&amp;#34;, &amp;#34;https://registry.docker-cn.com&amp;#34;, &amp;#34;https://dockerhub.azk8s.cn&amp;#34;, &amp;#34;https://reg-mirror.qiniu.com&amp;#34; ] terminal输入docker info可以看到Registry Mirrors添加成功了没有。
@@ -62,7 +72,7 @@ CPU高负载工作时，温度急剧升高，热量传递到散热器，散热�
 等拉取完(一两分钟)后容器会自动运行。在docker desktop里可以看到。
 之后需要运行只需要在docker desktop里开始，停止就行。
 修改clash x的配置文件将原本的配置文件内容复制到新建的sf.yaml中。防止clash自动刷新后将修改清除。
-修改sf.yaml，在proxies和rules添加如下语句：（凡是10开头的内网ip …  ]]></content></entry><entry><title>象棋界大地震录音门事件</title><url>/post/%E8%B1%A1%E6%A3%8B%E7%95%8C%E5%A4%A7%E5%9C%B0%E9%9C%87--%E5%BD%95%E9%9F%B3%E9%97%A8%E4%BA%8B%E4%BB%B6/</url><categories><category/></categories><tags><tag>新闻</tag><tag>2025-01</tag></tags><content type="html">  摘要：录音门从2023年4月曝光，期间2024年9月官方公告处理过王天一、王跃飞两人。但2025年1月12日的公告却直接让整个象棋界来了个大洗牌。象棋等级分前十的选手里，前三的王天一、郑惟桐、赵鑫鑫、第六的汪洋被终生禁赛，排名第八的郝继超也被禁赛4年并撤销等级称号。这一次，真的是“高手在民间”了。
+修改sf.yaml，在proxies和rules添加如下语句：（凡是10开头的内网ip地 …  ]]></content></entry><entry><title>象棋界大地震录音门事件</title><url>/post/%E8%B1%A1%E6%A3%8B%E7%95%8C%E5%A4%A7%E5%9C%B0%E9%9C%87--%E5%BD%95%E9%9F%B3%E9%97%A8%E4%BA%8B%E4%BB%B6/</url><categories><category/></categories><tags><tag>新闻</tag><tag>2025-01</tag></tags><content type="html">  摘要：录音门从2023年4月曝光，期间2024年9月官方公告处理过王天一、王跃飞两人。但2025年1月12日的公告却直接让整个象棋界来了个大洗牌。象棋等级分前十的选手里，前三的王天一、郑惟桐、赵鑫鑫、第六的汪洋被终生禁赛，排名第八的郝继超也被禁赛4年并撤销等级称号。这一次，真的是“高手在民间”了。
 处理结果（截至2025年1月12日）官方的公告是还在继续查，不知道第三批还会有哪些人被处罚。
 过程初步发酵（2023年）2023年4月，一段长达12分钟的录音在网络上曝光，录音内容涉及两位中国象棋特级大师王跃飞和郝继超的对话。录音中，两人讨论了买棋、卖棋、操纵比赛结果、软件作弊等违规行为，期间提及中国象棋等级分连续十年排名第一的棋手王天一。
 2023年7月，中国象棋协会介入调查。
