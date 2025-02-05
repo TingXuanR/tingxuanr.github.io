@@ -21,7 +21,23 @@ H.264粗略的讲，这个编码就是把视频画面里不变或相似的部�
 刚开始还比较克制，只是使用更先进的编码，如H.265、AV1等，根据设备的不同发送不同码率的视频。
 理论上更高的编码格式意味着用更少的流量就可以让用户看清晰的视频，应该是用户和平台双赢的局面。但是，对视频进行不同程度的编码，这就意味着需要更多的算力，它们还想继续降低成本。于是，事情开始离谱。
 首先，所有上传到视频平台的视频都会被进行压缩，并且为了让视频看起来没那么模糊，还给视频增加了锐化，导致视频失真。其次，对于同一个视频，如果看的人少，那么码率会高一些。一旦这个视频观看的人多了，视频的码率便会急剧降低；再者，当用户在观看一个视频时，视频的编码和码率会不断的变化，也就是说平台会动态切换用户看到的视频源。并且，很多时候，H.265这个更高效的编码视频清晰度甚至不如H.264的视频，因为平台给H.265压制的码率实在太低了。
-最终，目前的局面就是平台（不只B站）为了节省流量，无底线的降低视频码率，现在有的1080p视频的码率甚至只有500kpbs不到！Apple Music上一首标准无损音质的音乐码率都能达到：44100（ …  </content></entry><entry><title>Edge开启兼容ie后如何再打开ie</title><url>/note/edge%E5%BC%80%E5%90%AF%E5%85%BC%E5%AE%B9ie%E5%90%8E%E5%A6%82%E4%BD%95%E5%86%8D%E6%89%93%E5%BC%80ie/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>windows</tag><tag>2025-01</tag></tags><content type="html">  摘要：有些东西必须用IE打开（vsg文件，可以使用ie或Visio打开），EDGE打不开。
+最终，目前的局面就是平台（不只B站）为了节省流量，无底线的降低视频码率，现在有的1080p视频的码率甚至只有500kpbs不到！Apple Music上一首标准无损音质的音乐码率都能达到：44100（ …  </content></entry><entry><title>红米Note12TPro 小米14Ultra Root记录</title><url>/note/%E7%BA%A2%E7%B1%B3note12tpro-%E5%B0%8F%E7%B1%B314ultra-root%E8%AE%B0%E5%BD%95/</url><categories><category>笔记</category><category>玩机记录</category></categories><tags><tag>数码</tag><tag>android</tag><tag>折腾</tag><tag>2025-02</tag></tags><content type="html">  摘要：记录一下给红米note12t、红米note11t、小米14ultra的root过程。联发科芯片和骁龙芯片及不同安卓版本的root过程有差异。推荐用狐狸面具，隐藏root能过电信app和银行app的检测。
+红米Note 12T Pro Root记录Root准备工作：
+手机解BL锁(目前小米系手机miui系统可解，hyper系统2025年之后花钱可秒解；一加截至20250205可以申请解锁；解BL锁时会清除手机数据。)
+手机开启usb调试，usb调试（安全）设置
+手机连接电脑
+电脑准备好adb-fastboot, payload-dumper-go-64
+手机下载好狐狸面具(https://magiskdelta.com/apk/)
+退出手机账号! (尤其是谷歌账号)
+在手机设置里检查系统更新，选择下载最新完整系统包更新。
+将手机Dowload-&amp;amp;gt;downloaded_rom目录下找到下载的更新包，复制到document目录。防止系统更新完后更新包被删除。
+将更新包复制到电脑，解压。
+将解压出来的payload.bin复制到payload目录下。
+运行bat脚本，选择解压所有img。其实用到的就两个，一个boot.img, 一个vbmeta.img。
+将boot.img复制到手机Download目录，狐狸面具首页点击“安装”，选择“选择并修补一个文件”。就会得到一个magisk_patched-***的文件，把这个文件复制到电脑上adb-fastboot所在的目录。
+点击bat脚本，打开cmd窗口。手机关机，重启到fastboot模式。不要用cmd命令fastboot reboot重启，否则就会到fastbootd模式。关机后按音量减键+电源键进入fastboot模式。
+依次输入以下命令：
+# 1. 检查设备是否正常连接 fastboot devices # 2.1 刷入修补后的boot文件（redmi note11t/12t） fastboot flash boot magisk_patched-27001_PTnl0.img # 2.2（二选一） 如果修补的是init_boot（小米14ultra） fastboot flash init_boot magisk_patched-27001_PTnl0.img # 3.（可选） 如果用的是联发科天 …  </content></entry><entry><title>Edge开启兼容ie后如何再打开ie</title><url>/note/edge%E5%BC%80%E5%90%AF%E5%85%BC%E5%AE%B9ie%E5%90%8E%E5%A6%82%E4%BD%95%E5%86%8D%E6%89%93%E5%BC%80ie/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>windows</tag><tag>2025-01</tag></tags><content type="html">  摘要：有些东西必须用IE打开（vsg文件，可以使用ie或Visio打开），EDGE打不开。
 资源管理器里输入命令：
 C:\Program Files\Internet Explorer\iexplore.exe about:blank -Embedding
   </content></entry><entry><title>Switch上60帧的游戏</title><url>/daily/switch%E4%B8%8A60%E5%B8%A7%E7%9A%84%E6%B8%B8%E6%88%8F/</url><categories><category>杂谈</category><category>影视游戏</category></categories><tags><tag>任天堂</tag><tag>2025-01</tag></tags><content type="html"><![CDATA[  摘要：记录一些nintendo switch上能达到60帧的游戏
