@@ -21,7 +21,17 @@ H.264粗略的讲，这个编码就是把视频画面里不变或相似的部�
 刚开始还比较克制，只是使用更先进的编码，如H.265、AV1等，根据设备的不同发送不同码率的视频。
 理论上更高的编码格式意味着用更少的流量就可以让用户看清晰的视频，应该是用户和平台双赢的局面。但是，对视频进行不同程度的编码，这就意味着需要更多的算力，它们还想继续降低成本。于是，事情开始离谱。
 首先，所有上传到视频平台的视频都会被进行压缩，并且为了让视频看起来没那么模糊，还给视频增加了锐化，导致视频失真。其次，对于同一个视频，如果看的人少，那么码率会高一些。一旦这个视频观看的人多了，视频的码率便会急剧降低；再者，当用户在观看一个视频时，视频的编码和码率会不断的变化，也就是说平台会动态切换用户看到的视频源。并且，很多时候，H.265这个更高效的编码视频清晰度甚至不如H.264的视频，因为平台给H.265压制的码率实在太低了。
-最终，目前的局面就是平台（不只B站）为了节省流量，无底线的降低视频码率，现在有的1080p视频的码率甚至只有500kpbs不到！Apple Music上一首标准无损音质的音乐码率都能达到：44100（ …  </content></entry><entry><title>红米Note12TPro 小米14Ultra Root记录</title><url>/note/%E7%BA%A2%E7%B1%B3note12tpro-%E5%B0%8F%E7%B1%B314ultra-root%E8%AE%B0%E5%BD%95/</url><categories><category>笔记</category><category>玩机记录</category></categories><tags><tag>数码</tag><tag>android</tag><tag>折腾</tag><tag>2025-02</tag></tags><content type="html">  摘要：记录一下给红米note12t、红米note11t、小米14ultra的root过程。联发科芯片和骁龙芯片及不同安卓版本的root过程有差异。推荐用狐狸面具，隐藏root能过电信app和银行app的检测。
+最终，目前的局面就是平台（不只B站）为了节省流量，无底线的降低视频码率，现在有的1080p视频的码率甚至只有500kpbs不到！Apple Music上一首标准无损音质的音乐码率都能达到：44100（ …  </content></entry><entry><title>2025开年不利</title><url>/daily/2025%E5%BC%80%E5%B9%B4%E4%B8%8D%E5%88%A9/</url><categories><category>杂谈</category><category>闲言碎语</category></categories><tags><tag>2025-03</tag></tags><content type="html">  摘要：记录一下上班第一天到现在的生病历程。
+总结生病要尽早就诊，越早治疗效果越好（掌跖疣经历）。 看病像抽奖——即使是三甲医院，医生也可能开错药（感冒经历）。因此，最好对自己的病情有所了解。 如果要做手术，规划好恢复时间，能申请远程办公最好（掌跖疣经历）。 感冒正月初七开始轻微咳嗽。初八（周二）第一天上班手表连续两次提醒静息心率高于120，自己也能明显感觉到发热。扛了两个小时后温度又退了下去，静息心率降到108。
+周三七点四十就去医院，抽血化验显示C反应蛋白超标严重，还有其它几个指标也不正常。
+好在甲乙流都是阴性，坏在医生没开对药。
+服药三天后，零星咳嗽愈演愈烈，咳嗽频率越来越高。周六又去医院，原本打算抽血化验一下，但医生（第二位）非常肯定的说不用，继续吃药就行。我说一句哪里不舒服，他就打字开一种药。就这样又拿了一堆药回去。这堆药更离谱，他开的两种中成药，都是写只用于风热感冒，但我的症状应该是风寒感冒。吃了不但没效果，咳嗽反而继续加重。尤其是晚上，咳得难以入睡。
+第二周勉强上了两天班，期间好几次咳到流泪。周二晚上更是咳到两点多，几乎没睡着。周三立马去医院，好在这次遇到的医生比较靠谱。抽完血拍完CT发现只有一项异常值，只开了三种药，都不贵（前面两次的药又多又贵）。最有效的应该是阿奇霉素，服用后当晚咳嗽明显缓解，总算能好好睡一觉。
+病假休息了三天后，第三周终于能正常上班，不用再担心咳嗽严重影响到周围的同事。
+掌跖疣第五周感冒算是好了，但是脚底的突起（过年放假前才出现的）在走路时却感觉到疼。于是，又去了医院。医生一看就说是“疣”，需要做激光手术。第一次听说病毒导致的”掌趾疣“，医生又说是个小手术，就同意做了。
+但这次做手术的医生又不靠谱。一针麻药下去，还不到三十秒就开始做手术。一边挖一边用激光烧，整个过程疼的冒汗。做完手术后她竟然直接让我穿袜子走人，连纱布也没包扎！也是没经验，忍者痛穿回袜子。回到家伤口一直流渗透液，整整流了四天才略为好转。
+本来是开了五天病假，但请假时却被HR告知病假开始时间是周六，所以五天病假最多请到周三。于是周三那天又去医院复查顺便请病假。
+这次另一位医生随意看了一眼，就说本来最多请一天。完全没考虑伤口在脚底走路极其不便。疼可以忍，但每次走路多一点伤口受力便会流血。不过，她也纠正了上次那个医生的错误和疏漏：比如上次那个医生说用创口贴防止进水，实 …  </content></entry><entry><title>红米Note12TPro 小米14Ultra Root记录</title><url>/note/%E7%BA%A2%E7%B1%B3note12tpro-%E5%B0%8F%E7%B1%B314ultra-root%E8%AE%B0%E5%BD%95/</url><categories><category>笔记</category><category>玩机记录</category></categories><tags><tag>数码</tag><tag>android</tag><tag>折腾</tag><tag>2025-02</tag></tags><content type="html">  摘要：记录一下给红米note12t pro、红米note11t pro、小米14ultra的root过程。推荐用狐狸面具或KSU，隐藏root能过电信app和银行app的检测。联发科芯片和骁龙芯片及不同安卓版本的root过程有差异。
 红米Note 12T Pro Root记录Root准备工作：
 手机解BL锁(目前小米系手机miui系统可解，hyper系统2025年之后花钱可秒解；一加截至20250205可以申请解锁；解BL锁时会清除手机数据。)
 手机开启usb调试，usb调试（安全）设置
@@ -37,7 +47,7 @@ H.264粗略的讲，这个编码就是把视频画面里不变或相似的部�
 将boot.img复制到手机Download目录，狐狸面具首页点击“安装”，选择“选择并修补一个文件”。就会得到一个magisk_patched-***的文件，把这个文件复制到电脑上adb-fastboot所在的目录。
 点击bat脚本，打开cmd窗口。手机关机，重启到fastboot模式。不要用cmd命令fastboot reboot重启，否则就会到fastbootd模式。关机后按音量减键+电源键进入fastboot模式。
 依次输入以下命令：
-# 1. 检查设备是否正常连接 fastboot devices # 2.1 刷入修补后的boot文件（redmi note11t/12t） fastboot flash boot magisk_patched-27001_PTnl0.img # 2.2（二选一） 如果修补的是init_boot（小米14ultra） fastboot flash init_boot magisk_patched-27001_PTnl0.img # 3.（可选） 如果用的是联发科天 …  </content></entry><entry><title>Edge开启兼容ie后如何再打开ie</title><url>/note/edge%E5%BC%80%E5%90%AF%E5%85%BC%E5%AE%B9ie%E5%90%8E%E5%A6%82%E4%BD%95%E5%86%8D%E6%89%93%E5%BC%80ie/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>windows</tag><tag>2025-01</tag></tags><content type="html">  摘要：有些东西必须用IE打开（vsg文件，可以使用ie或Visio打开），EDGE打不开。
+# 1. 检查设备是否正常连接 fastboot devices # 2.1 刷入修补后的boot文件（redmi note11t/12t） fastboot flash boot magisk_patched-27001_PTnl0.img # 2.2（二选一） 如果修补的是init_boot（小米14ultra） fastboot flash init_boot magisk_patched-27001_PTnl0.img # 3.（可 …  </content></entry><entry><title>Edge开启兼容ie后如何再打开ie</title><url>/note/edge%E5%BC%80%E5%90%AF%E5%85%BC%E5%AE%B9ie%E5%90%8E%E5%A6%82%E4%BD%95%E5%86%8D%E6%89%93%E5%BC%80ie/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>windows</tag><tag>2025-01</tag></tags><content type="html">  摘要：有些东西必须用IE打开（vsg文件，可以使用ie或Visio打开），EDGE打不开。
 资源管理器里输入命令：
 C:\Program Files\Internet Explorer\iexplore.exe about:blank -Embedding
   </content></entry><entry><title>Switch上60帧的游戏</title><url>/daily/switch%E4%B8%8A60%E5%B8%A7%E7%9A%84%E6%B8%B8%E6%88%8F/</url><categories><category>杂谈</category><category>影视游戏</category></categories><tags><tag>任天堂</tag><tag>2025-01</tag></tags><content type="html"><![CDATA[  摘要：记录一些nintendo switch上能达到60帧的游戏
