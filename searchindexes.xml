@@ -8,6 +8,7 @@
 如何自定义左上角的菜单？
 如何添加友联？
 如何确定网页布局是否正常？
+升级主题后网站已运行时间是NAN？
 ……
 初步使用 下载Hogo Extend, Git，Go 本次hugo版本: hugo v0.140.2-aae02ca612a02e085c08366a9c9279f4abb39d94+extended windows/amd64 BuildDate=2024-12-30T15:01:53Z VendorInfo=gohugoio
 Hugo-theme-next: 4.6.3(20240722)
@@ -15,7 +16,7 @@ Hugo-theme-next: 4.6.3(20240722)
 建好后在setting里面选择main分支为GitHub page。等待github deploy完成后就可以用https://github_user_name.github.io访问博客网站了。（当然要先完成创建博客网站这步）
 如果仓库名是其它的，也没问题。但是在config.yaml里面的baseurl要改成github_user_name.github.io/other_repo，不然很多样式文件是找不到的。
 创建博客网站目录 在本地新建一个目录website或其它名字，右键“git bash here”，在git bash里输入 hugo new site Blog Blog就是本地的调试目录了。（推荐在OneDrive里面新建，这样就可以多端同步）
-cd Blog // 初始化git目录 git init // 下载主题（需要科学上网，clash开TUN Mode。或者从gitee下载） git submodule …  </content></entry><entry><title>视频为什么会糊（二）？B站的码率变化</title><url>/note/%E8%A7%86%E9%A2%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E7%B3%8A%E4%BA%8Cb%E7%AB%99%E7%9A%84%E7%A0%81%E7%8E%87%E5%8F%98%E5%8C%96/</url><categories><category>笔记</category><category>比特乾坤</category></categories><tags><tag>码率</tag><tag>2025-01</tag></tags><content type="html">  摘要：流媒体平台（不只B站，所有流媒体都在干，画质最差的还得是优爱腾三家）为了节约成本，不断的降低自家视频的码率。很多所谓的4k、蓝光清晰度还不如六七年前的，纯粹是自欺欺人。 上一篇 对比 码率指1秒内包含的比特数量，对视频而言，越多越清晰。2020年，B站1080p的视频码率能达到6Mbps，4K能达到20Mbps；2024年，B站1080p视频码率不足1Mbps，4K有时也只有不到2Mbps。很多时候，一段高解析度音频的码率都比视频码率要高得多。再好的视频编码方式，在码率极低的情况下也无法化腐朽为神奇。
+cd Blog // 初始化git目录 git init // 下载主题（需要科学上网，clash开TUN Mode。或者从gitee下 …  </content></entry><entry><title>视频为什么会糊（二）？B站的码率变化</title><url>/note/%E8%A7%86%E9%A2%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E7%B3%8A%E4%BA%8Cb%E7%AB%99%E7%9A%84%E7%A0%81%E7%8E%87%E5%8F%98%E5%8C%96/</url><categories><category>笔记</category><category>比特乾坤</category></categories><tags><tag>码率</tag><tag>2025-01</tag></tags><content type="html">  摘要：流媒体平台（不只B站，所有流媒体都在干，画质最差的还得是优爱腾三家）为了节约成本，不断的降低自家视频的码率。很多所谓的4k、蓝光清晰度还不如六七年前的，纯粹是自欺欺人。 上一篇 对比 码率指1秒内包含的比特数量，对视频而言，越多越清晰。2020年，B站1080p的视频码率能达到6Mbps，4K能达到20Mbps；2024年，B站1080p视频码率不足1Mbps，4K有时也只有不到2Mbps。很多时候，一段高解析度音频的码率都比视频码率要高得多。再好的视频编码方式，在码率极低的情况下也无法化腐朽为神奇。
 H.264 粗略的讲，这个编码就是把视频画面里不变或相似的部分节省下来。比如，一个画面里有大量相同的色块，如蓝天白云，那么就可以利用一个像素块来代替周围相邻的像素块，这就是去除空间冗余；如果连续的几个帧之间只有少量部分在动，比如一片树叶下落的过程，那么这么多帧之间只需要记录树叶的运动轨迹就行，这就是去除时间冗余。还有变换编码、量化、熵编码等步骤，就不细说了。通过这些复杂的操作，能够在保证视频质量前提下，把视频体积缩小十倍以上。
 发展 随着视频平台客户量的增大，它们在流量上的支出也越来越大，虽然有会员和广告盈利，但天生吝啬的它们还是想降低流量成本。
 刚开始还比较克制，只是使用更先进的编码，如H.265、AV1等，根据设备的不同发送不同码率的视频。
