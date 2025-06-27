@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>使用Hugo搭建博客网站</title><url>/note/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>建站</tag><tag>折腾</tag><tag>2025-01</tag></tags><content type="html">  摘要：基于Hugo和hugo-theme-next利用github page搭建自己的静态网站并开启评论功能。需要注意的是next主题使用的是yaml配置文件，和大部分主题用的toml文件语法不一样，不过文章里面遇到的一些问题对其它主题也能有参考作用。
+关键词：Hugo	Github	Hugo-theme-next	SSH	LeanCloud	Vercel
+遇到的问题：如何配置文章的最后修改时间？
+如何不在首页显示全部内容？
+如何激活评论模块？
+如何创建archives界面？
+如何配置图片路径？
+如何自定义左上角的菜单？
+如何添加友联？
+如何确定网页布局是否正常？
+……
+初步使用下载Hogo Extend, Git，Go本次hugo版本: hugo v0.140.2-aae02ca612a02e085c08366a9c9279f4abb39d94+extended windows/amd64 BuildDate=2024-12-30T15:01:53Z VendorInfo=gohugoio
+Hugo-theme-next: 4.6.3(20240722)
+新建GitHub仓库仓库名为github_user_name.github.io，权限为public，创建时readme或者git ignore都不需要选，建一个空白仓库就行。
+建好后在setting里面选择main分支为GitHub page。等待github deploy完成后就可以用https://github_user_name.github.io访问博客网站了。（当然要先完成创建博客网站这步）
+如果仓库名是其它的，也没问题。但是在config.yaml里面的baseurl要改成github_user_name.github.io/other_repo，不然很多样式文件是找不到的。
+创建博客网站目录在本地新建一个目录website或其它名字，右键“git bash here”，在git bash里输入 hugo new site Blog Blog就是本地的调试目录了。（推荐在OneDrive里面新建，这样就可以多端同步）
+cd Blog // 初始化git目录 git init // 下载主题（需要科学上网，clash开TUN Mode。或者从gitee下载） git submodule …  </content></entry><entry><title>视频为什么会糊（二）？B站的码率变化</title><url>/note/%E8%A7%86%E9%A2%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E7%B3%8A%E4%BA%8Cb%E7%AB%99%E7%9A%84%E7%A0%81%E7%8E%87%E5%8F%98%E5%8C%96/</url><categories><category>笔记</category><category>比特乾坤</category></categories><tags><tag>码率</tag><tag>2025-01</tag></tags><content type="html">  摘要：流媒体平台（不只B站，所有流媒体都在干，画质最差的还得是优爱腾三家）为了节约成本，不断的降低自家视频的码率。很多所谓的4k、蓝光清晰度还不如六七年前的，纯粹是自欺欺人。上一篇对比码率指1秒内包含的比特数量，对视频而言，越多越清晰。2020年，B站1080p的视频码率能达到6Mbps，4K能达到20Mbps；2024年，B站1080p视频码率不足1Mbps，4K有时也只有不到2Mbps。很多时候，一段高解析度音频的码率都比视频码率要高得多。再好的视频编码方式，在码率极低的情况下也无法化腐朽为神奇。
+H.264粗略的讲，这个编码就是把视频画面里不变或相似的部分节省下来。比如，一个画面里有大量相同的色块，如蓝天白云，那么就可以利用一个像素块来代替周围相邻的像素块，这就是去除空间冗余；如果连续的几个帧之间只有少量部分在动，比如一片树叶下落的过程，那么这么多帧之间只需要记录树叶的运动轨迹就行，这就是去除时间冗余。还有变换编码、量化、熵编码等步骤，就不细说了。通过这些复杂的操作，能够在保证视频质量前提下，把视频体积缩小十倍以上。
+发展随着视频平台客户量的增大，它们在流量上的支出也越来越大，虽然有会员和广告盈利，但天生吝啬的它们还是想降低流量成本。
+刚开始还比较克制，只是使用更先进的编码，如H.265、AV1等，根据设备的不同发送不同码率的视频。
+理论上更高的编码格式意味着用更少的流量就可以让用户看清晰的视频，应该是用户和平台双赢的局面。但是，对视频进行不同程度的编码，这就意味着需要更多的算力，它们还想继续降低成本。于是，事情开始离谱。
+首先，所有上传到视频平台的视频都会被进行压缩，并且为了让视频看起来没那么模糊，还给视频增加了锐化，导致视频失真。其次，对于同一个视频，如果看的人少，那么码率会高一些。一旦这个视频观看的人多了，视频的码率便会急剧降低；再者，当用户在观看一个视频时，视频的编码和码率会不断的变化，也就是说平台会动态切换用户看到的视频源。并且，很多时候，H.265这个更高效的编码视频清晰度甚至不如H.264的视频，因为平台给H.265压制的码率实在太低了。
+最终，目前的局面就是平台（不只B站）为了节省流量，无底线的降低视频码率，现在有的1080p视频的码率甚至只有500kpbs不到！Apple Music上一首标准无损音质的音乐码率都能达到：44100（ …  </content></entry><entry><title>随记202505</title><url>/daily/%E9%9A%8F%E8%AE%B0202505/</url><categories><category>杂谈</category><category>闲言碎语</category></categories><tags><tag>文化</tag><tag>经济</tag><tag>2025-05</tag></tags><content type="html">  摘要：韩愈
+文化旧唐书-韩愈传进学解《进学解》里的“业精于勤荒于嬉，行成于思毁于随”小学就要背诵，但还有很多耳熟能详的成语名句也出自《进学解》，如“细大不捐、焚膏继晷、回狂澜于既倒”（苏轼引用时改‘回’为‘挽’）、含英咀华、闳中肆外、动辄得咎、头童齿豁、佶屈聱牙。”
+国子先生晨入太学，召诸生立馆下，诲之曰：“业精于勤荒于嬉；行成于思毁于随。方今圣贤相逢，治具毕张，拔去凶邪，登崇俊良。……占小善者率以录，名一艺者无不庸。诸生业患不能精，无患有司之不明；行患不能成，无患有司之不公。”
+言未既，有笑于列者曰：“先生欺予哉！先生口不绝吟于六艺之文，手不停披于百家之编。……贪多务得，细大不捐。烧膏油以继晷，常矻矻（ku,1,勤奋)以穷年。……障百川而东之，回狂澜于既倒。先生之于儒，可谓有劳矣。沉浸𬪩郁，含英咀华。作为文章，其书满家。……周诰殷盘，佶屈聱牙。……先生之于儒，可谓闳其中而肆其外矣。……然而公不见信于人，私不见助于友。跋前踬后，动辄得咎。暂为御史，遂窜南夷。三为博士，冗不见治。命与仇谋，其败几时？冬煖而儿号寒，年丰而妻啼饥。头童齿豁，竟死何裨？不知虑此，而反教人为？”
+先生曰：……昔者孟轲好辩，孔道以明，辕环天下，卒老于行。荀卿守正，大论是弘，逃谗于楚，废死兰陵。是二儒者，吐辞为经，举足为法，绝类离伦，优入圣域，其遇于世何如也？……
+《进学解》这个题目以前还以为是劝人努力学习的，没想到是韩愈抒发自己屡遭贬谪，怀才不遇才写的。写完后，宰相也同情他，调他做使馆修撰，一年后，拜中书舍人。
+上疏反对迎佛骨元和十四年（公元819年），宪宗迎释迦指骨。王公贵族、平民百姓全都抢着施舍，甚至有人为了施舍而烧顶灼臂、倾家荡产。韩愈本就不喜欢佛教，于是上疏谏曰：
+伏以佛者，夷狄之一法耳。自后汉时始流入中国，上古未尝有也。周文王年九十七岁，武王年九十三岁，穆王在位百年。此时佛法亦未至中国，非因事佛而致此也。
+汉明帝时始有佛法，明帝在位才十八年耳。其后乱亡相继，运祚不长。宋、齐、梁、陈、元魏已下，事佛渐谨，年代尤促。……
+宪宗看后觉得韩愈是在暗指尊崇佛教会使统治者短命，要处以极刑。宰相裴度等为韩愈求情，才改为贬韩愈潮州刺史（从陕西西安到广东潮州，走现代高速路也相隔一千八百多公里）。也正是在这个途中，写下了给侄儿韩湘子的诗“一封朝奏九重天，夕贬潮州路八千。欲为圣明除弊事，肯将衰朽惜残 …  </content></entry><entry><title>随记202504</title><url>/daily/%E9%9A%8F%E8%AE%B0202504/</url><categories><category>杂谈</category><category>闲言碎语</category></categories><tags><tag>经济</tag><tag>文化</tag><tag>时事</tag><tag>2025-04</tag></tags><content type="html">  摘要：港币汇率、对等关税、“伪古风”歌曲、明史
+经济港币涨跌ns2出了，由于日区的种种限制，还是直接去香港买方便。于是关注起港币与人民币的汇率，才知道港币锚定美元，随美元的涨跌而变化。对比进一年美元与港币和人民币的汇率变化，一模一样。
+现在由于特朗普的关税战，美元涨到一个新的高度。对比下特朗普的上一任期，美元也是上涨。让子弹再飞一会吧。
+中国对美加征关税提高到145%20250410，美国将中国的“对等关税”加至125%（加上之前20%的关税，中国商品在美国的关税是145%）。中国国务院在20240411发表声明：将对美国的加征关税从84%提高到125%。鉴于在目前税率水平下，美国输华商品已无市场接受可能，如果美方之后继续加征关税，中方将不予理会。
+中国是真的站立起来了。
+时事关于特朗普“解决危机”的推文This is Trump’s strategy: Creates a crisis that hurts people Claims the crisis is actually good The crisis gets really, really bad Trump then reverses his bad decision and takes credit for ending the crisis he created MAGA applauds him Every. Single. Time. 特朗普，真正的“股神”2025年4月8日，因为特朗普的“对等关税”政策（4月2号宣布），美股断崖式下跌，蒸发5.8万亿美元，其中苹果直接下跌了23%。并且根据目前对中国的关税，一部iPhone顶配可能会高达6000美元。
+然而，4月9号，特朗普却于20250409 09:37在其自创社交平台 “Truth Social”上说“THIS IS A GREAT TIME TO BUY!!! DJT”（原文。DJT就是特朗普的公司的股票代码） 就在投资者们还在揣测这一呼吁背后意图之时，几个小时后的下午 1 点 30 分左右，特朗普宣布暂停对多国的 “对等关税” 90 天。这一消息如同一剂强心针，美股三大指数应声强势反弹。纳斯达克指数飙升 12%，创下 2001 年以来最大单日涨幅；标普 500 指数上涨 9.5%；道琼斯指数上涨 7.9% 。截至当日收盘， …  </content></entry><entry><title>刘和平采访</title><url>/note/%E5%88%98%E5%92%8C%E5%B9%B3%E9%87%87%E8%AE%BF/</url><categories><category>笔记</category><category>文字摘要</category></categories><tags><tag>摘要</tag><tag>历史</tag><tag>2025-04</tag></tags><content type="html">  摘要：刘和平在2017年的采访，可惜八年之后还是看不到《北斗南箕之歌》的任何消息。
+刘和平采访原文发布时间: 2017.07.13 11:45摘录你用社会属性去要求每个个体生命时，很多个体生命会本能地采取一种逆反心态；反而从个体属性来看待事物时，很多个体会认同。嘉靖就是为个人找理由的祖宗，他每句话都在为自己找理由，所以很多观众觉得这是对的；海瑞就是以伦理道德、社会秩序等社会属性来要求人的行为，自然引起很多人本能的逆反。这就是今天这个时代，所以我说要充分兼顾到每一个人对于个体生命的尊重和价值的追求。 《大明王朝1566》嘉靖诡辩性的“长江黄河论”：长江之水灌溉数省两岸之田地，黄河之水也灌溉两岸数省之田地，只能不因水清而偏用，也只能不因水浊而偏废，自古皆然。这个海瑞不懂这个道理，在奏疏里要朕只用长江而废黄河，朕其可乎？反之，黄河一旦泛滥，便需治理，这就是朕为什么罢黜严嵩杀严世蕃等人的道理。再反之，长江一旦泛滥，朕也要治理，这就是朕为什么罢黜杨廷和夏言杀杨继盛沈炼等人的道理。 历史剧，它的主语是剧。传统上也没有历史剧这一说，以往都是演义剧，民间演义，没有谁拿正史搬到台上去演。《雍正王朝》的八爷、九爷、十爷比历史上多活了十年，八爷前一天死，雍正第二天死，但历史上雍正三年八爷就死了，这是文学艺术。《大明王朝1566》也一样，“改稻为桑”是虚构。这个以后我们大家会慢慢取得共识，史学研究是史学研究，历史考证是历史考证，文学艺术是文学艺术。大家都明白，尤其我现在来搞，受到的非议少一点。 在历史这块我主要想表达的是历史精神，我的终极追求是美学价值。文学作品没有美学价值的突破，它就没有存在的必要。我也经常说，我们用史学的眼光看世界，用科学的眼光看世界，用神学的眼光看世界，还有美学的眼光看世界。我在写的东西里面首先是用美学的眼光，当然其它三个都有。 什么是主旋律？就是一部人类历史，就是人类不断自我完善的过程。任何一个历史阶段，如果一个历史人物或者历史群体在自我完善的过程中起到了正面作用，它就是主旋律。 关外游牧民族和关内农耕民族的融合一直到唐朝，李世民完成了。他完成的是文化的统一，不要只看版图。 1949年，决定中国前途命运的时刻到来了，不要忘了这个前途命运到来的时刻，之前有多少人在承受它，然后完成它，但决定还真不是人做的。虽然有些人对历史能做一些宏观的预测，但他也是在预测历史的 …  </content></entry><entry><title>Nintendo Switch 2 发布信息汇总及对比NS</title><url>/daily/nintendo-switch-2-%E5%8F%91%E5%B8%83%E4%BF%A1%E6%81%AF%E6%B1%87%E6%80%BB%E5%8F%8A%E5%AF%B9%E6%AF%94ns/</url><categories><category>杂谈</category><category>影视游戏</category></categories><tags><tag>任天堂</tag><tag>2025-04</tag></tags><content type="html">  摘要：任天堂终于发布了Nintendo Switch 2，总结了目前的已知信息以及与NS的区别。
+NS2对比NS特性分类 Nintendo Switch 2 (NS2) 原版Nintendo Switch 对比亮点 尺寸与重量 - 尺寸：116mm × 272mm × 13.9mm（带Joy-Con 2） - 重量：401g（裸机）→ 534g（带Joy-Con 2） - 尺寸：102mm × 239mm × 13.9mm - 重量：297g（裸机）→ 398g（带Joy-Con） 📏 更大屏幕：7.9英寸 vs. 6.2英寸 ⚖️ 重量增加：便携性略降，534g vs. 398g 屏幕与显示 - 手持模式：7.9英寸LCD，1080p/120Hz，HDR - 主机模式：4K@60Hz 或 1440p@120Hz - 手持模式：6.2英寸LCD，720p - 主机模式：1080p@60Hz 🔍 画质飞跃：4K输出 + HDR支持 🔄 流畅性：120Hz可变刷新率 性能与硬件 （爆料信息。官方未公布NS2硬件，等6月5号看拆机）
+- 芯片：NVIDIA定制Ampere架构 - 配置：8核CPU + 1536 GPU核心
+- 内存带宽：102.4GB/s - 芯片：NVIDIA Tegra X1 - 配置：4核CPU + 256 GPU核心 - 内存带宽：25.6GB/s ⚡ 性能提升4倍：复杂场景帧率更稳 🎨 AI上采样：低分辨率游戏优化增强 存储扩展 - 内置存储：256GB - 扩展支持：仅microSD Express（最大2TB） - 内置存储：32GB/64GB - 扩展支持：普通microSD卡（最大2TB） 💾 容量翻倍：256GB起步 🚀 高速读写：仅支持Express卡（速度提升3倍） 续航与充电 - 电池容量：5220mAh - 续航：2-6.5小时 - 充电时间：3小时 - 电池容量：4315mah（2017版）/4310mAh（2019版） - 续航：2.5-6.5小时（2017版）/4.5-9小时（2019版） - 充电时间：3小时 🔋 容量提升21%：高负载游戏续航优化 ⏳ 充电效率不变：需平衡性能与功耗 连接与接口 - 接口：双USB-C（充电+扩展） - 网络：Wi-Fi 6 + 蓝牙5.0 + 有线网（底座模式） - 接口： …  </content></entry><entry><title>蓝牙发展历程--1999到2025</title><url>/note/%E8%93%9D%E7%89%99%E5%8F%91%E5%B1%95%E5%8E%86%E7%A8%8B--1999%E5%88%B02025/</url><categories><category>笔记</category><category>比特乾坤</category></categories><tags><tag>数码</tag><tag>2025-03</tag></tags><content type="html">  摘要：随着蓝牙6.0对UWB级测距能力的整合，以及LE Audio重塑无线音视频体验，蓝牙正突破“连接工具”的定位，向环境感知与空间计算领域纵深拓展，成为构建智能世界的隐形桥梁。本文简要介绍蓝牙从1.0到6.0的发展历史。
+蓝牙发展历程&amp;amp;ndash;1.0到6.0参考链接Bluetooth 1.0 to 6.0 explained: How do Bluetooth versions differ from each other?蓝牙蓝牙4.11.01994年，爱立信开始研究这个低功耗的无线连接协议。
+1998年5月，爱立信联合IBM、诺基亚、英特尔等公司建立SIG（Bluetooth Special Interest Group）。
+1999年发布蓝牙1.0版本。（然而2001才有了第一款自带蓝牙的手机&amp;amp;ndash;爱立信T39mc）
+特性：支持短距离无线数据传输；使用2.4 GHz频段；传输速度最大1 Mbps（实际最大723.2kbps）；距离最大10米。
+2.02004年发布。
+特性：引入EDR（Enhanced Data Rate），数据传输速度最大3 Mbps；融合A2DP(Advanced Audio Distribution Profile，一个控音轨分配技术，主要应用于立体声耳机)，可以进行无线音频传输；最大传输距离达30米；一台电脑能够同时连接多个蓝牙设备。
+2007年发布了2.1版本。
+特性：添加了SSP（Secure Simple Pairing ）机制。配对时通过输入PIN增强安全性。
+3.02009年发布。
+特性：引入HS（High Speed）功能，通过蓝牙建立连接后，使用802.11 Wi-Fi协议传输数据，理论速度高达24 Mbps；最大传输距离30米；引入增强电源控制，根据设备距离改变功率。
+4.02010年发布4.0版本。
+特性：在这一代蓝牙分为了Low Energy和Classic两条路径；最大传输距离60米。
+BLE(BlueTooth Low Energy)主要目的是尽可能的减少电量消耗，这对于无线耳机和可穿戴设备非常重要。而Classic就是在原来的基础上进行常规发展。现在的设备大部分都同时支持两种模式并自动切换。
+2013年发布4.1版本。
+特性：单个数据包从20字节增加到23字节（广播包还是31 …  </content></entry><entry><title>国内外币信用卡在任天堂eshop购买问题</title><url>/daily/%E5%9B%BD%E5%86%85%E5%A4%96%E5%B8%81%E4%BF%A1%E7%94%A8%E5%8D%A1%E5%9C%A8%E4%BB%BB%E5%A4%A9%E5%A0%82eshop%E8%B4%AD%E4%B9%B0%E9%97%AE%E9%A2%98/</url><categories><category>杂谈</category><category>影视游戏</category></categories><tags><tag>任天堂</tag><tag>2025-03</tag></tags><content type="html">  摘要：昨天还用visa卡在任天堂eshop买了余额，今天突然不能用，返回2813-2470的错误码。通过改邮箱的方式暂时解决了问题。
+20250326更新泥潭水友总结：
+关于今天老任eShop支付系统更新后的一些实测：
+大陆发行的JCB(招行)确认不能绑定eShop(报错：9008-2471)。 ana pay(虚拟visa，绑大陆发行的JCB)可以正常在eshop(网页版)绑定并下单，没有影响(废话)。(PS：虽然ana pay二月有发公告说是停止海外发行的visa和万事达卡充值，但公告里没有提到过JCB哦。) 日区PP只能主机上购买，经测试，日区PP(绑大陆发行的JCB)可以正常扣款+购买。 20250325更新早上07:52尝试购买500日元，竟然成功了。可能因为任天堂员工还没上班？
+刚刚去任天堂官网看到告示：
+在日本的“Nintendo eShop”和“My Nintendo Store”中 终止海外发行的信用卡和在海外开设的 PayPal 账户&amp;amp;lt;重要提示&amp;amp;gt; 由于维护，My Nintendo Store 在接下来的时间将不可用 。 3 月 25 日（周二） 12：30~15：30 预定 对于给您带来的不便，我们 深表歉意，但请理解
+晚上回去试了一下，会返回2813-2471的错误码，提示“请使用所在国家/地区发行的信用卡”。
+20250324更新新办的银联JCB卡到了，成功绑定eshop，充值1000日元余额。
+20250320更新：3月25号之后eshop怎么买游戏？通过日亚购买： ​	帖子链接。大意是amazon.co.jp进入日亚，地址需要设定日本地址为常用地址，国内手机号绑定也行。但第一次就买电子券容易锁账号。
+​	如果要查询信用卡发卡行，可以用这个地址通过淘宝：直接买给卡密的，不要把账号给商家。 去日本旅游时屯几张。 ​	自己今天早上充值eshop余额失败，但中午充值两次都成功了。
+​	还是得说，任天堂这种操作太为难海外玩家了。
+原文大概经历是同学想买eshop的游戏，但是没有外币信用卡。于是我打算把自己的信用卡绑到他的账号上帮他购买，然后一直绑定失败。接着又在自己的switch上新建了个账号准备直接在eshop用信用卡购买，还是报错。
+之后试着给自己的账号充值余额，同样报错！我昨天才刚刚充了余额的。虽 …  </content></entry><entry><title>红米Note12TPro 小米14Ultra Root记录</title><url>/note/%E7%BA%A2%E7%B1%B3note12tpro-%E5%B0%8F%E7%B1%B314ultra-root%E8%AE%B0%E5%BD%95/</url><categories><category>笔记</category><category>玩机记录</category></categories><tags><tag>数码</tag><tag>android</tag><tag>折腾</tag><tag>2025-02</tag></tags><content type="html">  摘要：记录一下给红米note12t pro、红米note11t pro、小米14ultra的root过程。推荐用狐狸面具或KSU，隐藏root能过电信app和银行app的检测。联发科芯片和骁龙芯片及不同安卓版本的root过程有差异。
+红米Note 12T Pro Root记录Root准备工作：
+手机解BL锁(目前小米系手机miui系统可解，hyper系统2025年之后花钱可秒解；一加截至20250205可以申请解锁；解BL锁时会清除手机数据。)
+手机开启usb调试，usb调试（安全）设置
+手机连接电脑
+电脑准备好adb-fastboot, payload-dumper-go-64
+手机下载好狐狸面具(https://magiskdelta.com/apk/)
+退出手机账号! (尤其是谷歌账号)
+在手机设置里检查系统更新，选择下载最新完整系统包更新。
+将手机Dowload-&amp;amp;gt;downloaded_rom目录下找到下载的更新包，复制到document目录。防止系统更新完后更新包被删除。
+将更新包复制到电脑，解压。
+将解压出来的payload.bin复制到payload目录下。
+运行bat脚本，选择解压所有img。其实用到的就两个，一个boot.img, 一个vbmeta.img。
+将boot.img复制到手机Download目录，狐狸面具首页点击“安装”，选择“选择并修补一个文件”。就会得到一个magisk_patched-***的文件，把这个文件复制到电脑上adb-fastboot所在的目录。
+点击bat脚本，打开cmd窗口。手机关机，重启到fastboot模式。不要用cmd命令fastboot reboot重启，否则就会到fastbootd模式。关机后按音量减键+电源键进入fastboot模式。
+依次输入以下命令：
+# 1. 检查设备是否正常连接 fastboot devices # 2.1 刷入修补后的boot文件（redmi note11t/12t） fastboot flash boot magisk_patched-27001_PTnl0.img # 2.2（二选一） 如果修补的是init_boot（小米14ultra） fastboot flash init_boot magisk_patched-27001_PTnl0.img # 3.（可 …  </content></entry><entry><title>Edge开启兼容ie后如何再打开ie</title><url>/note/edge%E5%BC%80%E5%90%AF%E5%85%BC%E5%AE%B9ie%E5%90%8E%E5%A6%82%E4%BD%95%E5%86%8D%E6%89%93%E5%BC%80ie/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>windows</tag><tag>2025-01</tag></tags><content type="html">  摘要：有些东西必须用IE打开（vsg文件，可以使用ie或Visio打开），EDGE打不开。
+资源管理器里输入命令：
+C:\Program Files\Internet Explorer\iexplore.exe about:blank -Embedding
+  </content></entry><entry><title>Switch上60帧的游戏</title><url>/daily/switch%E4%B8%8A60%E5%B8%A7%E7%9A%84%E6%B8%B8%E6%88%8F/</url><categories><category>杂谈</category><category>影视游戏</category></categories><tags><tag>任天堂</tag><tag>2025-01</tag></tags><content type="html"><![CDATA[  摘要：记录一些nintendo switch上能达到60帧的游戏
+咚奇刚归来HD 超级马力欧派对 空前盛会 塞尔达传说 智慧的再现 碧姬公主 表演时刻 圣兽之王 塞尔达无双 海拉尔全明星DX(最高60帧，大部分时间40-55) ARMS 斯普拉遁3 波斯王子 失落王冠 任天堂明星大乱斗 特别版 斯普拉遁2 密特罗德 生存恐惧 密特罗德 Prime 黑帝斯 鬼武者HD 猎天使魔女1、2 超级马里奥:奥德赛 马里奥赛车8:豪华版 超级马里奥制造2 超级马里奥3D世界+库巴之怒(3D世界) 超级马里奥3D全明星 新马里奥兄弟U豪华版 马里奥派对:超级巨星 俄罗斯方块效应:链接 俄罗斯方块99 噗哟噗哟VS俄罗斯方块2 奥日与萤火意志 奥日与黑暗森林:决定版 蔚蓝 铲子骑士:无尽宝藏 空洞骑士 启示 怪物小子:诅咒王国 墨西哥英雄大混战:超级漩涡 信使 墨西哥英雄大混战2 公理边缘 大金刚:热带寒流 耀西的手工世界 雷曼传奇:终极版 龙珠斗士Z 苍翼默示录:神观之梦特别版 夜下降生Exe:Late[cl-r] 致命联盟:烈焰 真人快打11 侍魂 晓 哈迪斯 堡垒 晶体管 死亡细胞 光明旅者 卡图斯:进击的机器人 奥力奥力世界 狂徒猎手 茶杯头 怒之铁拳4 暗黑地牢 盗贼遗产 孤山:下山 格瑞丝 Yoku小岛之旅 前进！奇奥比诺队长 远星物语 矿坑之下 战斗厨师旅团 武士零 蒸汽世界:挖掘2 囚禁inside 废土之王 孤帆远航 死亡之门 灵魂旅者 猎天使魔女2 猎天使魔女 鬼泣3:特别版 英雄不再 英雄不再2:垂死挣扎 蒸汽世界:大劫掠 终极版 陷阵之志 光之子:豪华版 杀戮尖塔 战律 命运之手2 数码宝贝物语:赛博侦探 骇客追忆 魔界战记4:完整版+ 魔界战记5:完整版 宵星传奇重制版 符文工房4:特别版 斑鸠 古树旋律 兰空 王国之心:记忆旋律 节奏海拉鲁 再见狂野的心 初音未来Project DIVA Mega 39&rsquo;s 暗黑破坏神3:永恒之战版 塞尔达传说:御天之剑HD 塞尔达传说:梦幻岛 极速赛车RMX 火爆狂飙:天堂 狂野飙车9:竞速传奇 超级房车赛:汽车运动 超级鸡马 鸭王争霸赛 世界游戏大全51 你裁我剪！斯尼帕 真三国无双7 with猛将传DX 生化危机4 天穂的咲稻姬 女神异闻录4:无敌究极后桥背摔 危险时空的恋人 黄昏
+参考链接：https://bbs.nga.cn/read.php?&amp;tid=40193808&amp;pid=759545564&amp;to=1
+  ]]></content></entry><entry><title>Mac时间错误</title><url>/note/mac%E6%97%B6%E9%97%B4%E9%94%99%E8%AF%AF/</url><categories><category>笔记</category><category>比特乾坤</category></categories><tags><tag>mac</tag><tag>2025-01</tag></tags><content type="html">  摘要：Mac时间突然错误，需要删除timed才能校正。
+如果设置里的地区和时区都没问题的话，打开finder。
+按住shift+command+. 显示隐藏文件夹 按住option键，点击下方的Macintosh HD进入Macintosh HD目录 进入灰色的隐藏文件夹var-&amp;gt;db，找到timed删除并重启   </content></entry><entry><title>区块链与比特币</title><url>/note/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%8E%E6%AF%94%E7%89%B9%E5%B8%81/</url><categories><category>笔记</category><category>比特乾坤</category></categories><tags><tag>区块链</tag><tag>2025-01</tag></tags><content type="html">  摘要：摘录了阮一峰写的关于区块链和比特币的一些知识。
+区块链一、本质分布式数据库。主要作用是存储信息，且任何一个节点都保存这数据库的全部信息。可以向任何一个节点写入、读取数据，最终这个区块链上的所有节点都会同步保持一致。
+二、特点去中心化。没有管理员节点，所有节点都是平等的。
+三、构成区块链由一个个区块组成。每个区块包含两个部分：区块头（记录当前区块特征值）、区块体（实际数据）。
+区块头的特征值包括：生成时间、区块体的hash、上一个区块的hash……
+使用hash，保证了数据的可靠性。如果有人修改了一个区块，该区块的hash值就会改变，为了使这个被修改的区块能被下一个区块链接到（因为下一个区块包含上一个区块的哈希），必须修改这个区块之后的所有区块，这个几乎是不可能发生。
+由于每个区块都连着上一个区块，因此才被称作区块链。
+四、采矿为了保证各个节点之间的同步，新区快的添加不能太快。不然可能你刚想添加一个区块，却被通知其他人已经添加了新的区块，你只能重新生成一个，如此循环往复。
+所以，区块链发明者“中本聪”（化名，其真实身份至今无人知晓）故意让添加新区块，变得很困难。他的设计是：平均每10分钟，全网才能生成一个新区块，一小时也就六个。
+这个速度的控制并不是通过命令达成，而是故意设计海量计算。也就是说，只有通过极其大量的计算，才能得到当前区块的有效哈希，从而把新区块添加到区块链。由于计算量太大，所以快不起来。
+这个过程就叫做采矿（mining），因为计算有效哈希的难度，好比在全世界的沙子里面，找到一粒符合条件的沙子。计算哈希的机器就叫做矿机，操作矿机的人就叫做矿工。
+五、难度系数为了保证计算的困难性，区块头里设置了难度系数(difficulty)。这个值决定了计算哈希的难度。举例来说，第100000个区块的难度系数是 14484.16236122。
+区块链协议规定，使用一个常量除以难度系数，可以得到目标值（target）。显然，难度系数越大，目标值就越小。
+target = targetmax/difficulty
+只有小于目标值的hash才是有效的。由于目标值非常小，哈希小于该值的机会极其渺茫，可能计算10亿次，才算中一次。这就是采矿如此之慢的根本原因。
+如果要对同一个区块反复计算哈希，就意味着，区块头必须不停地变化，否则不可能算出不一样的哈希。区块头 …  </content></entry><entry><title>Windows换电脑后添加AppLinks快捷方式</title><url>/note/windows%E6%8D%A2%E7%94%B5%E8%84%91%E5%90%8E%E6%B7%BB%E5%8A%A0applinks%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>windows</tag><tag>软件</tag><tag>2025-01</tag></tags><content type="html">  摘要：使用win+R “运行”对话框，直接输入软件快捷方式名就可以打开软件，就像使用mac的聚焦一样。
+将applinks文件夹复制到C:\Program Files, 然后为applinks文件夹新建桌面快捷方式，该名称为&amp;quot;al&amp;quot;，把 al 复制到C:\Program Files\AppLinks。 添加环境变量。在系统path中添加C:\Program Files\AppLinks这个目录。 这样打开软件就只需要按下win+R, 然后输入applinks中的快捷方式名字就可以打开软件。 注:
+​	为了方便起见，习惯性的在D盘下新建 Software目录，将大部分软件安装到这个目录。这样即便更换电脑原先的快捷方式也是有效的，或者在设置安装目录前查看一下快捷方式的属性，看看它原先安装在哪个目录。
+  </content></entry><entry><title>图片在显示器上在为什么会糊？PPI、DPI、Retina</title><url>/note/%E5%9B%BE%E7%89%87%E5%9C%A8%E6%98%BE%E7%A4%BA%E5%99%A8%E4%B8%8A%E5%9C%A8%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E7%B3%8Appidpiretina/</url><categories><category>笔记</category><category>比特乾坤</category></categories><tags><tag>数码</tag><tag>windows</tag><tag>mac</tag><tag>分辨率</tag><tag>2025-01</tag></tags><content type="html">  摘要：有关图片的缩放及Retina屏幕介绍
+图片缩放图片是由一个个的像素点组成，屏幕也是一个个的像素点组成，如果屏幕的像素点和图片的像素点能够一一对应，那么图片就能够正常显示。
+比方说有一个27英寸1920x1080的屏幕，图片分辨率为900x600，图片以点对点的形式显示在屏幕中央；如果换成一个27英寸2560x1440的屏幕，那么每个像素点的面积就变小了，如果还以点对点的形式显示，图片也会变小，此时就需要通过缩放来显示图片。
+缩放计算方式：
+在 1080P 屏幕上，显示比例为：水平方向：900 / 1920 ≈ 46.9%；垂直方向：600 / 1080 ≈ 55.6%
+在 1440P 屏幕上，要保持相同的显示比例，图片大小为：水平方向：2560 × 46.9% ≈ 1200 像素；垂直方向：1440 × 55.6% ≈ 800 像素。
+也就是从900x600放大到1200x800的尺寸。
+一般系统采用的是双线性插值算法来进行拉伸填充，这样就会使得图片变得模糊。如果把屏幕换成3840x2160，就可以用屏幕的四个像素点替代图片的一个像素点，这就是临近像素采样算法。
+插值算法正是插值算法，使得图片失真。
+双线性插值基于周围四个像素点的加权平均，提供了更平滑的结果，但是会导致图片模糊。而临近像素采样直接复制最近的原始像素值，图像不会模糊但是边缘可能有明显锯齿。如假设下面2x2像素的图片要放大到4x4像素(实际的值并不准确，只是示意)：
+原始 临近像素采样 双线性插值 1 3
+5 7 1 1 3 3 1 1 3 3 5 5 7 7 5 5 7 7 1.00 2.00 3.00 3.00 3.00 4.00 5.00 5.00 5.00 6.00 7.00 7.00 5.00 6.00 7.00 7.00 Windows的DPI导致软件图片及字体模糊在最早期的时候，屏幕的PPI和打印用的DPI是一致的。一个图片在屏幕上有72个像素，打印机打印出来也是72个点。但是后来电脑屏幕比纸张要大不少，而且人与屏幕的距离也比人与纸张的距离要远，所以同样的像素点在大屏幕上显得就小了。于是Windows就把图片进行放大，一个72x72像素的图片，Windows会放大成96x96。
+经过不断的发展，Windows有了现在的几个默认放大倍 …  </content></entry><entry><title>GoogleCEO在斯坦福上学的演讲</title><url>/note/googleceo%E5%9C%A8%E6%96%AF%E5%9D%A6%E7%A6%8F%E4%B8%8A%E5%AD%A6%E7%9A%84%E6%BC%94%E8%AE%B2/</url><categories><category>笔记</category></categories><tags><tag>人工智能</tag><tag>2025-01</tag></tags><content type="html">  摘要：曾经担任谷歌CEO长达10年(2001-2011)之久的Eric Schmidt在2024年受邀去斯坦福大学计算机学院接受访谈，本文记录了主要内容。对于网上说的什么Eric不知道会有摄像头，纯属捏造。视频里Eric抬头看到摄像头时表现非常平淡，而且继续说后面的话。
+原文为什么英伟达能价值两万亿美元？因为几乎所有的AI代码都要使用CUDA优化，而只有英伟达的GPU支持CUDA。另外，很多开源库也只针对CUDA做了优化。AMD现在正在做一个工具把CUDA翻译成AMD自己的语言ROCm。
+星际之门（自带AI的超级计算机，拥有数百万专用服务器芯片）不止要花1000亿美元，open ai CEO认为至少要3000亿美元。并且这个需要大量的能源，美国没有这么多能源，所以需要和加拿大搞好关系。或者找阿拉伯人来投资。
+为什么最新的排行榜上，opanAI不是榜首？以谷歌为例：谷歌认为，工作与生活的平衡、早回家和在家工作比获胜更重要。但是初创公司却是往死里工作，谷歌和微软初创时都是这样。把员工逼的很紧。台积电会让物理学博士在第一年到工厂干活，在美国几乎不可能。
+微软跟OpenAI合作时自己也觉得难以置信，微软怎么能将AI主导地位让渡给openAI。结果他们正在成为最有价值的公司。而苹果却没有好的AI解决方案。
+美国现在处于行业领先地位，大概领先了中国十年。所以有了芯片法案及其它法案限制中国AI的发展(Eric本人也参与了法案的制定)，因为只有少数国家（有大量资金、大量人才、强大教育体系和获胜意愿）能将AI发展起来。美国是一个，中国是一个。其它的国家？不知道。
+如何在一个已经学习到危险内容的系统中检测危险？假如AI已经学习了有害内容，但它并告诉你它学习了。
+现在的我们已经无法理解创造出来的AI是怎么运行的了。以后可能会出现对抗性AI，大公司会雇佣人去破坏AI系统，找出AI的漏洞。
+TikTok给美国人上了一课，在座各位年轻人以后如果创业，能偷音乐什么的就赶紧去做——似乎是在影射TikTok早期纵容盗版BMG——如果你做成了，就有钱雇佣最顶级的律师帮你擦屁股，如果你没做成，那就没人会起诉你。
+开源很好，谷歌历史上的大部分基础设施也都受益于开源，但是说实话，AI行业的成本太高了，开源负担不起，自己投资的法国大模型Mistral将会转为闭源路线了。
+公司CEO的目标是最大化收入，也就是 …  </content></entry><entry><title>Windows查看iPhone的heic图片</title><url>/note/windows%E6%9F%A5%E7%9C%8Biphone%E7%9A%84heic%E5%9B%BE%E7%89%87/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>windows</tag><tag>软件</tag><tag>2025-01</tag></tags><content type="html">  摘要：在windows查看heic图片的方式
+更新到win11 23H2, 使用自带的图片应用就可以查看heic图片。但是图片亮度过曝，和原照片不一致。 下载xnview classic, 安装heic_x32插件。查看图片时比原片亮度稍低，但观感比windows自带的好。   </content></entry><entry><title>Windows安装CUDA Toolkit</title><url>/note/windows%E5%AE%89%E8%A3%85cuda-toolkit/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>windows</tag><tag>软件</tag><tag>2025-01</tag></tags><content type="html"><![CDATA[  摘要：在windows环境下安装cuda的方式及注意事项。
+需要确保C盘空间足够，预留10G。
+Cuda在安装图形驱动时就已经安装了，欠缺的是cuda toolkit和cuDNN。二者都可以从英伟达官网下载，其中cuDNN需要登录账号。
+使用nvidia-smi可以看到目前的显卡驱动和cuda版本：最大支持12.7，安装12.6就行。
+安装cuda toolkit，注意选择驱动支持的版本（https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html）。默认会同时安装图形驱动，取消勾选。还有visual studio integerate如果没有安装vs的话也可以取消勾选。
+安装cuDNN其实就是解压后把对应的目录拷贝到cuda的安装目录：
+D:\Software\cudnn-windows-x86_64-8.9.7.29_cuda12-archive\bin\* -&gt; C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\bin
+D:\Software\cudnn-windows-x86_64-8.9.7.29_cuda12-archive\lib\* -&gt; C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\lib\x64
+D:\Software\cudnn-windows-x86_64-8.9.7.29_cuda12-archive\include\* -&gt; C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\include
+安装pytorch(https://pytorch.org/get-started/locally/)，需要注意的是截至20241210，稳定版2.5.1只支持到12.4，只能下载测试版才支持12.6
+复制命令到cmd里安装就行（管理员权限运行）
+使用这段代码测试是否成功：
+import torch if torch.cuda.is_available(): print(f&#34;CUDA is available. GPU:{torch.cuda.get_device_name(0)}&#34;) else: print(&#34;CUDA is not available.&#34;) 参考链接https://www.cnblogs.com/UnderTurrets/p/18379274  ]]></content></entry><entry><title>Win11专业版完全禁止自动更新</title><url>/note/win11%E4%B8%93%E4%B8%9A%E7%89%88%E5%AE%8C%E5%85%A8%E7%A6%81%E6%AD%A2%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>windows</tag><tag>软件</tag><tag>2025-01</tag></tags><content type="html"><![CDATA[  摘要：windows更新容易出bug，直接禁用。
+官方操作步骤组合键 Win + R 输入 gpedit.msc 回车 打开组策略编辑器：计算机配置 &gt; 管理模板 &gt; Windows组件 &gt; Windows 更新 &gt; 管理最终用户体验，双击进入。
+进入后选择 配置自动更新，右键编辑属性，在弹出的配置窗口中选择 已禁用。
+利用工具下载联想推出的“关闭Win11系统自动更新.exe”。注意这个工具禁用更新后，windows store就用不了了。
+参考链接windows论坛联想工具  ]]></content></entry><entry><title>Vmware虚拟机没有网络？</title><url>/note/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%B2%A1%E6%9C%89%E7%BD%91%E7%BB%9C/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>数码</tag><tag>虚拟机</tag><tag>2025-01</tag></tags><content type="html"><![CDATA[  摘要：第一次遇到虚拟机安装完系统显示没网的情况，估计是之前用联想管家更新驱动导致网络设置出了问题。有段时间用UU加速器也一直超时丢包。
+虚拟机安装完win10一直显示没网，使用NAT或桥接模式都没网。
+查询后通过添加虚拟机网络恢复 简要如下：
+VMware-&gt;编辑-&gt;虚拟网络编辑器-&gt;更改设置-&gt;添加网络-&gt;VMnet8、Nat模式-&gt;确认。
+  ]]></content></entry><entry><title>电脑散热：热管，风冷，水冷</title><url>/note/%E7%94%B5%E8%84%91%E6%95%A3%E7%83%AD%E7%83%AD%E7%AE%A1%E9%A3%8E%E5%86%B7%E6%B0%B4%E5%86%B7/</url><categories><category>笔记</category></categories><tags><tag>数码</tag><tag>散热</tag><tag>2025-01</tag></tags><content type="html">  摘要：介绍一下热管的工作原理与风冷水冷的散热方式。
+原理牛顿冷却定律：一个物体的热量散失速率与该物体周围的环境温度成正比。也就是说，物体与环境的温差越大，热量散的越快。
+CPU高负载工作时，温度急剧升高，热量传递到散热器，散热器与周围空气的温差就越大，热传递就越高。当散热器的温度高到一定程度后，散热器能够散发出去的热量和CPU最大功率产生的热量相等时，温度就不会再上升。只要此时CPU的温度低于危险工作温度，那散热器就是够用的。
+除了温差，影响散热的另一个要素是表面积。CPU的表面积很小，如果直接拿风扇吹CPU，散热效率非常低。所以需要先把热量从CPU传递到散热器，散热器利用空气的对流散失热量。散热器和空气接触的表面积越大，对流面积越大，热量散失的也就越快。如果再加上风扇加强对流，那散热器就能更高效的工作了。这就是风冷散热器。
+简而言之：热量从CPU到达散热器，散热器利用温差和对流将热量散发到空气。散热器表面积越大，效率也越高。
+热管原理就是液体蒸发时吸收热量，液化时释放热量。
+热管的内部装有冷却液，并且气压非常低，也就是沸点很低。热管工作时，热管的一头（蒸发端）吸收热量使水变成气体，然后在另一端（冷凝端）进行散热，当气体到达冷凝端就会液化成水，当蒸发端气体不断增加，冷凝端气体不断减少，就会形成压强差，使气体自发从蒸发端跑到冷凝端。水通过热管内部吸液芯的毛细管作用流回蒸发端，如此循环往复，就达成了热量交换。
+热管不光以管状形式出现，还会以板状形式出现，如均热板。
+风冷常见的风冷散热器有 塔式鳍片散热器和挤铝式下压散热器。它们都是将CPU的热量传递到热管，热管再传递到鳍片，鳍片再利用风扇快速的将热量散热到空气中。
+水冷水冷主要由冷头、水管、冷排、风扇构成。常见的是一体式水冷和分体式水冷。
+工作时冷头直接接触CPU，内部包含泵机和微水道。冷水流过微水道后带着热量，再通过泵机流到冷排上，冷排之间有很多水道，水道之间有大量密集鳍片。热水流入后把热量传递给鳍片，再通过风扇加强与空气的流通，将热水的热量散发到空气中。降温后的冷水再通过泵机流回冷头，如此循环往复。
+由上述可知冷排的尺寸是散热能力的关键，尺寸越大，与空气的接触越多，散热效率越高。常见的冷排有120mm，240mm，360mm。
+最后不管风冷还是水冷，最终都要和空气交换热量，所以散热器降温的极限不会低于室温， …  </content></entry><entry><title>Mac通过容器运行深信服easy Connect</title><url>/note/mac%E9%80%9A%E8%BF%87%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%B7%B1%E4%BF%A1%E6%9C%8Deasy-connect/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>mac</tag><tag>软件</tag><tag>折腾</tag><tag>2025-01</tag></tags><content type="html"><![CDATA[  摘要：公司用的深信服easy Connect进行内网连接。但是这个软件过于流氓，在windows上会占用u盘导致无法弹出，而且还会生成根证书，想干什么不得而知。为了防止它继续祸害，决定把它丢到docker里运行。如果失败，建议用虚拟机而不是在本地安装。
+安装dockerhttps://docs.docker.com/desktop/下载arm版docker desktop
+安装完后进入setting，关闭docker自动更新。找到docker engineer选项，更换库源，加入以下代码：
+&amp;#34;registry-mirrors&amp;#34;: [ &amp;#34;http://hub-mirror.c.163.com&amp;#34;, &amp;#34;https://docker.mirrors.ustc.edu.cn&amp;#34;, &amp;#34;https://registry.docker-cn.com&amp;#34;, &amp;#34;https://dockerhub.azk8s.cn&amp;#34;, &amp;#34;https://reg-mirror.qiniu.com&amp;#34; ] terminal输入docker info可以看到Registry Mirrors添加成功了没有。
+打开terminal，输入nohup docker run --device /dev/net/tun --cap-add NET_ADMIN -ti -e PASSWORD=mypass -e URLWIN=1 -e DISABLE_PKG_VERSION_XML=1 -p 127.0.0.1:5901:5901 -p 127.0.0.1:1080:1080 -p 127.0.0.1:8888:8888 hagb/docker-easyconnect:7.6.7 &amp;gt; /dev/null &amp;amp; 其中passwd和7.6.7可以更改为适合自1.己的版本。
+等拉取完(一两分钟)后容器会自动运行。在docker desktop里可以看到。
+之后需要运行只需要在docker desktop里开始，停止就行。
+修改clash x的配置文件将原本的配置文件内容复制到新建的sf.yaml中。防止clash自动刷新后将修改清除。
+修改sf.yaml，在proxies和rules添加如下语句：（凡是10开头的内网ip地 …  ]]></content></entry><entry><title>象棋界大地震录音门事件</title><url>/post/%E8%B1%A1%E6%A3%8B%E7%95%8C%E5%A4%A7%E5%9C%B0%E9%9C%87--%E5%BD%95%E9%9F%B3%E9%97%A8%E4%BA%8B%E4%BB%B6/</url><categories><category/></categories><tags><tag>新闻</tag><tag>2025-01</tag></tags><content type="html">  摘要：录音门从2023年4月曝光，期间2024年9月官方公告处理过王天一、王跃飞两人。但2025年1月12日的公告却直接让整个象棋界来了个大洗牌。象棋等级分前十的选手里，前三的王天一、郑惟桐、赵鑫鑫、第六的汪洋被终生禁赛，排名第八的郝继超也被禁赛4年并撤销等级称号。这一次，真的是“高手在民间”了。
+处理结果（截至2025年1月12日）官方的公告是还在继续查，不知道第三批还会有哪些人被处罚。
+过程初步发酵（2023年）2023年4月，一段长达12分钟的录音在网络上曝光，录音内容涉及两位中国象棋特级大师王跃飞和郝继超的对话。录音中，两人讨论了买棋、卖棋、操纵比赛结果、软件作弊等违规行为，期间提及中国象棋等级分连续十年排名第一的棋手王天一。
+2023年7月，中国象棋协会介入调查。
+2023年8月4日，随后王天一以“身体健康原因”退出杭州亚运会比赛。象棋大师党斐在直播中认为王天一不参加亚运会是被协会禁赛，特级大师柳大华则公开表态“录音可能是真的”。但8月18日，王天一却出席了象甲第二轮比赛。
+2023年10月17日，柳大华公开举身份证举报时任国家体育总局棋牌运动管理中心副主任郭莉萍，“长期以来，她包庇纵容中国象棋界的黑恶势力，公然使用电脑软件以及现代科技手段，操纵包办国内各种大型比赛的胜负与奖金分配”。
+第一次处理（2024年）2024年8月，据《经济观察报》报道，王天一因涉嫌“买卖棋”，被批准逮捕。
+2024年9月19日，中国象棋协会公布了对“录音门”事件的处罚结果，“查明王天一、王跃飞等运动员存在买棋卖棋操纵比赛等违规行为，时间跨度长、频次高，性质非常恶劣，情节非常严重”，给予终身禁赛、撤销所有称号的处罚。
+2024年12月16日，据《环球时报》报道，国家体育总局免去朱国平的棋牌运动管理中心（中国棋院）主任（院长）、党委书记职务，免去郭玉军的棋牌运动管理中心纪委书记职务，还免去郭莉萍试任的健身气功管理中心副主任职务。被柳大华举报后，国家体育总局曾安排郭莉萍试任健身气功管理中心副主任。
+第二次处理（2025年）2025年01月12日，国家体育总局棋牌运动管理中心召开全国棋牌领域赛风赛纪警示教育会，通报对41名违规人员的处罚决定：
+终身禁赛：赵鑫鑫、汪洋、郑惟桐等3人
+禁赛数年：王廓（7年6个月）、孙逸阳（7年）、赵金成（6年）等34人
+通报批评：曹岩磊等4人
+参 …  </content></entry><entry><title>混乱的分辨率：1920*1080=2K ？</title><url>/note/%E6%B7%B7%E4%B9%B1%E7%9A%84%E5%88%86%E8%BE%A8%E7%8E%87192010802k-/</url><categories><category>笔记</category><category>比特乾坤</category></categories><tags><tag>分辨率</tag><tag>2025-01</tag></tags><content type="html">  摘要：大多数人的认知里，1920x1080应该是1080p，而非2K。但是数字电影联盟的标准里2K却是2048x1080。这其实是电影行业和显示器行业标准不同导致。
+分辨率表示方式目前分辨率有两种表示方式：
+以长作为分辨率：一般以K为后缀。如长边有2048个像素点，那就称2K；有4096个像素点，那就称4K。而目前国内电脑常用的2.5K，就是因为长边有2560个像素点。这是根据数字电影联盟（DCI）的标准，它跳过1k直接把2048x1080这个定义为2k，是有意为之。 以宽作为分辨率：一般以P为后缀，表示显示器逐行扫描的行数。如宽有1080行，就称为1080P；有2160行，就称为2160P。而目前国内厂家为了数据好看，很少用这个标准。一般都是标注2K、2.5K之类。 2K=2048*1080的由来对于早期的的电视而言，有着HD标准。也就是分辨达到720p（1280x720）以上，FHD指的是1080p。
+电视或显示器的长宽比普遍为16:9，而好莱坞电影制作大多使用17:9的长宽比，因此DCI（由多家好莱坞电影公司共同成立的组织，旨在制定数字影院的技术标准。）公布2048x1080=2k时是以电影行业的屏幕宽比为标准的。长边多出来的128个像素主要是方便拍摄与剪辑。它们定义2048x1080=2k可能是故意让人们以为影院看比电视上看更清晰，但实际上并没有。
+DCI规定的4K也和如今电视行业的3840x2160不同，它的是4096x2160。也是基于电视和电影制作时长宽比不同而设定的。
+混乱开始厂家也了解这些，于是开始替换概念宣传。比方说某厂商在2020年将3168x1440称为3K屏！之后还有某厂商在2021年将1920x1080分辨率称为2K屏！这些统统都是各家厂商自定义的标准。
+事实上DCI定义的2k和4k只是用在电影制作领域。更普遍被消费者了解的其实是电视或显示器对分辨率的定义：1920x1080是1K，2560x1440才是2K，3840x2160才是4K。
+厂商为了宣传数据好看，故意混淆各种概念，这才模糊了大众几乎对分辨率的认识。
+好在大多数人都是理智的，不会真的认可3168x1440是3k屏（某厂商宣传时修改成了2.5k屏）。
+归根结底，电影行业的标准和显示器行业的标准不应该为了宣传而混淆。尤其是手机屏幕和电脑屏幕，都是显示器，分辨率也应该跟着显示 …  </content></entry><entry><title>视频为什么会糊？蓝光、码率、分辨率</title><url>/note/%E8%A7%86%E9%A2%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E7%B3%8A%E8%93%9D%E5%85%89%E7%A0%81%E7%8E%87%E5%88%86%E8%BE%A8%E7%8E%87/</url><categories><category>笔记</category><category>比特乾坤</category></categories><tags><tag>蓝光</tag><tag>码率</tag><tag>分辨率</tag><tag>2025-01</tag></tags><content type="html">  摘要：主要介绍一下什么是蓝光、码率、分辨率，以及它们之间的区别。重点介绍码率和蓝光，分辨率太混乱，单独介绍。
+蓝光蓝光：blue-ray disk。光盘的一种，并无特指某种清晰度。最大的特点是容量大，最低25GB，最大128GB。普通CD只有650-700MB，DVD只有4.7-15.8GB。
+分辨率分辨率：包含图像分辨率，屏幕分辨率，打印分辨率等。图像分辨率指图像文件中的像素数量，通常以宽度 × 高度的形式表示，如1080P为1920x1080 像素。屏幕分辨率指显示屏上能显示的像素数，屏幕的分辨率越高，屏幕能够显示的细节就越多，图像就越清晰。
+如果屏幕分辨率为4k（3840x2160），需要显示1080p的图片，此时图片的一个像素点可以对应屏幕的四个像素点，图片显示正常。但如果屏幕分辨率为2K（2560x1440），需要显示1080p图片，此时像素点就无法对齐，通常是通过拉伸来显示（或者不拉伸，但图片就会变得更小），使得图片失真。也就是说，可以把一个1080p的图片强制拉伸成2k或者4k的图片，所以使用ppi（每英寸像素）或者码率来表示画面的精细程度更加合适。
+码率码率：一秒钟包含的数据量（比特数），如视频的 10 Mbps，音频的 320 kbps。
+Netflix曾经做过调查，码率达到3Mbps时，720p和1080p视频的观感都有90分以上，也就是大部分人都能接受。如此计算，一部两小时的电影，大小至少要达到3Mbps/8 * 2 * 60 * 60 = 2700MB。注意这只是视频大小，还有音频、字幕等等没计算。而如果码率达到24Mbps, 体积就至少有21.6GB！这也是为什么手机或相机拍出来的视频体积非常大的原因。
+为什么同样分辨率下蓝光盘的视频体积有几十个G？因为蓝光盘的码率非常高，而视频网站为了节省流量，码率非常低。同样1080P码率，h.264编码下，蓝光盘视频码率能达到27Mbps，而视频网站，如爱奇艺“蓝光1080P”只有1.97Mbs，优酷“蓝光1080P”只有0.77Mbps，腾讯视频“高清SDR”只有0.55Mbps，而Netflix却有5.7Mbps。
+根据up柴知道的测试，国内流媒体平台的视频码率：B站高码率（3.97Mbps）&amp;amp;gt;爱奇艺1080P蓝光（1.73Mbps）&amp;amp;gt;B站普通（1.24Mbps）&amp;amp;raquo; …  </content></entry><entry><title>使用HandBrake烧录字幕到视频里</title><url>/note/%E4%BD%BF%E7%94%A8handbrake%E7%83%A7%E5%BD%95%E5%AD%97%E5%B9%95%E5%88%B0%E8%A7%86%E9%A2%91%E9%87%8C/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>软件</tag><tag>2025-01</tag></tags><content type="html"><![CDATA[  摘要：使用HandBrake这个软件，将外挂字幕烧录到视频里面，顺便还能缩小视频体积，转换格式。觉得手机拍摄的视频太占空间也可以使用这个软件在保证质量的情况下极大的缩小文件体积。附带利用vscode转换文本编码。
+主要步骤下载handbrake: https://handbrake.fr/downloads.php打开源，选择视频或视频文件夹
+设置视频、音频码率，选择字幕文件
+在视频标签页中，一般保持1080p 30, 默认就行
+如果需要GPU加速，可以在编码器选择对应的选项，如H.264(Nvenc)&ndash; N卡专用。
+音频的话可以查看源文件音频码率，选择合适的。默认是160kb/s，可以改为和源文件一样的，如192kb/s。
+选好视频、音频设置后，点击字幕标签&ndash;轨道&ndash;导入字幕，选择字幕文件，点击burn in框，删除原来的列。
+最后点击“添加到队列中”（多个文件）或者直接开始编码（单个文件）
+整个流程演示：利用VsCode将字幕文件由中文GBK编码转化为UTF8编码先打开GBK编码的视频文件，发现乱码；点击右下角编码， reopen with gbk； 再次点击右下角编码，save as utf8。
+使用PR烧录有时候用handbrake烧录会失败，此时可以用PR替代。直接将视频和字幕添加到PR的项目里，然后把视频和字幕拉到右边的编辑栏导出即可。
+字幕文件时间必须有序给索尼克电影拉取字幕时发现的问题。
+字幕文件在PR里只显示到41:00左右，原因就是字幕文件存在这么一段:
+684 00:41:14,590 &ndash;&gt; 00:40:57,000
+可以看出时间从41秒到40秒，这肯定是不对的。把40:57改成41:16，之后再导入PR就能全部显示了。
+  ]]></content></entry><entry><title>Macbook air m1不要升级macOS15</title><url>/note/macbook_air_m1%E4%B8%8D%E8%A6%81%E5%8D%87%E7%BA%A7macos15/</url><categories><category>杂谈</category><category>闲言碎语</category></categories><tags><tag>软件</tag><tag>Mac</tag><tag>2025-01</tag></tags><content type="html">  摘要：一开始比较纠结macbook air m1 8g内存要不要升级macOS15，最终结论是不要。 8g内存日用都不太够，升级15就更加捉襟见肘，而且续航也会缩短很多。附带Safari去广告方式。
+之前想用chatgpt桌面版时，想升级14，但查了一圈后放弃了。这次想用Ghostery插件给Safari去广告，想升级的，但是发现可以在设置里单独升级Safari，不用升级系统。再加上看了一圈国内外的评价，都在吐槽8g的升级后体验不好。reddit的一篇帖子有专门讨论。
+原帖链接：https://www.reddit.com/r/MacOS/comments/1fmq9ux/initial_macos_sequoia_stable_update_review_on/?sort=new
+总结如下：
+运存占用异常，AI会额外占用运存（大约2g），并且15.0时开启swap会导致电脑卡顿，20241224时15.1似乎解决，但是运存相比之前系统还是非常吃紧。 可能造成WIFI断流问题。同一个WIFI，手机有网，电脑没网。 chrome浏览器可能处于不可用状态。很多tab打不开。 触控板可能会抽风失灵。 耗电增加，续航减少。 Safari去广告使用Ad block Pro去除B站广告时有时广告只是不显示，但广告还是占着网页上的空间，甚至tab还会自动轮转。而打开Ghostery后这块空间就消失了。也因此单独把Safari升级到最新版，不然用不了Ghostery。
+  </content></entry><entry><title>MacOS安装homeBrew及监控实时功耗</title><url>/note/macos%E5%AE%89%E8%A3%85homebrew%E5%8F%8A%E7%9B%91%E6%8E%A7%E5%AE%9E%E6%97%B6%E5%8A%9F%E8%80%97/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>mac</tag><tag>软件</tag><tag>2025-01</tag></tags><content type="html"><![CDATA[  摘要：介绍了如何在ARM芯片上安装homebrew。最初写于2022年，基于MacMini。2024年更新为基于Macbook air，并且用homebrew安装asitop来监控MacBook的实时功耗，安装smartmontools来查看查看磁盘的写入与读取。
+20241205更新：homebrew的好处是一个命令就能下载软件，而且会自动配好环境变量。下载时实际上不需要修改host，只要clashx开启增强模式，直接运行install就没问题。还需要注意的是安装完需要按照提示添加环境变量。在命令行依次输入
+echo &amp;raquo; /Users/rao/.zprofile
+echo &amp;rsquo;eval &amp;ldquo;$(/opt/homebrew/bin/brew shellenv)&amp;rdquo;&amp;rsquo; &amp;raquo; /Users/rao/.zprofile
+eval &amp;ldquo;$(/opt/homebrew/bin/brew shellenv)&amp;rdquo;
+安装完后硬盘剩余空间对比
+最主要的是xcode的command line，占用了2.37G。
+利用smartmontools查看硬盘写入量brew install smartmontools
+smartctl -a disk0 | awk &amp;lsquo;/SMART/Health Information/,/^$/&amp;rsquo;
+20241205日结果如下：
+SMART/Health Information (NVMe Log 0x02)
+Critical Warning: 0x00
+Temperature: 35 Celsius
+Available Spare: 100%
+Available Spare Threshold: 99%
+Percentage Used: 0%
+Data Units Read: 6,991,706 [3.57 TB]
+Data Units Written: 3,203,066 [1.63 TB]
+Host Read Commands: 162,196,009
+Host Write Commands: 65,625,988
+Controller Busy Time: 0
+Power Cycles: 91
+Power On Hours: 131
+Unsafe …  ]]></content></entry><entry><title>MacOS使用Hugo</title><url>/note/macos%E4%BD%BF%E7%94%A8hugo/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>建站</tag><tag>折腾</tag><tag>mac</tag><tag>2025-01</tag></tags><content type="html">  摘要：将Blog项目文件拷贝到onedrive后，开始在macbook air上进行内容编写与发布。
+安装推荐开启科学上网，不然太慢了。
+安装ARM版Hugoarch -arm64 brew install hugo
+本次安装的为hugo v0.139.5+extended+withdeploy darwin/arm64 BuildDate=2024-12-14T19:16:21Z VendorInfo=brew`版本
+安装Goarch -arm64 brew install go
+本次安装的为go version go1.23.4 darwin/arm64
+使用和Windows使用区别不大，命令都是一样的。需要注意的是以下两点：
+本地生成ssh私钥公钥，添加公钥到github设置里。​	ssh-keygen -t rsa -b 4096 -C &amp;quot;name@outlook.com&amp;quot;
+上传时如果之前有关联过https格式git仓库链接，可能提示输入用户名、密码，但是即使密码正确也不能登陆。
+需要改成ssh链接：git remote set-url origin git@github.com:user_name/repo_name.git
+默认的名字和邮箱是mac的本地用户名和机型，可以通过github &amp;ndash;config更改
+Committer: admin admin@admindeMacBook-Air.localYour name and email address were configured automatically based on your username and hostname……
+Git全局忽略 .DS_Store 文件由于Mac会默认生成.DS_Store文件，可以通过配置让git忽略这个文件。
+vim core.excludesfile ~/.gitignore_global # 添加一行：.DS_Store git config --global core.excludesfile ~/.gitignore_global 将Blog目录上传到新的私有仓库github page需要仓库是公开的，但是其实部署GitHub page只需要Public文件夹即可。
+而Blog文件夹则可以放到一个私有的仓库Blog-Project里面。
+步骤很简单，但需要注意的是要在根目录编辑.gitignore文件，添加public/。表示忽略public目录。
+  </content></entry><entry><title>CW 闪电侠、超级少女、绿箭侠、明日传奇联动整理</title><url>/daily/cw-%E9%97%AA%E7%94%B5%E4%BE%A0%E8%B6%85%E7%BA%A7%E5%B0%91%E5%A5%B3%E7%BB%BF%E7%AE%AD%E4%BE%A0%E6%98%8E%E6%97%A5%E4%BC%A0%E5%A5%87%E8%81%94%E5%8A%A8/</url><categories><category>杂谈</category><category>影视游戏</category></categories><tags><tag>超英</tag><tag>2025-01</tag></tags><content type="html"><![CDATA[  摘要：收集了CW频道十年中闪电侠、超级少女、绿箭侠、明日传奇几部剧的具体联动集数。并且每一次联动都合并成了一个mp4文件。
+First-VS第一次联动：闪电侠VS绿箭侠
+闪电侠S1E08&amp;mdash;&amp;gt;绿箭S3E08
+2015-Together闪电侠团队与绿箭侠团队联手对抗不死野人萨维奇，与鹰侠和鹰女并肩作战
+闪电侠S2E08&amp;mdash;&amp;gt;绿箭S4E08
+2016-FlashAndSuperGirl闪电侠第一次穿越次元来到超女的宇宙联手对敌
+超女S1E18
+2016-Dominators北京时间2016年11月29日，CW电视台将播出《四剧联动特别篇：支配者入侵》（序言）；11月30日播出《四剧联动特别篇：支配者入侵》（上篇）；12月1日播出《四剧联动特别篇：支配者入侵》（中篇）；12月2日播出《四剧联动特别篇：支配者入侵》（下篇）。约20位超级英雄将出现在联动特别篇中，正义联盟总部也将首次在电视中亮相。在《四剧联动特别篇：支配者入侵》（中篇）观众还将看到奥利弗已经逝世的父母和前女友黑金丝雀一起回归。DC漫画中的超级反派丧钟也将登场。 [1-2]联动篇中，CW将融合四剧主题BGM旋律全新编曲，带来四剧融合版BGM。
+超女S2E08&amp;mdash;&amp;gt;闪电侠S3E08&amp;mdash;&amp;gt;绿箭S5E08&amp;mdash;&amp;gt;明日传奇S2E07
+2017-Duet超女受到高维度生物音乐大师的催眠而陷入梦境，超女团队随着线索到1号地球向闪电侠团队求助，而闪电侠也意外被音乐大师催眠陷入同一个梦境。
+超女S2E16&amp;mdash;&amp;gt;闪电侠S3E17
+2017-Earth X2017年11月27日，DC联动集：CRISIS ON EARTH X （地球X的危机）
+超女S3E08&amp;mdash;&amp;gt;绿箭S6E08&amp;mdash;&amp;gt;闪电侠S4E08&amp;mdash;&amp;gt;明日传奇S3E08
+2018-ElseWorld2018年12月9日，CW台再一次进行《闪电侠》《绿箭侠》《超女》的联动大事件（《明日传奇》将不参与这次联动）。故事始于阿卡姆疯人院博士John Deegan重写现实，导致绿箭侠和闪电侠交换生命，在这个新的现实中，巴里·艾伦变成了奥利弗·奎恩（绿箭侠），奥利弗·奎恩变成了巴里·艾伦（闪电侠），而这两位英雄是唯一知道他们在错误的生活 …  ]]></content></entry><entry><title>关于网站</title><url>/about.html</url><categories><category>杂谈</category></categories><tags/><content type="html">  人生到处知何似，应似飞鸿踏雪泥。
+泥上偶然留指爪，鸿飞那复计东西。
+萍水相逢，欢迎留言。如果遇到评论或图片加载不出，请打开“科学上网”。
+  </content></entry><entry><title>站点示例</title><url>/flinks.html</url><categories/><tags/><content type="html">  如想交换本站友情链接，请在评论区留下你的站点信息，格式参考如下：
+- name: 亭轩阁 desc: 收录遇到的问题，分享解决方法 avatar: https://tingxuanr.github.io/imgs/my_avatar.png link: https://tingxuanr.github.io   </content></entry></search>
