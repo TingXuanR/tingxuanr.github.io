@@ -21,7 +21,12 @@ H.264 粗略的讲，这个编码就是把视频画面里不变或相似的部�
 刚开始还比较克制，只是使用更先进的编码，如H.265、AV1等，根据设备的不同发送不同码率的视频。
 理论上更高的编码格式意味着用更少的流量就可以让用户看清晰的视频，应该是用户和平台双赢的局面。但是，对视频进行不同程度的编码，这就意味着需要更多的算力，它们还想继续降低成本。于是，事情开始离谱。
 首先，所有上传到视频平台的视频都会被进行压缩，并且为了让视频看起来没那么模糊，还给视频增加了锐化，导致视频失真。其次，对于同一个视频，如果看的人少，那么码率会高一些。一旦这个视频观看的人多了，视频的码率便会急剧降低；再者，当用户在观看一个视频时，视频的编码和码率会不断的变化，也就是说平台会动态切换用户看到的视频源。并且，很多时候，H.265这个更高效的编码视频清晰度甚至不如H.264的视频，因为平台给H.265压制的码率实在太低了。
-最终，目前的局面就是平台（不只B站）为了节省流量，无底线的降低视频码率，现在有的1080p视频的码率甚至只有500kpbs不到！Apple Music上一首标准无损音质的音乐码率都能达 …  </content></entry><entry><title>关于旁路供电</title><url>/note/%E5%85%B3%E4%BA%8E%E6%97%81%E8%B7%AF%E4%BE%9B%E7%94%B5/</url><categories><category>笔记</category></categories><tags><tag>数码</tag><tag>2025-08</tag></tags><content type="html">   摘要 如题
+最终，目前的局面就是平台（不只B站）为了节省流量，无底线的降低视频码率，现在有的1080p视频的码率甚至只有500kpbs不到！Apple Music上一首标准无损音质的音乐码率都能达 …  </content></entry><entry><title>任天堂的独创</title><url>/daily/%E4%BB%BB%E5%A4%A9%E5%A0%82%E7%9A%84%E7%8B%AC%E5%88%9B/</url><categories><category>杂谈</category><category>影视游戏</category></categories><tags><tag>任天堂</tag><tag>2025-08</tag></tags><content type="html">   摘要 任天堂虽然不是最早的游戏公司，但却屡屡做出改变游戏界的重大创新。几十年来，受到了不少质疑，但它的独创精神却可以坚信。当2D平台跳跃发展到瓶颈，任天堂用《Super Mario Bros: Wonder》展现在2D平面上开拓场景变化的新维度；当3D开放世界趋于同质时，任天堂用《Zelda：Tears Of Kingdom》让玩家发挥想象力，在乘法规则的世界里创造只属于自己的游戏体验。
+此处记录一些任天堂的独创产物，可以看出任天堂对业界的贡献确实无人能及。
+十字方向键（D-Pad） 1982 年，任天堂在 Game &amp;amp;amp; Watch 掌机的《大金刚》机型中首次应用十字方向键。这一设计以平面化的四向按键替代传统摇杆，既提升操作精准度，又节省空间，成为后续掌机和家用机的标配。FC（红白机）进一步将其普及，至今仍是手柄上必备按键。
+A/B 键布局与肩键 A/B 键：1983 年 FC 手柄首次采用 **十字键 + 右侧双按键（A/B）**的布局，奠定现代手柄基础。 肩键：1990 年超级任天堂（SFC）手柄引入L/R 肩键，通过食指操作扩展复杂指令，直接影响后续所有控制器设计。 游戏存储 卡带存储：1983 年 FC采用可拆卸游戏卡带，取代游戏机只能玩预装游戏的设计，大幅降低玩家成本并延长主机寿命。 红外通信：1998 年 Game Boy Color 首次支持红外联机，玩家可通过无线传输交换数据或对战，为《口袋妖怪》系列社交玩法提供基础。 掌机 Game &amp;amp;amp; Watch：1980 年推出的首款掌机，内置独立游戏并采用十字键，被公认为现代掌机的雏形。 Game Boy：1989 年发布的首款真正意义上的便携游戏机，凭借《俄罗斯方块》《口袋妖怪》等游戏全球销量超 1.2 亿台，开创掌机市场统治时代。 VR 1995 年 Virtual Boy 通过视差原理实现立体视觉效果。尽管因单色显示和市场表现不佳而失败，但其技术探索为后续 VR 设备奠定基础。
+摇杆 1996 年N64 手柄首次配备3D 模拟摇杆，通过检测 XY 轴向量实现全方向精准控制，解决了 3D 游戏的操作难题。这一设计成为《超级马里奥 64》《塞尔达传说：时之笛》等里程碑作品的核心交互基础。
+开放世界与3D游戏教科书 1996 年《超级马里奥 64》首次在 3D 空间中实现自由探索与多路径通 …  </content></entry><entry><title>关于旁路供电</title><url>/note/%E5%85%B3%E4%BA%8E%E6%97%81%E8%B7%AF%E4%BE%9B%E7%94%B5/</url><categories><category>笔记</category></categories><tags><tag>数码</tag><tag>2025-08</tag></tags><content type="html">   摘要 如题
 原文链接 锂电池充放电：
 放电时（正向反应）：负极（如石墨）的 Li + 脱出，经电解液迁移到正极（如 LiCoO₂），电子经外电路流向正极，释放电能； 充电时（逆向反应）：外接电源迫使电子反向流动，Li + 从正极脱出，回到负极嵌入，储存电能。 结论：锂电池不会一边正向反应一边逆向反应，也就不会一边充电一边放电。
 厂商宣传的旁路充电是指直接用电源给手机供电，此时电池基本处于闲置状态，从而降低发热及减少电池损耗。
@@ -39,7 +44,7 @@ H.264 粗略的讲，这个编码就是把视频画面里不变或相似的部�
 稳定币是加密货币的一种。加密货币的价值会波动，今天值3美元，明天值5美元，后天值2美元。而稳定币就是价值稳定的加密货币。以最大的稳定币 USDT 为例，它是 Tether 公司在2014年开始发行的，1USDT=1美元。
 稳定币由于是加密货币，所以容易逃避监管。美国今年通过的《GENIUS法案》，开始要求稳定币发行公司必须在政府管辖范围，获得政府许可。
 由于港币与美元汇率固定，香港的稳定币条例实际创建了一种与美元绑定，但又不受美国监管的货币。
-中国大概率不会推行稳定币。
+中国大陆大概率不会推行稳定币。
   </content></entry><entry><title>国外手机号Giffgaff获取与激活</title><url>/note/%E5%9B%BD%E5%A4%96%E6%89%8B%E6%9C%BA%E5%8F%B7giffgaff%E8%8E%B7%E5%8F%96%E4%B8%8E%E6%BF%80%E6%B4%BB/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>数码</tag><tag>任天堂</tag><tag>2025-07</tag></tags><content type="html">   摘要 英国手机号giffgaff的申请与激活，用于打开NS2的语音聊天功能。
 国外手机号Giffgaff获取与激活 重点 giffgaff是英国运营商，支持无月租、5G、esim、WiFi-Call 申请免费，但需要充值10英镑激活获取手机号 官网可以发邮件到国内，但是“平邮”，可能不会打电话，也无法追查邮件信息。所以地址要写清楚（不确定的话可以多申请几次），精确到楼号，邮递员会放到小区邮箱；或者寄到公司，会放到前台。邮寄花费时间不定，上海大概一周左右能收到，也可能花两周甚至数月【20250729更新：第一次申请了三张，一周后到了两张。第二次申请了三张，等了半个月，收到四张（有一张是第一次申请的）。】 每180天需要有一次消费，如发一条短信或开一下漫游，不然号会被回收 关闭漫游，不然流量费非常贵 类型 giffgaff收费 收短信 免费 发短信 0.3英镑/条 流量 0.2英镑/MB 拨/接打电话 1英镑/分钟 申请 官网申请：https://giffgaff.com/orders/affiliate/soguk097?app=1，走邀请链接后充值10英镑赠送5英镑。不走邀请的话没有赠送。
 申请时不要挂代理，用国内流量。如果没有出现“country”这个选项，换个网再试。
@@ -77,12 +82,12 @@ address太长可以分开写在line1和line2，建议带上手机号：Phone1xxx
 伏以佛者，夷狄之一法耳。自后汉时始流入中国，上古未尝有也。周文王年九十七岁，武王年九十三岁，穆王在位百年。此时佛法亦未至中国，非因事佛而致此也。
 汉明帝时始有佛法，明帝在位才十八年耳。其后乱亡相继，运祚不长。宋、齐、梁、陈、元魏已下，事佛渐谨，年代尤促。……
 宪宗看后觉得韩愈是在暗指尊崇佛教会使统治者短命，要处以极刑。宰相裴度等为韩愈求情，才改为贬韩愈潮州刺史（从陕西西安到广东潮州，走现代高速路也相隔一千八百多公里）。也正是在这个途中，写下了给侄儿韩湘子的诗“一封朝奏九重天，夕贬潮州路八千。欲为圣明除弊事，肯将衰朽惜 …  </content></entry><entry><title>月札202504</title><url>/daily/%E6%9C%88%E6%9C%AD202504/</url><categories><category>杂谈</category><category>闲言碎语</category></categories><tags><tag>经济</tag><tag>文化</tag><tag>时事</tag><tag>2025-04</tag></tags><content type="html">   摘要 港币汇率、对等关税、“伪古风”歌曲、明史
-经济 港币涨跌 ns2出了，由于日区的种种限制，还是直接去香港买方便。于是关注起港币与人民币的汇率，才知道港币锚定美元，随美元的涨跌而变化。对比进一年美元与港币和人民币的汇率变化，一模一样。
+经济 港币涨跌 ns2出了，由于日区的种种限制，还是买港版方便。于是关注起港币与人民币的汇率，才了解到港币锚定美元，随美元的涨跌而变化。对比进一年美元与港币和人民币的汇率变化，一模一样。
 现在由于特朗普的关税战，美元涨到一个新的高度。对比下特朗普的上一任期，美元也是上涨。让子弹再飞一会吧。
 中国对美加征关税提高到145% 20250410，美国将中国的“对等关税”加至125%（加上之前20%的关税，中国商品在美国的关税是145%）。中国国务院在20240411发表声明：将对美国的加征关税从84%提高到125%。鉴于在目前税率水平下，美国输华商品已无市场接受可能，如果美方之后继续加征关税，中方将不予理会。
 中国是真的站立起来了。
 时事 关于特朗普“解决危机”的推文 This is Trump’s strategy: Creates a crisis that hurts people Claims the crisis is actually good The crisis gets really, really bad Trump then reverses his bad decision and takes credit for ending the crisis he created MAGA applauds him Every. Single. Time. 特朗普，真正的“股神” 2025年4月8日，因为特朗普的“对等关税”政策（4月2号宣布），美股断崖式下跌，蒸发5.8万亿美元，其中苹果直接下跌了23%。并且根据目前对中国的关税，一部iPhone顶配可能会高达6000美元。
-然而，4月9号，特朗普却于20250409 09:37在其自创社交平台 “Truth Social”上说“THIS IS A GREAT TIME TO BUY!!! DJT”（原文。DJT就是特朗普的公司的股票代码） 就在投资者们还在揣测这一呼吁背后意图之时，几个小时后的下午 1 点 30 分左右，特朗普宣布暂停对多国的 “对等关税” 90 天。这一消息如同一剂强心针，美股三大指数应声强势反弹。纳斯达克指数飙升 12%，创下 2001 年以来最大单日涨幅；标普 500 指数上涨 9.5%；道琼斯指数上涨 7.9% 。截至当日收 …  </content></entry><entry><title>刘和平采访</title><url>/note/%E5%88%98%E5%92%8C%E5%B9%B3%E9%87%87%E8%AE%BF/</url><categories><category>笔记</category><category>文字摘要</category></categories><tags><tag>摘要</tag><tag>历史</tag><tag>2025-04</tag></tags><content type="html">   摘要 刘和平在2017年的采访，可惜八年之后还是看不到《北斗南箕之歌》的任何消息。
+然而，4月9号，特朗普却于20250409 09:37在其自创社交平台 “Truth Social”上说“THIS IS A GREAT TIME TO BUY!!! DJT”（原文。DJT就是特朗普的公司的股票代码） 就在投资者们还在揣测这一呼吁背后意图之时，几个小时后的下午 1 点 30 分左右，特朗普宣布暂停对多国的 “对等关税” 90 天。这一消息如同一剂强心针，美股三大指数应声强势反弹。纳斯达克指数飙升 12%，创下 2001 年以来最大单日涨幅；标普 500 指数上涨 9.5%；道琼斯指数上涨 7.9% 。截至当日收盘，特 …  </content></entry><entry><title>刘和平采访</title><url>/note/%E5%88%98%E5%92%8C%E5%B9%B3%E9%87%87%E8%AE%BF/</url><categories><category>笔记</category><category>文字摘要</category></categories><tags><tag>摘要</tag><tag>历史</tag><tag>2025-04</tag></tags><content type="html">   摘要 刘和平在2017年的采访，可惜八年之后还是看不到《北斗南箕之歌》的任何消息。
 刘和平采访 原文 发布时间: 2017.07.13 11:45 摘录 你用社会属性去要求每个个体生命时，很多个体生命会本能地采取一种逆反心态；反而从个体属性来看待事物时，很多个体会认同。嘉靖就是为个人找理由的祖宗，他每句话都在为自己找理由，所以很多观众觉得这是对的；海瑞就是以伦理道德、社会秩序等社会属性来要求人的行为，自然引起很多人本能的逆反。这就是今天这个时代，所以我说要充分兼顾到每一个人对于个体生命的尊重和价值的追求。 《大明王朝1566》嘉靖诡辩性的“长江黄河论”：长江之水灌溉数省两岸之田地，黄河之水也灌溉两岸数省之田地，只能不因水清而偏用，也只能不因水浊而偏废，自古皆然。这个海瑞不懂这个道理，在奏疏里要朕只用长江而废黄河，朕其可乎？反之，黄河一旦泛滥，便需治理，这就是朕为什么罢黜严嵩杀严世蕃等人的道理。再反之，长江一旦泛滥，朕也要治理，这就是朕为什么罢黜杨廷和夏言杀杨继盛沈炼等人的道理。 历史剧，它的主语是剧。传统上也没有历史剧这一说，以往都是演义剧，民间演义，没有谁拿正史搬到台上去演。《雍正王朝》的八爷、九爷、十爷比历史上多活了十年，八爷前一天死，雍正第二天死，但历史上雍正三年八爷就死了，这是文学艺术。《大明王朝1566》也一样，“改稻为桑”是虚构。这个以后我们大家会慢慢取得共识，史学研究是史学研究，历史考证是历史考证，文学艺术是文学艺术。大家都明白，尤其我现在来搞，受到的非议少一点。 在历史这块我主要想表达的是历史精神，我的终极追求是美学价值。文学作品没有美学价值的突破，它就没有存在的必要。我也经常说，我们用史学的眼光看世界，用科学的眼光看世界，用神学的眼光看世界，还有美学的眼光看世界。我在写的东西里面首先是用美学的眼光，当然其它三个都有。 什么是主旋律？就是一部人类历史，就是人类不断自我完善的过程。任何一个历史阶段，如果一个历史人物或者历史群体在自我完善的过程中起到了正面作用，它就是主旋律。 关外游牧民族和关内农耕民族的融合一直到唐朝，李世民完成了。他完成的是文化的统一，不要只看版图。 1949年，决定中国前途命运的时刻到来了，不要忘了这个前途命运到来的时刻，之前有多少人在承受它，然后完成它，但决定还真不是人做的。虽然有些人对历史能做一些宏观的预测，但他也是在预测历史 …  </content></entry><entry><title>Nintendo Switch 2 发布信息汇总及对比NS</title><url>/daily/nintendo-switch-2-%E5%8F%91%E5%B8%83%E4%BF%A1%E6%81%AF%E6%B1%87%E6%80%BB%E5%8F%8A%E5%AF%B9%E6%AF%94ns/</url><categories><category>杂谈</category><category>影视游戏</category></categories><tags><tag>任天堂</tag><tag>2025-04</tag></tags><content type="html">   摘要 任天堂终于发布了Nintendo Switch 2，总结了目前的已知信息以及与NS的区别。
 NS2对比NS 特性分类 Nintendo Switch 2 (NS2) 原版Nintendo Switch 对比亮点 尺寸与重量 - 尺寸：116mm × 272mm × 13.9mm（带Joy-Con 2） - 重量：401g（裸机）→ 534g（带Joy-Con 2） - 尺寸：102mm × 239mm × 13.9mm - 重量：297g（裸机）→ 398g（带Joy-Con） 📏 更大屏幕：7.9英寸 vs. 6.2英寸 ⚖️ 重量增加：便携性略降，534g vs. 398g 屏幕与显示 - 手持模式：7.9英寸LCD，1080p/120Hz，HDR - 主机模式：4K@60Hz 或 1440p@120Hz - 手持模式：6.2英寸LCD，720p - 主机模式：1080p@60Hz 🔍 画质飞跃：4K输出 + HDR支持 🔄 流畅性：120Hz可变刷新率 性能与硬件 - 芯片：T239，NVIDIA定制Ampere架构 - 配置：8核CPU + 1536 GPU核心
 - 内存带宽：102.4GB/s - 芯片：NVIDIA Tegra X1 - 配置：4核CPU + 256 GPU核心 - 内存带宽：25.6GB/s ⚡ 性能提升：复杂场景帧率更稳 🎨 AI采样：低分辨率游戏优化增强 存储扩展 - 内置存储：256GB - 扩展支持：仅microSD Express（最大2TB）
@@ -274,7 +279,7 @@ eval &amp;ldquo;$(/opt/homebrew/bin/brew shellenv)&amp;rdquo;
 安装完后硬盘剩余空间对比
 最主要的是xcode的command line，占用了2.37G。
 利用smartmontools查看硬盘写入量 brew install smartmontools
-smartctl -a disk0 | awk &amp;lsquo;/SMART/Health Information/,/^$/&amp;rsquo;
+smartctl -a disk0 | awk &#39;/SMART\/Health Information/,/^$/&#39;
 20241205日结果如下：
 SMART/Health Information (NVMe Log 0x02)
 Critical Warning: 0x00
@@ -288,7 +293,8 @@ Host Read Commands: 162,196,009
 Host Write Commands: 65,625,988
 Controller Busy Time: 0
 Power Cycles: 91
-Power On Hours: 131 …  ]]></content></entry><entry><title>MacOS使用Hugo</title><url>/note/macos%E4%BD%BF%E7%94%A8hugo/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>建站</tag><tag>折腾</tag><tag>mac</tag><tag>2025-01</tag></tags><content type="html">   摘要 将Blog项目文件拷贝到onedrive后，开始在macbook air上进行内容编写与发布。
+Power On Hours: 131
+Unsafe …  ]]></content></entry><entry><title>MacOS使用Hugo</title><url>/note/macos%E4%BD%BF%E7%94%A8hugo/</url><categories><category>笔记</category><category>工具使用</category></categories><tags><tag>建站</tag><tag>折腾</tag><tag>mac</tag><tag>2025-01</tag></tags><content type="html">   摘要 将Blog项目文件拷贝到onedrive后，开始在macbook air上进行内容编写与发布。
 安装 推荐开启科学上网，不然太慢了。
 安装ARM版Hugo arch -arm64 brew install hugo
 本次安装的为hugo v0.139.5+extended+withdeploy darwin/arm64 BuildDate=2024-12-14T19:16:21Z VendorInfo=brew`版本
@@ -319,6 +325,6 @@ First-VS 第一次联动：闪电侠VS绿箭侠
 超女S3E08&amp;mdash;&amp;gt;绿箭S6E08&amp;mdash;&amp;gt;闪电侠S4E08&amp;mdash;&amp;gt;明日传奇S3E08
 2018-ElseWorld 2018年12月9日，CW台再一次进行《闪电侠》《绿箭侠》《超女》的联动大事件（《明日传奇》将不参与这次联动）。故事始于阿卡姆疯人院博士John Deegan重写现实，导致绿箭侠和闪电侠交换生命，在这个新的现实中，巴里·艾伦变成了奥利弗·奎恩（绿箭侠），奥利弗·奎恩变成了巴里·艾伦（闪电侠），而这两位英雄是唯一知道他们在错误的生 …  ]]></content></entry><entry><title>关于网站</title><url>/about.html</url><categories><category>杂谈</category></categories><tags/><content type="html">   人生到处知何似，应似飞鸿踏雪泥。
 泥上偶然留指爪，鸿飞那复计东西。
-萍水相逢，欢迎留言。 如果遇到评论或图片加载不出，请打开“科学上网”。
+如果遇到评论或图片加载不出，请开启“科学上网”。
   </content></entry><entry><title>站点示例</title><url>/flinks.html</url><categories/><tags/><content type="html">  如想交换本站友情链接，请在评论区留下你的站点信息，格式参考如下：
 1 2 3 4 - name: 亭轩阁 desc: 收录遇到的问题，分享解决方法 avatar: https://tingxuanr.github.io/imgs/my_avatar.png link: https://tingxuanr.github.io   </content></entry></search>
