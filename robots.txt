@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://tingxuanr.github.io/sitemap.xml
+Sitemap: https://tingxuanr-github-io.pages.dev/sitemap.xml
