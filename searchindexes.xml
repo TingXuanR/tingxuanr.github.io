@@ -8,6 +8,7 @@
 如何添加友联？
 如何确定网页布局是否正常？
 升级主题后网站已运行时间是NAN？
+mac上执行hugo没反应？
 ……
 初步使用 下载Hogo Extend, Git，Go 本次hugo版本: hugo v0.140.2-aae02ca612a02e085c08366a9c9279f4abb39d94+extended windows/amd64 BuildDate=2024-12-30T15:01:53Z VendorInfo=gohugoio
 Hugo-theme-next: 4.6.3(20240722)
@@ -15,13 +16,46 @@ Hugo-theme-next: 4.6.3(20240722)
 建好后在setting里面选择main分支为GitHub page。等待github deploy完成后就可以用https://github_user_name.github.io访问博客网站了。（当然要先完成创建博客网站这步）
 如果仓库名是其它的，也没问题。但是在config.yaml里面的baseurl要改成github_user_name.github.io/other_repo，不然很多样式文件是找不到的。
 创建博客网站目录 在本地新建一个目录website或其它名字，右键“git bash here”，在git bash里输入 hugo new site Blog Blog就是本地的调试目录了。（推荐在OneDrive里面新建，这样就可以多端同步）
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 cd Blog // 初始化git …  </content></entry><entry><title>视频为什么会糊（二）？B站的码率变化</title><url>/note/%E8%A7%86%E9%A2%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E7%B3%8A%E4%BA%8Cb%E7%AB%99%E7%9A%84%E7%A0%81%E7%8E%87%E5%8F%98%E5%8C%96/</url><categories><category>笔记</category><category>比特乾坤</category></categories><tags><tag>码率</tag><tag>2025-01</tag></tags><content type="html">   摘要 流媒体平台（不只B站，所有流媒体都在干，画质最差的还得是优爱腾三家）为了节约成本，不断的降低自家视频的码率。很多所谓的4k、蓝光清晰度还不如六七年前的，纯粹是自欺欺人。 上一篇 对比 码率指1秒内包含的比特数量，对视频而言，越多越清晰。2020年，B站1080p的视频码率能达到6Mbps，4K能达到20Mbps；2024年，B站1080p视频码率不足1Mbps，4K有时也只有不到2Mbps。很多时候，一段高解析度音频的码率都比视频码率要高得多。再好的视频编码方式，在码率极低的情况下也无法化腐朽为神奇。
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 cd …  </content></entry><entry><title>视频为什么会糊（二）？B站的码率变化</title><url>/note/%E8%A7%86%E9%A2%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E7%B3%8A%E4%BA%8Cb%E7%AB%99%E7%9A%84%E7%A0%81%E7%8E%87%E5%8F%98%E5%8C%96/</url><categories><category>笔记</category><category>比特乾坤</category></categories><tags><tag>码率</tag><tag>2025-01</tag></tags><content type="html">   摘要 流媒体平台（不只B站，所有流媒体都在干，画质最差的还得是优爱腾三家）为了节约成本，不断的降低自家视频的码率。很多所谓的4k、蓝光清晰度还不如六七年前的，纯粹是自欺欺人。 上一篇 对比 码率指1秒内包含的比特数量，对视频而言，越多越清晰。2020年，B站1080p的视频码率能达到6Mbps，4K能达到20Mbps；2024年，B站1080p视频码率不足1Mbps，4K有时也只有不到2Mbps。很多时候，一段高解析度音频的码率都比视频码率要高得多。再好的视频编码方式，在码率极低的情况下也无法化腐朽为神奇。
 H.264 粗略的讲，这个编码就是把视频画面里不变或相似的部分节省下来。比如，一个画面里有大量相同的色块，如蓝天白云，那么就可以利用一个像素块来代替周围相邻的像素块，这就是去除空间冗余；如果连续的几个帧之间只有少量部分在动，比如一片树叶下落的过程，那么这么多帧之间只需要记录树叶的运动轨迹就行，这就是去除时间冗余。还有变换编码、量化、熵编码等步骤，就不细说了。通过这些复杂的操作，能够在保证视频质量前提下，把视频体积缩小十倍以上。
 发展 随着视频平台客户量的增大，它们在流量上的支出也越来越大，虽然有会员和广告盈利，但天生吝啬的它们还是想降低流量成本。
 刚开始还比较克制，只是使用更先进的编码，如H.265、AV1等，根据设备的不同发送不同码率的视频。
 理论上更高的编码格式意味着用更少的流量就可以让用户看清晰的视频，应该是用户和平台双赢的局面。但是，对视频进行不同程度的编码，这就意味着需要更多的算力，它们还想继续降低成本。于是，事情开始离谱。
 首先，所有上传到视频平台的视频都会被进行压缩，并且为了让视频看起来没那么模糊，还给视频增加了锐化，导致视频失真。其次，对于同一个视频，如果看的人少，那么码率会高一些。一旦这个视频观看的人多了，视频的码率便会急剧降低；再者，当用户在观看一个视频时，视频的编码和码率会不断的变化，也就是说平台会动态切换用户看到的视频源。并且，很多时候，H.265这个更高效的编码视频清晰度甚至不如H.264的视频，因为平台给H.265压制的码率实在太低了。
-最终，目前的局面就是平台（不只B站）为了节省流量，无底线的降低视频码率，现在有的1080p视频的码率甚至只有500kpbs不到！Apple Music上一首标准无损音质的音乐码率都能达 …  </content></entry><entry><title>中国质量报：市场监管总局依法查处7家电商平台“幽灵外卖”系列案纪实</title><url>/post/%E4%B8%AD%E5%9B%BD%E8%B4%A8%E9%87%8F%E6%8A%A5%E5%B8%82%E5%9C%BA%E7%9B%91%E7%AE%A1%E6%80%BB%E5%B1%80%E4%BE%9D%E6%B3%95%E6%9F%A5%E5%A4%847%E5%AE%B6%E7%94%B5%E5%95%86%E5%B9%B3%E5%8F%B0%E5%B9%BD%E7%81%B5%E5%A4%96%E5%8D%96%E7%B3%BB%E5%88%97%E6%A1%88%E7%BA%AA%E5%AE%9E/</url><categories><category>笔记</category></categories><tags><tag>新闻</tag><tag>2026-04</tag></tags><content type="html">   摘要 2026 年 4 月 20 日： 市场监管总局依法查处7家电商平台“幽灵外卖”系列案纪实 单个平台最高罚款15亿元、7家平台合计罚没款35.97亿元；企业法定代表人和食品安全总监合计罚款近2000万元；暂停新增蛋糕店铺3至9个月不等……4月17日，市场监管总局公布了依法对拼多多、美团、京东、饿了么（淘宝闪购）、抖音、淘宝、天猫7家电商平台“幽灵外卖”系列案作出的行政处罚结果。
+最终，目前的局面就是平台（不只B站）为了节省流量，无底线的降低视频码率，现在有的1080p视频的码率甚至只有500kpbs不到！Apple Music上一首标准无损音质的音乐码率都能达 …  </content></entry><entry><title>月札202608</title><url>/daily/%E6%9C%88%E6%9C%AD202608/</url><categories><category>杂谈</category><category>闲言碎语</category></categories><tags><tag>生活</tag><tag>2026-08</tag></tags><content type="html">   摘要 招行万事达卡，
+  </content></entry><entry><title>月札202607</title><url>/daily/%E6%9C%88%E6%9C%AD202607/</url><categories><category>杂谈</category><category>影视游戏</category></categories><tags><tag>任天堂</tag><tag>2026-07</tag></tags><content type="html">   摘要 splatoon raiders，开心速递
+涂击队发售 自去年9月直面会公布以来，就很期待splatoon的第一部单机番外作品。
+为了第一时间玩了，决定入手数字版。顺便的折腾了下日亚账号，终于是成功购买。
+  </content></entry><entry><title>月札202606</title><url>/daily/%E6%9C%88%E6%9C%AD202606/</url><categories><category>杂谈</category><category>影视游戏</category></categories><tags><tag>任天堂</tag><tag>2026-06</tag></tags><content type="html">   摘要 咚奇刚，神秘博士，超级战队
+咚奇刚限定挑战 《咚奇刚蕉力全开》开启了限时挑战，截至9月1号，只要完成所有挑战就可以获得限定的卡片和头像。
+蕉力全开是自己首发购入的第一个NS2卡带，也是至今买过价格最高的游戏，340+。
+第一次看到游戏介绍时，有点纳闷只是破坏周边地形有什么好玩。没想到在专属直面会又爆出还有变身系统，还有其它各种探索收集要素，可玩性拉满。
+首发购入连续玩了好久，通关二周目全收集后就很少打开了。
+任天堂这次开启的限时挑战，又让自己久违的打开这款游戏，而且这些挑战有几个确实是难度新高，通过后成就感满满。
+要是其它游戏也能时不时有这种限时活动，那很多老游戏就又有了重玩的动力。
+神秘博士停播 2026年6月12日，BBC宣布对《神秘博士》系列进行重大创意调整，八个月前获批的圣诞特辑已被取消。
+这次停播，估计是很难再重启了。毕竟神秘博士从十三代开始就每况愈下，差评越来越多。
+从2019年开始看神秘博士，一边补番一边追，明显能感受到剧集质量下降。尤其是近几年国外政治正确大行其道，再加上编剧创意不足，如果不是神秘博士这个招牌，早就弃剧了。
+就这样停掉这个系列，防止这个招牌烂掉，也算是一件好事。
+超级战队停播 战队去年就停播了。换成了RED项目，第一作《新卡邦》，真的是烂穿地心。又烂又无聊。
+很神秘博士不同，战队不是因为质量不行。相反，最近几年的战队，质量都很不错。
+东映停播的原因很现实：战队玩具收入不理想。
+很让人无奈。毕竟这个系列连续播了五十多年，突然停播。接档它的又是部烂剧。
+  </content></entry><entry><title>月札202605</title><url>/daily/%E6%9C%88%E6%9C%AD202605/</url><categories><category>杂谈</category><category>闲言碎语</category></categories><tags><tag>生活</tag><tag>时事</tag><tag>2026-05</tag></tags><content type="html">   摘要 100%棉、Codex、OPPO母亲节事件
+100%棉 纯棉和百分之一百不能在同一标签出现，因为意思重复了。纯棉就代表百分之百是棉的，所以买纯棉，就四个标准，“棉100％”、“100％棉”、“纯棉”、“全棉”。没有100%存棉
+Codex写Chrome插件 这个月codex更新了一个新功能，可以直接操作chrome浏览器。为了体验，特地下载安装了chrome，结果体验挺一般的。
+不过还是发现了一个新大陆，可以让codex直接插件。比如让它写了一个京东订单的批量导出插件，消耗token有点大，但可以直接加载使用。点击就可以把京东的历史账单导出来，顺带还vibe了一个售后订单导出的插件。两个导出的excel直接交给codex再分析，把退货的相关情况也标注出来。
+OPPO母亲节宣传事件 2026年5月8日，oppo发布母亲节营销文案：我妈有两个“老公”，一个是我爸，另一个一年见两回。跟我爸约会基本不打扮，见另一个，她恨不得穿婚纱。
+一个大厂，居然可以允许这种明显违背社会伦理的文案，真的让人大跌眼镜。
+引起公愤后，oppo没有第一时间道歉，反而狡辩原意“是希望打破刻板印象，呈现更多元、更立体的当代母亲形象：母亲可以热爱马拉松，可以沉浸文字创作，也可以拥有自己的追星爱好”。追星没问题，但文案里的文字把一个正常爱好变得暧昧低俗。
+5月9日，有网友针对oppo的道歉发了详细阐述：
+这里我的关注点不是这个文案——它逆天的如此明显，以至于分析它没什么价值。OPPO的这个道歉声明应当被着重审视，它透露出的问题甚至比海报文案还大。
+原文如下：关于本次母亲节宣传文案引起的争议，我们诚恳表示歉意。我们的创作初衷，是希望打破刻板印象，呈现更多元、更立体的当代母亲形象：母亲可以热爱马拉松，可以沉浸文字创作，也可以拥有自己的追星爱好。我们已第一时间下架全部相关物料。我们将认真倾听各方批评，全面审查内容审核机制，确保此类问题不再发生。
+来，我们一句一句看。
+＂关于本次母亲节宣传文案引起的争议，我们诚恳表示歉意。＂
+注意措辞。
+它道歉的对象是什么？——＂引起的争议＂。不是＂我们发布了冒犯性的内容＂，不是＂我们的文案违背了基本的公序良俗＂，而是——你们吵起来了，我很抱歉。
+这在公关话术里叫＂if anyone was offended＂式道歉——＂如果有人感到被冒犯，我们表示歉意＂。潜台词是：问 …  </content></entry><entry><title>中国质量报：市场监管总局依法查处7家电商平台“幽灵外卖”系列案纪实</title><url>/post/%E4%B8%AD%E5%9B%BD%E8%B4%A8%E9%87%8F%E6%8A%A5%E5%B8%82%E5%9C%BA%E7%9B%91%E7%AE%A1%E6%80%BB%E5%B1%80%E4%BE%9D%E6%B3%95%E6%9F%A5%E5%A4%847%E5%AE%B6%E7%94%B5%E5%95%86%E5%B9%B3%E5%8F%B0%E5%B9%BD%E7%81%B5%E5%A4%96%E5%8D%96%E7%B3%BB%E5%88%97%E6%A1%88%E7%BA%AA%E5%AE%9E/</url><categories><category>笔记</category></categories><tags><tag>新闻</tag><tag>2026-04</tag></tags><content type="html">   摘要 2026 年 4 月 20 日： 市场监管总局依法查处7家电商平台“幽灵外卖”系列案纪实 单个平台最高罚款15亿元、7家平台合计罚没款35.97亿元；企业法定代表人和食品安全总监合计罚款近2000万元；暂停新增蛋糕店铺3至9个月不等……4月17日，市场监管总局公布了依法对拼多多、美团、京东、饿了么（淘宝闪购）、抖音、淘宝、天猫7家电商平台“幽灵外卖”系列案作出的行政处罚结果。
 **总计35.97亿元的罚单，是食品安全法实施以来，监管部门开出的最大罚单。**前后历时近10个月、覆盖全国31个省区市、涉及当前所有主流电商平台，这个“史上最大罚单”的背后，究竟藏着怎样一个斗智斗勇、破茧成蝶的执法历程？一切都要从一个蛋糕订单和一张伪造的证书说起。
 “幽灵”出现提级办理 “此案重大关系到人民群众‘舌尖上的安全’，从严从快查处。”2025年9月8日，市场监管总局领导在总局突击调查转单平台后对“幽灵外卖”案件查办的批示掷地有声，不仅体现了市场监管总局彻查案件的信心，更彰显了市场监管部门严守食品安全底线、维护执法权威的坚定决心。
 让我们把时针拨回到批示前的两个月。
@@ -112,19 +146,11 @@ pdf下载：https://github.com/user-attachments/files/25159626/default.pdf
 然廷玉实老病，十四年正月，命如宋文彦博十日一至都堂议事，四五日一入内廷备顾问。是冬，廷玉言：“受上恩不敢言去，私意原得暂归。后年，上南巡，当于江宁迎驾。”亲制诗三章以赐，廷玉入谢，奏言：“蒙世宗遗命配享太庙，上年奉恩谕，从祀元臣不宜归田终老，恐身后不获更蒙大典。免冠叩首，乞上一言为券。”上意不怿，然犹为颁手诏，以明刘基乞休后仍配享为例。次日，遣子若澄入谢。上以廷玉不亲至， …  </content></entry><entry><title>ActivityWatch使用记录</title><url>/note/activitywatch%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</url><categories><category>笔记</category></categories><tags><tag>mac</tag><tag>软件</tag><tag>2025-11</tag></tags><content type="html"><![CDATA[   摘要 关于使用ActivityWatch同步管理mac和pc的屏幕使用时间
 官方地址：https://activitywatch.net。
 主要用途：可以借用它的同步功能，看到mac和pc的屏幕使用详情。暂时不支持移动设备。
-同步设备使用时间 修改配置 安装好activitywatch后，右键状态栏图标-&gt;&ldquo;open config folder&rdquo;-&gt;&ldquo;aw-qt&rdquo;，编辑&quot;aw-qt.toml&quot;:
-1 2 [aw-qt] autostart_modules = [&#34;aw-server-rust&#34;, &#34;aw-sync&#34;, &#34;aw-watcher-afk&#34;, &#34;aw-watcher-window&#34;] 添加环境变量 activitywatch的 同步 是通过aw-sync将数据写入到同步目录里，重点是需要设置好AW_SYNC_DIR这个环境的值为自定义目录。
+同步设备使用时间 修改配置 安装好activitywatch后，右键状态栏图标-&amp;gt;&amp;ldquo;open config folder&amp;rdquo;-&amp;gt;&amp;ldquo;aw-qt&amp;rdquo;，编辑&amp;quot;aw-qt.toml&amp;quot;:
+1 2 [aw-qt] autostart_modules = [&amp;#34;aw-server-rust&amp;#34;, &amp;#34;aw-sync&amp;#34;, &amp;#34;aw-watcher-afk&amp;#34;, &amp;#34;aw-watcher-window&amp;#34;] 添加环境变量 activitywatch的 同步 是通过aw-sync将数据写入到同步目录里，重点是需要设置好AW_SYNC_DIR这个环境的值为自定义目录。
 Mac
 由于GUI程序无法读取到.zshrc的环境变量，需要利用lanchctl。开启终端，执行如下命令:
-1 mkdir -p ~/Library/LaunchAgents 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 cat &gt; ~/Library/LaunchAgents/com.activitywatch.syncdir.plist &lt;&lt; &#39;EOF&#39; &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt; &lt;!DOCTYPE plist PUBLIC &#34;-//Apple//DTD PLIST 1.0//EN&#34; &#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;&gt; &lt;plist version=&#34;1.0&#34;&gt; &lt;dict&gt; &lt;key&gt;Label&lt;/key&gt; &lt;string&gt;com.activitywatch.syncdir&lt;/string&gt; &lt;key&gt;ProgramArguments&lt;/key&gt; &lt;array&gt; &lt;string&gt;launchctl&lt;/string&gt; &lt;string&gt;setenv&lt;/string&gt; &lt;string&gt;AW_SYNC_DIR&lt;/string&gt; &lt;string&gt;Your_sync_lib&lt;/string&gt; &lt;/array&gt; &lt;key&gt;RunAtLoad&lt;/key&gt; &lt;true/&gt; &lt;/dict&gt; &lt;/plist&gt; EOF ​	需要修改的是your_sync_dir，改为需要使用的云同步目录（提前建好，路径有空格的话需要加双引号），如/Users/xxx/Library/CloudStorage/OneDrive-Personal/aw，除了onedrive，还可以用坚果云或其它同步软件。
-​	加载环境变量：
-1 launchctl load ~/Library/LaunchAgents/com.activitywatch.syncdir.plist 另外起一个终端窗口，验证环境变量： 1 launchctl getenv AW_SYNC_DIR PC
-win+i打开“设置”-&gt;&ldquo;系统&rdquo;-&gt;&ldquo;高级系统设置&rdquo;-&gt;&ldquo;环境变量&rdquo;，在&quot;用户环境变量&quot;处新建:
-变量名：AW_SYNC_DIR
-变量值：D:\Yun\OneDrive\aw
-检查 退出软件，重新打开。右键图标看看&quot;Modules&quot;是不是打开了&quot;aw-server-rust&quot;和&quot;aw-sync&quot;，再去检查下D:\Yun\OneDrive\aw是不是有以电脑名命名的文件夹，如&quot;LAPTOP-xxx&quot;或&quot;xxxdeMacBookxxx&quot;。
-打开dashbord，就可以在Activity上看到可以选择机器了。
-  ]]></content></entry><entry><title>月札202510</title><url>/daily/%E6%9C%88%E6%9C%AD202510/</url><categories><category>杂谈</category><category>闲言碎语</category></categories><tags><tag>文化</tag><tag>2025-10</tag></tags><content type="html">   摘要 草民由来、哆啦A梦漫画
+1 mkdir -p ~/Library/LaunchAgents 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 cat &amp;gt; ~/Library/LaunchAgents/com.activitywatch.syncdir.plist &amp;lt;&amp;lt; &amp;#39;EOF&amp;#39; &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE plist PUBLIC &amp;#34;-//Apple//DTD PLIST 1.0//EN&amp;#34; &amp;#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&amp;#34;&amp;gt; &amp;lt;plist version=&amp;#34;1.0&amp;#34;&amp;gt; &amp;lt;dict&amp;gt; &amp;lt;key&amp;gt;Label&amp;lt;/key&amp;gt; …  ]]></content></entry><entry><title>月札202510</title><url>/daily/%E6%9C%88%E6%9C%AD202510/</url><categories><category>杂谈</category><category>闲言碎语</category></categories><tags><tag>文化</tag><tag>2025-10</tag></tags><content type="html">   摘要 草民由来、哆啦A梦漫画
 印度达拉维贫民窟 《贫民窟里的百万富翁》现实取景地，印度最大贫民窟：2.1公里挤了200万人（2025年）。难以想象的人口密度，里面自称一体，医院、学校、工厂等一应俱全。
 在贫民窟不远处，就是大酒店、大豪宅。
 草民 什么是草民？普遍来讲是平民百姓。最早应该是出自论语“君子之德风，小人之德草。草上之风，必偃”，也就是说君子的德行像风一样影响大众。“草”也并非贬义，只是想表达百姓容易受影响，而影响他们的应该是君子之德。
@@ -261,7 +287,7 @@ NS2对比NS 特性分类 Nintendo Switch 2 (NS2) 原版Nintendo Switch 对比亮
 BLE(BlueTooth Low Energy)主要目的是尽可能的减少电量消耗，这对于无线耳机和可穿戴设备非常重要。而Classic就是在原来的基础上进行常规发展。现在的设备大部分都同时支持两种模式并自动切换。
 2013年发布4.1版本。
 特性：单个数据包从20字节增加到23字节（广播包还 …  </content></entry><entry><title>国内外币信用卡在任天堂eshop购买问题</title><url>/daily/%E5%9B%BD%E5%86%85%E5%A4%96%E5%B8%81%E4%BF%A1%E7%94%A8%E5%8D%A1%E5%9C%A8%E4%BB%BB%E5%A4%A9%E5%A0%82eshop%E8%B4%AD%E4%B9%B0%E9%97%AE%E9%A2%98/</url><categories><category>杂谈</category><category>影视游戏</category></categories><tags><tag>任天堂</tag><tag>2025-03</tag></tags><content type="html">   摘要 昨天还用visa卡在任天堂eshop买了余额，今天突然不能用，返回2813-2470的错误码。通过改邮箱的方式暂时解决了问题。
-20250326更新 泥潭水友总结 ：
+20260617更新 巴哈姆特日区亚马逊新账号购买经验1 贴吧日区亚马逊新账号购买经验1 20250326更新 泥潭水友总结 ：
 关于今天老任eShop支付系统更新后的一些实测：
 大陆发行的JCB(招行)确认不能绑定eShop(报错：9008-2471)。 ana pay(虚拟visa，绑大陆发行的JCB)可以正常在eshop(网页版)绑定并下单，没有影响(废话)。(PS：虽然ana pay二月有发公告说是停止海外发行的visa和万事达卡充值，但公告里没有提到过JCB哦。) 日区PP只能主机上购买，经测试，日区PP(绑大陆发行的JCB)可以正常扣款+购买。 禁止海外信用卡原因 ：
 日本在去年颁布的《信用卡安全指南 6.0 版》，里面强制要求了所有日本在线商户必须在最迟 2025 年 3 月底强制启用 3DS 验证，这一年日本本地银行跟支付供应商都在鸡飞狗跳，而根据大家都明白的日本 IT 基建水平，不少支付方式供应商选择一刀切，停止所有境外支付方式支持，就造成了现在的局面。这件事不止影响了任天堂，苹果之前中断新的境外信用卡也是有这个背景的。
@@ -271,7 +297,7 @@ BLE(BlueTooth Low Energy)主要目的是尽可能的减少电量消耗，这对�
 晚上回去试了一下，会返回2813-2471的错误码，提示“请使用所在国家/地区发行的信用卡”。
 20250324更新 新办的银联JCB卡到了，成功绑定eshop，充值1000日元余额。
 20250320更新：3月25号之后eshop怎么买游戏？ 通过日亚购买： ​	帖子链接 。大意是amazon.co.jp进入日亚，地址需要设定日本地址为常用地址，国内手机号绑定也行。但第一次就买电子券容易锁账号。
-​	如果要查询信用卡发卡行，可以用这个 地址 通过淘宝：直接买给卡密的，不要把账号给商家。 去日本旅游时屯几张。 ​	自己今天早上 …  </content></entry><entry><title>红米Note12TPro 小米14Ultra Root记录</title><url>/note/%E7%BA%A2%E7%B1%B3note12tpro-%E5%B0%8F%E7%B1%B314ultra-root%E8%AE%B0%E5%BD%95/</url><categories><category>笔记</category><category>玩机记录</category></categories><tags><tag>数码</tag><tag>android</tag><tag>折腾</tag><tag>2025-02</tag></tags><content type="html">   摘要 记录一下给红米note12t pro、红米note11t pro、小米14ultra的root过程。推荐用狐狸面具或KSU，隐藏root能过电信app和银行app的检测。联发科芯片和骁龙芯片及不同安卓版本的root过程有差异。
+​	如果要查询信用卡发卡行，可以用这个  …  </content></entry><entry><title>红米Note12TPro 小米14Ultra Root记录</title><url>/note/%E7%BA%A2%E7%B1%B3note12tpro-%E5%B0%8F%E7%B1%B314ultra-root%E8%AE%B0%E5%BD%95/</url><categories><category>笔记</category><category>玩机记录</category></categories><tags><tag>数码</tag><tag>android</tag><tag>折腾</tag><tag>2025-02</tag></tags><content type="html">   摘要 记录一下给红米note12t pro、红米note11t pro、小米14ultra的root过程。推荐用狐狸面具或KSU，隐藏root能过电信app和银行app的检测。联发科芯片和骁龙芯片及不同安卓版本的root过程有差异。
 红米Note 12T Pro Root记录 Root 准备工作：
 手机解BL锁(目前小米系手机miui系统可解，hyper系统2025年之后花钱可秒解；一加截至20250205可以申请解锁；解BL锁时会清除手机数据。)
 手机开启usb调试，usb调试（安全）设置
@@ -372,11 +398,11 @@ CPU高负载工作时，温度急剧升高，热量传递到散热器，散热�
 安装docker https://docs.docker.com/desktop/ 下载arm版docker desktop
 安装完后进入setting，关闭docker自动更新。找到docker engineer选项，更换库源，加入以下代码：
 1 2 3 4 5 6 7 &amp;#34;registry-mirrors&amp;#34;: [ &amp;#34;http://hub-mirror.c.163.com&amp;#34;, &amp;#34;https://docker.mirrors.ustc.edu.cn&amp;#34;, &amp;#34;https://registry.docker-cn.com&amp;#34;, &amp;#34;https://dockerhub.azk8s.cn&amp;#34;, &amp;#34;https://reg-mirror.qiniu.com&amp;#34; ] terminal输入docker info可以看到Registry Mirrors添加成功了没有。
-打开terminal，输入nohup docker run --device /dev/net/tun --cap-add NET_ADMIN -ti -e PASSWORD=mypass -e URLWIN=1 -e DISABLE_PKG_VERSION_XML=1 -p 127.0.0.1:5901:5901 -p 127.0.0.1:1080:1080 -p 127.0.0.1:8888:8888 hagb/docker-easyconnect:7.6.7 &amp;gt; /dev/null &amp;amp; 其中passwd和7.6.7可以更改为适合自1.己的版本。
+打开terminal，输入docker run -d --name easyconnect --device /dev/net/tun --log-opt max-size=5m --log-opt max-file=3 --cap-add NET_ADMIN -ti -e PASSWORD=mypass -e URLWIN=1 -e DISABLE_PKG_VERSION_XML=1 -p 127.0.0.1:5901:5901 -p 127.0.0.1:1080:1080 -p 127.0.0.1:8888:8888 hagb/docker-easyconnect:7.6.7 其中passwd和7.6.7可以更改为适合自1.己的版本。
 等拉取完(一两分钟)后容器会自动运行。在docker desktop里可以看到。
 之后需要运行只需要在docker desktop里开始，停止就行。
-修改clash x的配置文件 将原本的配置文件内容复制到新建的sf.yaml中。防止clash自动刷新后将修改清除。
-修改sf.yaml，在proxies …  ]]></content></entry><entry><title>象棋界大地震录音门事件</title><url>/post/%E8%B1%A1%E6%A3%8B%E7%95%8C%E5%A4%A7%E5%9C%B0%E9%9C%87--%E5%BD%95%E9%9F%B3%E9%97%A8%E4%BA%8B%E4%BB%B6/</url><categories><category/></categories><tags><tag>新闻</tag><tag>2025-01</tag></tags><content type="html">   摘要 录音门从2023年4月曝光，期间2024年9月官方公告处理过王天一、王跃飞两人。至2025年1月12日的公告却直接让整个象棋界来了个大洗牌。象棋等级分前十的选手里，前三的王天一、郑惟桐、赵骏骏、第六的汪洋被终生禁赛，排名第八的侯继超也被禁赛4年并撤销等级称号。这一次，真的是“高手在民间”了。
+docker镜像备份与恢复 查看当前images：docker images
+备份命 …  ]]></content></entry><entry><title>象棋界大地震录音门事件</title><url>/post/%E8%B1%A1%E6%A3%8B%E7%95%8C%E5%A4%A7%E5%9C%B0%E9%9C%87--%E5%BD%95%E9%9F%B3%E9%97%A8%E4%BA%8B%E4%BB%B6/</url><categories><category/></categories><tags><tag>新闻</tag><tag>2025-01</tag></tags><content type="html">   摘要 录音门从2023年4月曝光，期间2024年9月官方公告处理过王天一、王跃飞两人。至2025年1月12日的公告却直接让整个象棋界来了个大洗牌。象棋等级分前十的选手里，前三的王天一、郑惟桐、赵骏骏、第六的汪洋被终生禁赛，排名第八的侯继超也被禁赛4年并撤销等级称号。这一次，真的是“高手在民间”了。
 选手信用一旦崩塌，之前的一切成绩都将被怀疑。
 处理结果（截至2025年1月12日） 官方的公告是还在继续查，不知道第三批还会有哪些人被处罚。
 过程 初步发酵（2023年） 2023年4月，一段长达12分钟的录音在网络上曝光，录音内容涉及两位中国象棋特级大师王跃飞和郝继超的对话。录音中，两人讨论了买棋、卖棋、操纵比赛结果、软件作弊等违规行为，期间提及中国象棋等级分连续十年排名第一的棋手王天一。
